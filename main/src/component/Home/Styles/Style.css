@@ -1,5 +1,32 @@
-.home{
+.home {
     width: 90%;
-    height: 200dvh;
+    height: 100%;
     margin-left: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.home .text-part {
+    width: 60%;
+    height: 100%;
+}
+
+.text-part .text-box {
+    margin: 35% auto;
+}
+
+.text-part .text-box h2{
+    color: #b1ff58;
+    font-size: 3rem;
+}
+
+.home .image-part {
+    width: 40%;
+    height: 100%;
+}
+
+.home .text-part h1 {
+    text-transform: uppercase;
 }

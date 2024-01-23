@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
 *{
   margin: 0;
   padding: 0;
@@ -11,4 +13,6 @@ html{
   overflow-x: hidden;
   background: linear-gradient(to left,#202543,#1f233f);
   color-scheme: dark;
+  font-family: "Nunito Sans", sans-serif;
+  color:#f1f1f1d0;
 }
