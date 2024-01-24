@@ -1,11 +1,10 @@
 .project_card {
-    min-width: 25%;
-    min-height: 10rem;
-    margin: 3% auto;
+    width: 30%;
+    height: 100%;
+    margin: 2% auto;
     border: 1px solid #f1f1f12e;
     border-radius: .2rem;
-    padding: .5rem;
-    /* box-shadow: 0 0 5px #f1f1f12e; */
+    padding: .5rem 0 1rem 0;
 }
 
 .project_card h2 {
@@ -18,14 +17,24 @@
 
 .project_card p {
     font-size: smaller;
+    width: 90% !important;
+    padding: 0 .5rem .5rem .5rem;
 }
 
 .project_card a {
     text-decoration: none;
     color: var(--dark1);
     background: var(--blue1);
-    padding: 2%;
     border-radius: .2rem;
     font-size: 70%;
     font-weight: 500;
+    padding: .3rem;
+    margin: 0 .5rem .5rem .5rem;
+}
+
+@media screen and (max-width: 500px) {
+    .project_card {
+        width: 100%;
+        height: 100%;
+    }
 }

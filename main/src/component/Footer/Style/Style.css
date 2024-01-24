@@ -1,0 +1,28 @@
+.footer{
+    width: 90%;
+    height: 25%;
+    margin-left: 10%;
+    padding: 5% 0;
+}
+
+.footer .footer_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .footer_container .line{
+    width: 50%;
+    height: 2px;
+    background-color: var(--linecolor);
+}
+
+.footer .footer_container .content{
+    width: 50%;
+}
+
+.footer .footer_container .content a{
+    text-decoration: none;
+    color: var(--sideNavIconColor);
+    margin-left: 1rem;
+}

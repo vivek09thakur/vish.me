@@ -1,6 +1,7 @@
 import SideNav from "./component/SideNav/SideNav";
 import Home from "./component/Home/Home";
 import About from "./component/Home/About";
+import Footer from "./component/Footer/Footer";
 import "./App.css";
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
         <SideNav />
         <Home />
         <About/>
+        <Footer />
     </>
   );
 }

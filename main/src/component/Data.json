@@ -1,42 +1,43 @@
 {
   "user": {
     "IntroLine": "Hey There! I am Vivek",
-    "About": "Hello, I'm Vivek. An undergraduate computer science student from india. From my passion I love to build new things and I always try to implement my creativity in my projects and all of my creations. I love to learn about new technologies like Artificial Intelligence, Machine Learning, Deep Learning and TensorFlow or PyTorch etc. Also since , from childhood exploring the universe and cosmos and knowing even more about my world makes me even more alive. And besides of this I am also quite good at frontend technologies like React.Js and Figma etc."
+    "About": "Hello, I'm Vivek. An undergraduate computer science student from india. From my passion I love to build new things and I always try to implement my creativity in my projects and all of my creations. I love to learn about new technologies like Artificial Intelligence, Machine Learning, Deep Learning and TensorFlow or PyTorch etc. Also since , from childhood exploring the universe and cosmos and knowing even more about my world makes me even more alive. And besides of this I am also quite good at frontend technologies like React.Js and Figma etc.",
+    "email": "me.vivek.thakur09@gmail.com"
   },
   "RandomAboutText": [
     "Things I have Built (I am still working on them -_-)",
     "Things like 'Completed Projects' doesn't exsist in my life as I got an idea about a project and I start working on them. There's always something there which I find that can be improved. So every project is ongoing. "
   ],
-  "projects":{
-    "project1":{
-      "name": "Project 1",
-      "description": "This is a project description",
+  "projects": {
+    "project1": {
+      "name": "HIRO",
+      "description": "Your Personal Healthcare Companion :D.It's a healthcare chatbot that uses Naive Bayes , Decision Tree Classifier and Random Forest Classifier to predict the disease by extracting symptoms from the user's prompt",
+      "link": "https://github.com/vivek09thakur/HIRO"
+    },
+    "project2": {
+      "name": "PANDA",
+      "description": "Paradigm based Artificial Neural Dailog Agent(PANDA) medium sized LSTM language model. It's a text generation LM built using Keras and LSTM (Long Short Term Memory) neural network which is designed to generate the next sequence of text based on a given prompt.",
+      "link": "https://github.com/vivek09thakur/PANDA"
+    },
+    "project3": {
+      "name": "ELSA",
+      "description": "Enhanced Language Sequence Agent (ELSA)",
+      "link": "https://github.com/vivek09thakur/ELSA"
+    },
+    "project4": {
+      "name": "LearnIT",
+      "description": "An open source free of cost learning platform for all the computer science students pursuing their diplomas.",
       "link": "https://github.com/vivek09thakur/"
     },
-    "project2":{
-      "name": "Project 2",
-      "description": "This is a project description",
-      "link": "https://github.com/vivek09thakur/"
+    "project5": {
+      "name": "Baymax",
+      "description": "As it's name suggests, you all time fav buddy",
+      "link": "https://github.com/vivek09thakur/Baymax"
     },
-    "project3":{
-      "name": "Project 3",
-      "description": "This is a project description",
-      "link": "https://github.com/vivek09thakur/"
-    },
-    "project4":{
-      "name": "Project 4",
-      "description": "This is a project description",
-      "link": "https://github.com/vivek09thakur/"
-    },
-    "project5":{
-      "name": "Project 5",
-      "description": "This is a project description",
-      "link": "https://github.com/vivek09thakur/"
-    },
-    "project6":{
-      "name": "Project 6",
-      "description": "This is a project description",
-      "link": "https://github.com/vivek09thakur/"
+    "project6": {
+      "name": "LECTURE2NOTES",
+      "description": "It is a simple command-line python app that can record the notes or speaked lessons of teacher and convert them into Pdf Notes.",
+      "link": "https://vivek09thakur.github.io/Lecture2Notes/"
     }
   }
 }

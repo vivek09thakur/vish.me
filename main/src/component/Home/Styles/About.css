@@ -56,11 +56,12 @@
     margin-bottom: -5%;
 }
 .project_container{
-    width: 100%;
+    width: 80%;
     height: 100%;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    margin: auto;
 }
 @media screen and (max-width:500px) {
     .about {
@@ -88,5 +89,10 @@
 
     .about .container .image-box {
         width: 100%;
+    }
+
+    .project_container{
+        width: 100%;
+        margin: auto;
     }
 }
