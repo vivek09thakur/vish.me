@@ -22,7 +22,7 @@ html {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  background: var(--dark1);
+  background: var(--dark1) fixed;
   color-scheme: dark;
   font-family: "Poppins", sans-serif;
   color: var(--font_color1);
