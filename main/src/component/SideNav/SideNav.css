@@ -26,7 +26,7 @@
 }
 
 .line {
-    background: #f1f1f14f;
+    background: var(--linecolor);
     width: 2px;
     height: 45%;
     position: relative;
@@ -34,14 +34,13 @@
 
 .social_box .icon {
     font-size: 1.8rem;
-    color: #f1f1f171;
+    color: var(--sideNavIconColor)
 }
 
 .social_box .icon:focus,
 .social_box .icon:hover {
-    -webkit-transform: translateY(-40%);
-    transform: translateY(-40%);
-    transition: transform .5s ease-in;
+    color: var(--blue1);
+    transition: all transform 2s ease-in;
 }
 
 @media screen and (max-width:500px) {
