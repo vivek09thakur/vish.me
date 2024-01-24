@@ -18,28 +18,28 @@
 }
 
 .text-part .text-box h2 {
-    font-size: 6vw;
+    font-size: 10vh;
     font-family: "Roboto Mono", monospace;
     color: #5569ff;
     font-weight: 400;
 }
 
-.text-box a{
+.text-box a {
     margin-top: 5%;
     display: inline-block;
     text-decoration: none;
-    background: #1b202c;
-    color: #f1f1f1b9;
+    background: #5569ff;
+    color: #1b202c;
     padding: 7px 20px;
-    border-radius: .1rem;
-    border: 1px solid #f1f1f11d;
-    font-weight: 400;
+    border-radius: .2rem;
+    border: 1px solid #5569ff;
+    font-weight: 500 !important;
 }
 
-.text-box a:hover{
-    background: #5569ff;
+.text-box a:hover {
+    background: #10131a;
     border: 1px solid #5569ff;
-    color:#1b202c;
+    color: #5569ff;
     transition: all .5s ease-in-out;
 }
 
@@ -49,15 +49,36 @@
     font-weight: 400;
 }
 
-.Typewriter{
+.Typewriter {
     display: block;
-    height: 15vw !important;
+    height: 30vh !important;
 }
-@media screen and (max-width:670px) {
-    .home{
+
+@media screen and (max-width:500px) {
+    .home {
         flex-direction: column;
+        width: 85%;
+        margin-left: 15%;
     }
-    .home .text-part{
-        width: 90%;
+
+    .home .text-part {
+        width: 97%;
+    }
+
+    .home .text-part h1 {
+        font-size: 1.5rem;
+    }
+
+    .home .text-part .text-box {
+        margin: 65% auto;
+    }
+
+    .text-part .text-box h2 {
+        font-size: 6vh;
+    }
+
+    .Typewriter {
+        height: 42vh !important;
+        overflow: hidden !important;
     }
 }

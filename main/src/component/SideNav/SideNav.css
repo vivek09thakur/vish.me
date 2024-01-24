@@ -43,3 +43,9 @@
     transform: translateY(-40%);
     transition: transform .5s ease-in;
 }
+
+@media screen and (max-width:500px) {
+    .sideNav {
+        width: 15%;
+    }
+}
