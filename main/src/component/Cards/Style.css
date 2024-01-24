@@ -1,0 +1,31 @@
+.project_card {
+    min-width: 25%;
+    min-height: 10rem;
+    margin: 3% auto;
+    border: 1px solid #f1f1f12e;
+    border-radius: .2rem;
+    padding: .5rem;
+    /* box-shadow: 0 0 5px #f1f1f12e; */
+}
+
+.project_card h2 {
+    font-family: var(--robotic_font);
+    text-transform: uppercase;
+    font-weight: 400;
+    padding: .5rem;
+    font-size: 90%;
+}
+
+.project_card p {
+    font-size: smaller;
+}
+
+.project_card a {
+    text-decoration: none;
+    color: var(--dark1);
+    background: var(--blue1);
+    padding: 2%;
+    border-radius: .2rem;
+    font-size: 70%;
+    font-weight: 500;
+}

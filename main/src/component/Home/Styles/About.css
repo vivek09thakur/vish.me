@@ -4,9 +4,14 @@
     margin-left: 10%;
 }
 
-.about h1{
+.about h1 {
     font-family: var(--robotic_font);
     font-weight: 400;
+    padding-bottom: 2%;
+}
+
+.about p{
+    width: 70%;
     padding-bottom: 5%;
 }
 
@@ -28,6 +33,7 @@
 
 .about .container .text p {
     padding: 0 5%;
+    width: 90%;
 }
 
 .about .container .text h2 {
@@ -49,7 +55,13 @@
     object-fit: fill;
     margin-bottom: -5%;
 }
-
+.project_container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
 @media screen and (max-width:500px) {
     .about {
         width: 70%;
