@@ -7,13 +7,13 @@ function TypedIntro() {
         strings: [
           "A Undergrad Data Scientist",
           "An AI/ML enthusiast",
-          "Just another Python Programmer",
-          "An Open-Source Contributor",
-          "My Only Hope is a pieace of Rope"
+          "Just another python programmer",
+          "An open-source contributor",
+          "My only hope is a pieace of Rope"
         ],
         autoStart: true,
         loop: true,
-        deleteSpeed: 10,
+        deleteSpeed: 50,
       }}
     />
   );

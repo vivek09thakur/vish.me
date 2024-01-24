@@ -1,5 +1,7 @@
 import Data from "../Data.json";
 import TypedIntro from "./TypedIntro";
+// import MyImage from "../../assets";
+
 import "./Styles/Style.css";
 
 const Home = () => {
@@ -11,10 +13,9 @@ const Home = () => {
           <h2>
             <TypedIntro />
           </h2>
-          <p>{Data.user.About}</p>
+          <a href="" className="resume-btn">Download CV</a>
         </div>
       </div>
-      <div className="image-part"></div>
     </div>
   );
 };
