@@ -22,7 +22,7 @@
     display: flex;
     justify-content: center;
     flex-direction: row;
-    background: var(--blue1);
+    background: #1b2232;
     margin-bottom: 5%;
 }
 
