@@ -21,6 +21,7 @@ const About = () => {
           <img src={ProfilePic} alt="Profile Picture" />
         </div>
       </div>
+        <TechStack/>
       <h1>{randomTitle}</h1>
       <p>{randomDescription}</p>
       <div className="project_container">
@@ -28,7 +29,6 @@ const About = () => {
           <Cards key={item} project={Data.projects[key]} />
           ))}
       </div>
-          <TechStack/>
     </div>
   );
 };

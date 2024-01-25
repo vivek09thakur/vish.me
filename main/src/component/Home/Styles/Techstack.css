@@ -12,9 +12,12 @@
     text-align: center;
 }
 
-.techstack img{
+.icon-box{
+    width: 70%;
     margin: auto;
-    height: 100%;
-    width: 40%;
-    display: block;
+}
+
+.icon{
+    font-size:3rem;
+    margin: 5%;
 }

@@ -63,7 +63,7 @@
     flex-wrap: wrap;
     margin: auto;
 }
-@media screen and (max-width:500px) {
+@media screen and (max-width:680px) {
     .about {
         width: 70%;
         margin-left: 15%;
