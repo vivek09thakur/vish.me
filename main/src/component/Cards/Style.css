@@ -33,6 +33,11 @@
     margin: 0 .5rem .5rem .5rem;
 }
 
+.project_card:hover{
+    transform: scale(1.1);
+    transition: all .5s ease-in-out;
+}
+
 /* exp card */
 .expCard {
     width: 60%;
@@ -79,6 +84,10 @@
     width: 95% !important;
     padding: 0 .5rem .5rem 0;
 
+}
+.expCard:hover{
+    transform: translateY(-1rem);
+    transition: all .4s ease-in-out;
 }
 
 @media screen and (max-width: 500px) {

@@ -5,9 +5,9 @@ import {
   FaBootstrap,
   FaReact,
   FaNodeJs,
-  FaGit,
+  FaGitAlt,
   FaGithub,
-  FaPython,
+  FaPython
 } from "react-icons/fa";
 
 import {
@@ -31,7 +31,7 @@ const TechStack = () => {
     FaBootstrap,
     FaReact,
     FaNodeJs,
-    FaGit,
+    FaGitAlt,
     FaGithub,
     FaPython,
     SiJupyter,
