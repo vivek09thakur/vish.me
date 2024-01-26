@@ -13,11 +13,11 @@
     text-transform: uppercase;
     font-weight: 400;
     padding: .5rem;
-    font-size: 90%;
+    font-size: 1.2rem;
 }
 
 .project_card p {
-    font-size: smaller;
+    font-size: 80%;
     width: 90% !important;
     padding: 0 .5rem .5rem .5rem;
 }
