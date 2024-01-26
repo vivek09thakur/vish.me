@@ -8,6 +8,21 @@
     "Things I have Built (I am still working on them😑)",
     "Things like 'Completed Projects' doesn't exsist in my life as I got an idea about a project and I start working on them. There's always something there which I find that can be improved. So every project is ongoing. "
   ],
+  "exp":{
+    "exp1":{
+      "company_name":"HacktoberFest 2k23",
+      "start_date": "October 1st, 2023",
+      "end_date": "October 31st, 2023",
+      "designation":"Contributor",
+      "description":"Participated in HacktoberFest 2023 and contributed to open source projects and made 4 pull requests accepted and merged."
+    },
+    "exp2":{
+      "company_name":"InnoBytes Services",
+      "start_date": "Jan 25, 2024",
+      "designation":"Frontend Developer Intern",
+      "description":"As Frontend Developer Intern at InnoBytes Services. I am working on HTML5,CSS3,Javascript, React.JS and Next.Js along with Figma"
+    }
+  },
   "projects": {
     "project1": {
       "name": "HIRO",

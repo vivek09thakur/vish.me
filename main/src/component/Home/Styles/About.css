@@ -55,6 +55,15 @@
     object-fit: fill;
     margin-bottom: -5%;
 }
+
+/* Exp Container */
+.exp-container{
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column-reverse;
+}
 .project_container{
     width: 80%;
     height: 100%;
@@ -92,6 +101,11 @@
     }
 
     .project_container{
+        width: 100%;
+        margin: auto;
+    }
+
+    .exp-container{
         width: 100%;
         margin: auto;
     }
