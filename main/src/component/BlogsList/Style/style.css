@@ -1,0 +1,44 @@
+.blogList {
+    width: 90%;
+    margin-left: 10%;
+    margin-top: 5%;
+}
+
+.blogList h3 {
+    font-family: var(--robotic_font);
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 3%;
+}
+
+.blogCard {
+    width: 50%;
+    margin: 1.7% 0 0 0;
+    border-radius: .1rem;
+    font-family: var(--robotic_font);
+}
+
+.blogCard h5{
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--blue1);
+    padding-left: 4%;
+}
+
+.blogCard a {
+    text-decoration: none;
+}
+
+@media screen and (max-width:680px) {
+    .blogList{
+        width: 80%;
+        margin-left: 20%;
+    }
+    .blogCard{
+        width: 90%;
+        margin: 5% 0 0 0;
+    }
+    .blogCard h5{
+        font-size: 60%;
+    }
+}

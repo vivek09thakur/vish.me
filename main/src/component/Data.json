@@ -4,6 +4,15 @@
     "About": "Hello, I'm Vivek. An undergrad computer science major from india. From my passion I love to build new things and I always try to implement my creativity in my projects and all of my creations. I love to learn about new technologies like Artificial Intelligence, Machine Learning, Deep Learning and TensorFlow or PyTorch etc. Also since , from childhood exploring the universe and cosmos and knowing even more about my world makes me even more alive. And besides of this I am also quite good at frontend technologies like React.Js and Figma etc.",
     "email": "me.vivek.thakur09@gmail.com"
   },
+  "socials": {
+    "github":"https://github.com/vivek09thakur",
+    "linkedin":"https://www.linkedin.com/in/vivek09thakur/",
+    "twitter":"https://twitter.com/vivek09thakur",
+    "codepen":"https://codepen.io/vivek09thakur/",
+    "instagram":"https://www.instagram.com/vishme___/",
+    "dev":"https://dev.to/vivek09thakur",
+    "stackoverflow":"https://www.stackoverflow.com/vivek09thakur"
+  },
   "RandomAboutText": [
     "Things I have Built (I am also maintaining them😑)",
     "Things like 'Completed Projects' doesn't exsist in my life as I got an idea about a project and I start working on them. There's always something there which I find that can be improved. So every project is ongoing. "
@@ -57,16 +66,32 @@
   },
   "blogs": {
     "blog1": {
-      "title": "My 1st blog",
-      "link": ""
+      "title": "Hacktoberfest 2023 Hall of fame",
+      "link": "https://dev.to/vivek09thakur/hacktoberfest-2023-hall-of-fame-7nf"
     },
     "blog2": {
-      "title": "My 1st blog",
-      "link": ""
+      "title": "View your local React App on your phone",
+      "link": "https://dev.to/vivek09thakur/view-your-local-react-app-on-your-phone-4c2i"
     },
     "blog3": {
-      "title": "My 1st blog",
-      "link": ""
+      "title": "IMPORTANCE OF GITHUB PROFILE README",
+      "link": "https://dev.to/vivek09thakur/importance-of-github-profile-readme-8dp"
+    },
+    "blog4": {
+      "title": "My First Cross-Platform Hello-World Flutter App",
+      "link": "https://dev.to/vivek09thakur/my-first-cross-platform-hello-world-flutter-app-e9p"
+    },
+    "blog5": {
+      "title": "My Fav VS Code themes in 2023",
+      "link": "https://dev.to/vivek09thakur/my-fav-vs-code-themes-in-2023-20dk"
+    },
+    "blog6": {
+      "title": "Hacktoberfest 2k23 Contributor",
+      "link": "https://dev.to/vivek09thakur/hacktoberfest-2k23-contributor-222d"
+    },
+    "blog7": {
+      "title": "Setting and Achieving Your Hacktoberfest Goals",
+      "link": "https://dev.to/vivek09thakur/setting-and-achieving-your-hacktoberfest-goals-oh"
     }
   }
 }

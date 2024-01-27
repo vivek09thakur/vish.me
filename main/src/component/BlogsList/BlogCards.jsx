@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 const BlogCards = ({ Blog }) => {
   return (
     <div className="blogCard">
-      <a href={Blog.link} target="_blank" rel="noopener noreferrer">
-        <h3 className="blogTitle">{Blog.title}</h3>
-      </a>
+        <a href={Blog.link} target="_blank" rel="noopener noreferrer">
+          <h5 className="blogTitle">{Blog.title}</h5>
+        </a>
     </div>
   );
 };
