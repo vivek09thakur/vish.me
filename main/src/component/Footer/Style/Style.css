@@ -28,12 +28,12 @@
     font-family: var(--robotic_font);
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width:680px) {
     .footer .footer_container .line {
-        width: 25%;
+        width: 20%;
     }
 
     .footer .footer_container .content {
-        width: 75%;
+        width: 80%;
     }
 }

@@ -29,6 +29,7 @@
 @media screen and (max-width:680px) {
     .techstack .heading h2{
         font-size: 2rem;
+        margin-top: 15%;
     }
 
     .icon-box{

@@ -57,6 +57,12 @@
 }
 
 /* Exp Container */
+.experiences .title{
+    font-family: var(--robotic_font);
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 3.5%;
+}
 .exp-container{
     width: 80%;
     height: 100%;
@@ -109,4 +115,19 @@
         width: 100%;
         margin: auto;
     }
+
+    .experiences{
+        width: 100%;
+    }
+
+    .experiences .title{
+        font-size: 1.4rem;
+    }
+
+    .h1{
+        font-size: 1.5rem !important;
+        margin-bottom: 10%;
+        margin-top: 15%;
+    }
+    .p{width: 100% !important; margin-bottom: 10%;}
 }

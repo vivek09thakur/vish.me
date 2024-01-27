@@ -90,13 +90,21 @@
     transition: all .4s ease-in-out;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 680px) {
     .project_card {
         width: 100%;
         height: 100%;
+        margin: 5% auto;
+    }
+    .project_card:hover{
+        transform: scale(1);
     }
     .expCard {
         width: 90%;
         height: 100%;
+        margin-top: 10%;
+    }
+    .expCard #duration{
+        font-size: 70% !important;
     }
 }
