@@ -12,8 +12,10 @@
   --linecolor: #a4b1cd;
   --sideNavIconColor: #a4b1cd;
   --card_backgroud: #1b2232;
-  --blue1: #9fef00;
+  --blue1: --font_color1;
   --robotic_font: "Roboto Mono", monospace;
+  --btn_color:rgba(255, 32, 106, 0.678);
+  --green1:#9fef00;
 }
 
 html {

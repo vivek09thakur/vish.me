@@ -24,8 +24,8 @@
 
 .project_card a {
     text-decoration: none;
-    color: var(--dark1);
-    background: var(--blue1);
+    color: #f1f1f1b5;
+    background: var(--btn_color);
     border-radius: .2rem;
     font-size: 70%;
     font-weight: 500;
@@ -33,7 +33,7 @@
     margin: 0 .5rem .5rem .5rem;
 }
 
-.project_card:hover{
+.project_card:hover {
     transform: scale(1.1);
     transition: all .5s ease-in-out;
 }
@@ -85,7 +85,8 @@
     padding: 0 .5rem .5rem 0;
 
 }
-.expCard:hover{
+
+.expCard:hover {
     transform: translateY(-1rem);
     transition: all .4s ease-in-out;
 }
@@ -96,15 +97,18 @@
         height: 100%;
         margin: 5% auto;
     }
-    .project_card:hover{
+
+    .project_card:hover {
         transform: scale(1);
     }
+
     .expCard {
         width: 90%;
         height: 100%;
         margin-top: 10%;
     }
-    .expCard #duration{
+
+    .expCard #duration {
         font-size: 70% !important;
     }
 }

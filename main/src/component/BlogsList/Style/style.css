@@ -18,7 +18,7 @@
     font-family: var(--robotic_font);
 }
 
-.blogCard h5{
+.blogCard h5 {
     font-size: 1rem;
     font-weight: 400;
     color: var(--blue1);
@@ -26,19 +26,21 @@
 }
 
 .blogCard a {
-    text-decoration: none;
+    color: var(--blue1);
 }
 
 @media screen and (max-width:680px) {
-    .blogList{
+    .blogList {
         width: 80%;
         margin-left: 20%;
     }
-    .blogCard{
+
+    .blogCard {
         width: 90%;
         margin: 5% 0 0 0;
     }
-    .blogCard h5{
+
+    .blogCard h5 {
         font-size: 60%;
     }
 }

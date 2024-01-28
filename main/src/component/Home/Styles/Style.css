@@ -29,18 +29,18 @@
     margin-top: 5%;
     display: inline-block;
     text-decoration: none;
-    background: var(--blue1);
+    background: var(--btn_color);
     color: #1b202c;
     padding: 7px 20px;
     border-radius: .2rem;
-    border: 1px solid var(--blue1);
+    border: 1px solid var(--btn_color);
     font-weight: 500 !important;
 }
 
 .text-box a:hover {
     background: var(--dark1);
-    border: 1px solid var(--blue1);
-    color: var(--blue1);
+    border: 1px solid var(--btn_color);
+    color: var(--btn_color);
     transition: all .5s ease-in-out;
 }
 

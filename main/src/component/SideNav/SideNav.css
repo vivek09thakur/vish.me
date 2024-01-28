@@ -39,7 +39,7 @@
 
 .social_box .icon:focus,
 .social_box .icon:hover {
-    color: var(--blue1);
+    color: var(--btn_color);
     transition: all transform 2s ease-in;
 }
 

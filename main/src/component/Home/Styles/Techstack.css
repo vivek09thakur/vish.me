@@ -22,7 +22,7 @@
     margin: 5%;
 }
 .techstack .icon:hover{
-    color:var(--blue1);
+    color:var(--btn_color);
     transition: all .5s ease-in-out;
     transform: scale(1.4);
 }

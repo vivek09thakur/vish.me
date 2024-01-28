@@ -10,29 +10,24 @@ const ExpCard = ({ exp }) => {
   const displayEndDate = exp.end_date ? endDate : "Present";
   return (
     <div className="expCard">
-      <p id="duration">
+      <p id="duration" color="var(--btn_color)">
         {exp.start_date} - {displayEndDate}
       </p>
       <div className="heading">
-        <CgToolbox className="icon" />
+        <CgToolbox className="icon" color="var(--btn_color)" />
         <h2>{exp.company_name}</h2>
       </div>
       <h4>
         <span
-          style={{ color: "var(--blue1)", fontFamily: "var(--robotic_font)" }}
+          style={{
+            fontFamily: "var(--robotic_font)",
+          }}
         >
           Designation :{" "}
         </span>{" "}
         {exp.designation}
       </h4>
-      <p>
-        <span
-          style={{ color: "var(--blue1)", fontFamily: "var(--robotic_font)" }}
-        >
-          Roles & Responsibilities :{" "}
-        </span>{" "}
-        {exp.description}
-      </p>
+      <p>Roles & Responsibilities : {exp.description}</p>
     </div>
   );
 };

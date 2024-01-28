@@ -7,7 +7,7 @@ import {
   FaNodeJs,
   FaGitAlt,
   FaGithub,
-  FaPython
+  FaPython,
 } from "react-icons/fa";
 
 import {
@@ -18,7 +18,7 @@ import {
   SiPytorch,
   SiDjango,
   SiFlask,
-  SiPycharm
+  SiPycharm,
 } from "react-icons/si";
 import { DiAndroid } from "react-icons/di";
 import "./Styles/Techstack.css";
@@ -39,8 +39,10 @@ const TechStack = () => {
     SiPandas,
     SiTensorflow,
     SiPytorch,
-    SiDjango,SiFlask,SiPycharm,
-    DiAndroid
+    SiDjango,
+    SiFlask,
+    SiPycharm,
+    DiAndroid,
   ];
   return (
     <div className="techstack">
