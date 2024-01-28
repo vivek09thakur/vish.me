@@ -1,7 +1,7 @@
 import {
   AiOutlineCodepen,
-  AiFillGithub,
-  AiFillLinkedin,
+  AiOutlineGithub,
+  AiOutlineLinkedin,
   AiOutlineTwitter,
   AiOutlineInstagram,
 } from "react-icons/ai";
@@ -17,15 +17,15 @@ const SideNav = () => {
   const socialLinks = {
     github,
     dev,
-    linkedin,
     twitter,
+    linkedin,
     instagram,
     codepen,
     stackoverflow,
   };
   const Icons = {
-    github: AiFillGithub,
-    linkedin: AiFillLinkedin,
+    github: AiOutlineGithub,
+    linkedin: AiOutlineLinkedin,
     instagram: AiOutlineInstagram,
     twitter: AiOutlineTwitter,
     codepen: AiOutlineCodepen,
