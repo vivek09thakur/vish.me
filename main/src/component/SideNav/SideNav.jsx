@@ -1,33 +1,40 @@
 import {
-  AiOutlineGithub,
-  AiOutlineLinkedin,
-  AiOutlineTwitter,
-  AiOutlineInstagram,
-} from "react-icons/ai";
-
-import { FaStackOverflow,FaSpotify, FaDiscord } from "react-icons/fa6";
+  FaStackOverflow,
+  FaDiscord,
+  FaXTwitter,
+  FaInstagram,
+} from "react-icons/fa6";
+import { FiGithub, FiLinkedin } from "react-icons/fi";
+import { SiGeeksforgeeks } from "react-icons/si";
 import userData from "../Data.json";
 import "./SideNav.css";
 
 const SideNav = () => {
-  const { github, linkedin, instagram, twitter, discord, spotify, stackoverflow } =
-    userData.socials;
-  const socialLinks = {
-    spotify,
+  const {
     github,
     linkedin,
     instagram,
     twitter,
     discord,
+    gfg,
+    stackoverflow,
+  } = userData.socials;
+  const socialLinks = {
+    github,
+    linkedin,
+    instagram,
+    twitter,
+    discord,
+    gfg,
     stackoverflow,
   };
   const Icons = {
-    github: AiOutlineGithub,
-    linkedin: AiOutlineLinkedin,
-    instagram: AiOutlineInstagram,
-    twitter: AiOutlineTwitter,
+    github: FiGithub,
+    linkedin: FiLinkedin,
+    instagram: FaInstagram,
+    twitter: FaXTwitter,
     discord: FaDiscord,
-    spotify: FaSpotify,
+    gfg: SiGeeksforgeeks,
     stackoverflow: FaStackOverflow,
   };
 
