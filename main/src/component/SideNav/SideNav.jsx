@@ -10,15 +10,8 @@ import userData from "../Data.json";
 import "./SideNav.css";
 
 const SideNav = () => {
-  const {
-    github,
-    linkedin,
-    instagram,
-    twitter,
-    discord,
-    gfg,
-    stackoverflow,
-  } = userData.socials;
+  const { github, linkedin, instagram, twitter, discord, gfg, stackoverflow } =
+    userData.socials;
   const socialLinks = {
     github,
     linkedin,

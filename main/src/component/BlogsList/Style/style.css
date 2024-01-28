@@ -27,6 +27,7 @@
 
 .blogCard a {
     color: var(--blue1);
+    text-decoration: none;
 }
 
 @media screen and (max-width:680px) {

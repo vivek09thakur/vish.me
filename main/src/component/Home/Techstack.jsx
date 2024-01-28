@@ -1,7 +1,6 @@
 import {
   FaHtml5,
   FaCss3,
-  FaJsSquare,
   FaBootstrap,
   FaReact,
   FaNodeJs,
@@ -11,6 +10,7 @@ import {
 } from "react-icons/fa";
 
 import {
+  SiJavascript,
   SiNumpy,
   SiPandas,
   SiJupyter,
@@ -27,7 +27,7 @@ const TechStack = () => {
   const STACK = [
     FaHtml5,
     FaCss3,
-    FaJsSquare,
+    SiJavascript,
     FaBootstrap,
     FaReact,
     FaNodeJs,
