@@ -1,26 +1,24 @@
 import {
-  AiOutlineCodepen,
   AiOutlineGithub,
   AiOutlineLinkedin,
   AiOutlineTwitter,
   AiOutlineInstagram,
 } from "react-icons/ai";
 
-import { FaStackOverflow } from "react-icons/fa6";
-import { FaDev } from "react-icons/fa";
+import { FaStackOverflow, FaDev, FaDiscord } from "react-icons/fa6";
 import userData from "../Data.json";
 import "./SideNav.css";
 
 const SideNav = () => {
-  const { github, linkedin, instagram, twitter, codepen, dev, stackoverflow } =
+  const { github, linkedin, instagram, twitter, discord, dev, stackoverflow } =
     userData.socials;
   const socialLinks = {
     github,
     dev,
-    twitter,
     linkedin,
     instagram,
-    codepen,
+    twitter,
+    discord,
     stackoverflow,
   };
   const Icons = {
@@ -28,7 +26,7 @@ const SideNav = () => {
     linkedin: AiOutlineLinkedin,
     instagram: AiOutlineInstagram,
     twitter: AiOutlineTwitter,
-    codepen: AiOutlineCodepen,
+    discord: FaDiscord,
     dev: FaDev,
     stackoverflow: FaStackOverflow,
   };
