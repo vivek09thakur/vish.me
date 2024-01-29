@@ -34,7 +34,9 @@
 
 .social_box .icon {
     font-size: 1.8rem;
-    color: var(--sideNavIconColor)
+    color: var(--sideNavIconColor);
+    position: relative;
+    left: -5.5%;
 }
 
 .social_box .icon:focus,

@@ -1,6 +1,5 @@
 import Data from "../Data.json";
 import TypedIntro from "./TypedIntro";
-// import MyImage from "../../assets";
 
 import "./Styles/Style.css";
 
@@ -13,7 +12,7 @@ const Home = () => {
           <h2>
             <TypedIntro />
           </h2>
-          <a href="" className="resume-btn">Download CV</a>
+          <a href={Data.myCV} className="resume-btn" download="VivekThakurCV.pdf">Download CV</a>
         </div>
       </div>
     </div>

@@ -10,7 +10,7 @@
     "twitter": "https://twitter.com/vivek09thakur",
     "discord": "https://discordapp.com/users/",
     "instagram": "https://www.instagram.com/vishme___/",
-    "gfg": "https://geeksforgeeks.com/user/vivek09thakur",
+    "gfg": "https://auth.geeksforgeeks.org/user/vivek09thakur",
     "stackoverflow": "https://www.stackoverflow.com/vivek09thakur"
   },
   "RandomAboutText": [
@@ -93,5 +93,6 @@
       "title": "Setting and Achieving Your Hacktoberfest Goals",
       "link": "https://dev.to/vivek09thakur/setting-and-achieving-your-hacktoberfest-goals-oh"
     }
-  }
+  },
+  "myCV": "./src/assets/myCV.pdf"
 }
