@@ -60,14 +60,14 @@
       "link": "https://github.com/vivek09thakur/Baymax"
     },
     "project6": {
-      "name": "LECTURE2NOTES",
-      "description": "It is a simple command-line python app that can record the notes or speaked lessons of teacher and convert them into Pdf Notes.",
-      "link": "https://vivek09thakur.github.io/Lecture2Notes/"
-    },
-    "project7": {
       "name": "Google Colab Server",
       "description": "A simple tool to use Google Colab as backend to host web apps. This project includes a flask web app that runs on google colab and a python scripts that sends your response to endpoint and fetches the response from flask app.",
       "link": "https://github.com/vivek09thakur/GoogleColabServer"
+    },
+    "project7": {
+      "name": "LECTURE2NOTES",
+      "description": "It is a simple command-line python app that can record the notes or speaked lessons of teacher and convert them into Pdf Notes.",
+      "link": "https://vivek09thakur.github.io/Lecture2Notes/"
     }
   },
   "blogs": {
