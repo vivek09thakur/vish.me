@@ -45,9 +45,9 @@
       "link": "https://github.com/vivek09thakur/PANDA"
     },
     "project3": {
-      "name": "ELSA",
-      "description": "Enhanced Language Sequence Agent (ELSA)",
-      "link": "https://github.com/vivek09thakur/ELSA"
+      "name": "XDEA",
+      "description": "A Retrieval based Machine Learning Discord Bot which is capable of learning new responses over the time.The Machine Learning algorithim allow the bot to store and retrive new responses.",
+      "link": "https://github.com/vivek09thakur/XDEA"
     },
     "project4": {
       "name": "LearnIT",
