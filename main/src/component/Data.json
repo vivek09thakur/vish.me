@@ -65,7 +65,7 @@
       "link": "https://vivek09thakur.github.io/Lecture2Notes/"
     },
     "project7": {
-      "name": "GoogleColabServer",
+      "name": "Google Colab Server",
       "description": "A simple tool to use Google Colab as backend to host web apps. This project includes a flask web app that runs on google colab and a python scripts that sends your response to endpoint and fetches the response from flask app.",
       "link": "https://github.com/vivek09thakur/GoogleColabServer"
     }
