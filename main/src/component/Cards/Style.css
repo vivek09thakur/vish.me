@@ -40,9 +40,9 @@
 
 /* exp card */
 .expCard {
-    width: 60%;
+    width: 80%;
     height: 100%;
-    margin: 2% 0;
+    margin: 2% auto;
     border: var(--border1);
     border-radius: .2rem;
     padding: .2rem .7rem;
@@ -52,7 +52,7 @@
 .expCard #duration {
     font-size: smaller;
     width: 95% !important;
-    padding: 0 .5rem .5rem .5rem;
+    padding: .5rem .5rem .5rem .5rem;
     text-align: end;
 }
 
@@ -64,6 +64,7 @@
     align-items: center;
     color: var(--blue1);
     overflow: hidden;
+    margin-bottom: 2%;
 }
 
 .expCard .heading h2 {
@@ -82,7 +83,7 @@
 .expCard p {
     font-size: smaller;
     width: 95% !important;
-    padding: 0 .5rem .5rem 0;
+    padding: .5rem .5rem .5rem 0;
 
 }
 

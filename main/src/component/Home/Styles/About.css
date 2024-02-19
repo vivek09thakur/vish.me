@@ -40,8 +40,8 @@
 
 .about .container .text h2 {
     padding: 0 5% 5% 5%;
-    font-family: "Roboto Mono", monospace;
-    font-weight: 400;
+    font-family: var(--robotic_font);
+    font-weight: 600;
     font-size: x-large;
 }
 
