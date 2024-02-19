@@ -1,4 +1,4 @@
-import { AiOutlineFolder, AiOutlineGithub } from "react-icons/ai";
+import { FiGithub, FiFolder } from "react-icons/fi";
 import PropTypes from "prop-types";
 import "./Style.css";
 
@@ -6,14 +6,14 @@ const Cards = ({ project }) => {
   return (
     <div className="project_card">
       <h2>
-        <AiOutlineFolder className="project_icon" /> {project.name}
+        <FiFolder className="project_icon" /> {project.name}
       </h2>
 
       <div className="project_description">
         <p>{project.description}</p>
       </div>
       <a href={project.link} target="_blank" rel="noreferrer">
-        <AiOutlineGithub /> View Project
+        <FiGithub /> View Project
       </a>
     </div>
   );
