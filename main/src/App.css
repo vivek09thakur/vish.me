@@ -7,15 +7,16 @@
 }
 
 :root {
-  --dark1: #111927;
+  --dark1: #10151d;
   --font_color1: #a4b1cd;
   --linecolor: #a4b1cd;
   --sideNavIconColor: #a4b1cd;
-  --card_backgroud: #1b2232;
+  --card_backgroud: #161f2c;
   --blue1: --font_color1;
   --robotic_font: "Roboto Mono", monospace;
-  --btn_color: rgba(255, 32, 106, 0.678);
+  --btn_color: #8043fc;
   --green1: #9fef00;
+  --border1:1px solid #6717fb42;
 }
 
 html {

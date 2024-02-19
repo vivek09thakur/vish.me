@@ -20,8 +20,10 @@ const GithubActivity = () => {
       </h1>
       <GitHubCalendar
         username="vivek09thakur"
-        color="#9fef00"
-        style={{ width: "100%", margin: "0 auto" }}
+        blockSize={15}
+        blockMargin={5}
+        color="#c084f5"
+        fontSize={16}
       />
     </div>
   );

@@ -33,8 +33,8 @@ const App = () => {
         <SideNav />
         <Home />
         <About />
-        <BlogList />
         <GithubActivity />
+        <BlogList />
         <Footer />
       </React.Fragment>
     </>

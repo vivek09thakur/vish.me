@@ -2,7 +2,7 @@
     width: 30%;
     height: 100%;
     margin: 2% auto;
-    border: 1px solid #f1f1f115;
+    border: var(--border1);
     border-radius: .2rem;
     padding: .5rem 0 1rem 0;
     background: var(--card_backgroud);
@@ -24,7 +24,7 @@
 
 .project_card a {
     text-decoration: none;
-    color: #f1f1f1b5;
+    color: var(--dark1);
     background: var(--btn_color);
     border-radius: .2rem;
     font-size: 70%;
@@ -43,7 +43,7 @@
     width: 60%;
     height: 100%;
     margin: 2% 0;
-    border: 1px solid #f1f1f115;
+    border: var(--border1);
     border-radius: .2rem;
     padding: .2rem .7rem;
     background: var(--card_backgroud);
