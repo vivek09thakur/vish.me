@@ -76,28 +76,28 @@
       "link": "https://dev.to/vivek09thakur/hacktoberfest-2023-hall-of-fame-7nf"
     },
     "blog2": {
-      "title": "View your local React App on your phone",
-      "link": "https://dev.to/vivek09thakur/view-your-local-react-app-on-your-phone-4c2i"
+      "title": "Hacktoberfest 2k23 Contributor",
+      "link": "https://dev.to/vivek09thakur/hacktoberfest-2k23-contributor-222d"
     },
     "blog3": {
-      "title": "IMPORTANCE OF GITHUB PROFILE README",
-      "link": "https://dev.to/vivek09thakur/importance-of-github-profile-readme-8dp"
+      "title": "Setting and Achieving Your Hacktoberfest Goals",
+      "link": "https://dev.to/vivek09thakur/setting-and-achieving-your-hacktoberfest-goals-oh"
     },
     "blog4": {
-      "title": "My First Cross-Platform Hello-World Flutter App",
-      "link": "https://dev.to/vivek09thakur/my-first-cross-platform-hello-world-flutter-app-e9p"
+      "title": "Importance of Github Profile README",
+      "link": "https://dev.to/vivek09thakur/importance-of-github-profile-readme-8dp"
     },
     "blog5": {
       "title": "My Fav VS Code themes in 2023",
       "link": "https://dev.to/vivek09thakur/my-fav-vs-code-themes-in-2023-20dk"
     },
     "blog6": {
-      "title": "Hacktoberfest 2k23 Contributor",
-      "link": "https://dev.to/vivek09thakur/hacktoberfest-2k23-contributor-222d"
+      "title": "My First Cross-Platform Hello-World Flutter App",
+      "link": "https://dev.to/vivek09thakur/my-first-cross-platform-hello-world-flutter-app-e9p"
     },
     "blog7": {
-      "title": "Setting and Achieving Your Hacktoberfest Goals",
-      "link": "https://dev.to/vivek09thakur/setting-and-achieving-your-hacktoberfest-goals-oh"
+      "title": "View your local React App on your phone",
+      "link": "https://dev.to/vivek09thakur/view-your-local-react-app-on-your-phone-4c2i"
     }
   },
   "myCV": "./src/assets/myCV.pdf"

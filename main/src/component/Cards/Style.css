@@ -40,12 +40,12 @@
 
 /* exp card */
 .expCard {
-    width: 80%;
+    width: 60%;
     height: 100%;
     margin: 2% auto;
     border: var(--border1);
     border-radius: .2rem;
-    padding: .2rem .7rem;
+    padding: .2rem 0 0 .7rem;
     background: var(--card_backgroud);
 }
 

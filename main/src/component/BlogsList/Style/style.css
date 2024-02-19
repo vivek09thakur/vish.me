@@ -29,6 +29,9 @@
     color: var(--blue1);
     text-decoration: none;
 }
+.blogCard a:hover{
+    color:var(--btn_color);
+}
 
 @media screen and (max-width:680px) {
     .blogList {

@@ -1,11 +1,6 @@
-import {
-  FaStackOverflow,
-  FaDiscord,
-  FaXTwitter,
-  FaInstagram,
-} from "react-icons/fa6";
+import { FaXTwitter, FaInstagram } from "react-icons/fa6";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
-import { SiGeeksforgeeks } from "react-icons/si";
+import { SiGeeksforgeeks, SiDiscord, SiStackoverflow } from "react-icons/si";
 import userData from "../Data.json";
 import "./SideNav.css";
 
@@ -26,9 +21,9 @@ const SideNav = () => {
     linkedin: FiLinkedin,
     instagram: FaInstagram,
     twitter: FaXTwitter,
-    discord: FaDiscord,
+    discord: SiDiscord,
     gfg: SiGeeksforgeeks,
-    stackoverflow: FaStackOverflow,
+    stackoverflow: SiStackoverflow,
   };
 
   return (

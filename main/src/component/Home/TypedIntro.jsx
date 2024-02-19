@@ -9,7 +9,10 @@ function TypedIntro() {
           "An AI/ML enthusiast",
           "Just another python programmer",
           "An open-source contributor",
-          "My only hope is a pieace of Rope"
+          "My only hope is a pieace of Rope",
+          "Internal Pointer Variable",
+          "A story teller",
+          "Gotta catch em' all"
         ],
         autoStart: true,
         loop: true,

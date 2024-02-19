@@ -56,7 +56,10 @@ const TechStack = () => {
   return (
     <div className="techstack">
       <div className="heading">
-        <h2 style={{ textTransform: "capitalize" }}>Languages and Tools⚡ </h2>
+        <h2 style={{ textTransform: "capitalize" }}>
+          Languages <span style={{ color: "var(--btn_color)" }}> and </span>
+          Tools⚡{" "}
+        </h2>
       </div>
       <div className="icon-box">
         {STACK.map((Icon, index) => (
