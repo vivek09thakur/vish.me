@@ -63,7 +63,7 @@
     }
 
     .home .text-part {
-        width: 97%;
+        width: 93%;
     }
 
     .home .text-part h1 {
@@ -75,7 +75,7 @@
     }
 
     .text-part .text-box h2 {
-        font-size: 6vh;
+        font-size: 3rem;
     }
 
     .Typewriter {

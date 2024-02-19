@@ -29,11 +29,15 @@
 }
 
 @media screen and (max-width:680px) {
+    .footer {
+        padding-top: 3rem;
+    }
+
     .footer .footer_container .line {
-        width: 15%;
+        width: 10%;
     }
 
     .footer .footer_container .content {
-        width: 85%;
+        width: 90%;
     }
 }

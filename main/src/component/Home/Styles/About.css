@@ -10,7 +10,7 @@
     padding-bottom: 2%;
 }
 
-.about p{
+.about p {
     width: 70%;
     padding-bottom: 5%;
 }
@@ -58,20 +58,22 @@
 }
 
 /* Exp Container */
-.experiences .title{
+.experiences .title {
     font-family: var(--robotic_font);
     font-size: 2.5rem;
     font-weight: 400;
     margin-bottom: 3.5%;
 }
-.exp-container{
+
+.exp-container {
     width: 80%;
     height: 100%;
     margin: auto;
     display: flex;
     flex-direction: column-reverse;
 }
-.project_container{
+
+.project_container {
     width: 80%;
     height: 100%;
     display: flex;
@@ -79,9 +81,10 @@
     flex-wrap: wrap;
     margin: auto;
 }
+
 @media screen and (max-width:680px) {
     .about {
-        width: 70%;
+        width: 80%;
         margin-left: 15%;
     }
 
@@ -107,28 +110,38 @@
         width: 100%;
     }
 
-    .project_container{
+    .project_container {
         width: 100%;
         margin: auto;
     }
 
-    .exp-container{
+    .exp-container {
         width: 100%;
         margin: auto;
     }
 
-    .experiences{
+    .experiences {
         width: 100%;
     }
 
-    .experiences .title{
+    .experiences .title {
+        margin-top: 2.2rem;
         font-size: 1.4rem;
+        margin-bottom: 2rem;
     }
 
-    .h1{
+    .h1 {
         font-size: 1.5rem !important;
         margin-bottom: 10%;
         margin-top: 15%;
     }
-    .p{width: 100% !important; margin-bottom: 10%;}
+
+    .p {
+        width: 100% !important;
+        margin-bottom: 10%;
+    }
+
+    .about h1 {
+        padding-bottom: 7%;
+    }
 }
