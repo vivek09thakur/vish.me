@@ -17,6 +17,10 @@
 }
 
 @media screen and (max-width: 690px) {
+    .github-activity {
+        margin-left: 20% !important;
+    }
+
     .github-activity .heading {
         font-size: .8rem;
     }
@@ -25,4 +29,8 @@
         font-size: 1.5rem !important;
         margin-left: 1%;
     }
+}
+
+.styles-module_container__GBNxC rect {
+    stroke: none !important;
 }

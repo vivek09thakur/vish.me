@@ -22,7 +22,7 @@ const GithubActivity = () => {
         username="vivek09thakur"
         blockSize={15}
         blockMargin={5}
-        color="#c084f5"
+        color="#8043fc"
         fontSize={16}
       />
     </div>

@@ -49,4 +49,10 @@
     .sideNav {
         width: 15%;
     }
+    .social_box{
+        height: 60%;
+    }
+    .line{
+        height: 30%;
+    }
 }

@@ -2,6 +2,7 @@
     width: 90%;
     height: 100%;
     margin-left: 10%;
+    background: url("../../../assets//bg-hero.svg") no-repeat center center/cover;
 }
 
 .about h1 {
