@@ -8,6 +8,7 @@ import Footer from "./component/Footer/Footer";
 import { Planets } from "react-preloaders";
 import "./App.css";
 import { useEffect } from "react";
+import Particle from "./component/Particles";
 
 const App = () => {
   const [load, updateLoad] = useState(true);
@@ -21,6 +22,7 @@ const App = () => {
   }, []);
   return (
     <>
+      <Particle />
       <React.Fragment>
         <Planets
           background="var(--dark1)"

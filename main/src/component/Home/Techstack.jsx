@@ -1,15 +1,4 @@
 import {
-  FaHtml5,
-  FaCss3,
-  FaBootstrap,
-  FaReact,
-  FaNodeJs,
-  FaGitAlt,
-  FaGithub,
-  FaPython,
-} from "react-icons/fa";
-
-import {
   SiJavascript,
   SiNumpy,
   SiPandas,
@@ -18,36 +7,56 @@ import {
   SiPytorch,
   SiDjango,
   SiFlask,
-  SiPycharm,
+  SiHtml5,
+  SiCss3,
+  SiBootstrap,
+  SiReact,
+  SiNodedotjs,
+  SiGit,
+  SiGithub,
+  SiPython,
+  SiVisualstudiocode,
+  SiGooglecolab,
+  SiAngularjs,
+  SiNextdotjs,
+  SiSvelte,
+  SiAstro,
+  SiVercel,
+  SiGitpod,
 } from "react-icons/si";
-import { DiAndroid } from "react-icons/di";
 import "./Styles/Techstack.css";
 
 const TechStack = () => {
   const STACK = [
-    FaHtml5,
-    FaCss3,
+    SiHtml5,
+    SiCss3,
     SiJavascript,
-    FaBootstrap,
-    FaReact,
-    FaNodeJs,
-    FaGitAlt,
-    FaGithub,
-    FaPython,
+    SiBootstrap,
+    SiNodedotjs,
+    SiGit,
+    SiGithub,
+    SiReact,
+    SiAngularjs,
+    SiNextdotjs,
+    SiSvelte,
+    SiAstro,
+    SiPython,
     SiJupyter,
     SiNumpy,
     SiPandas,
     SiTensorflow,
     SiPytorch,
-    SiDjango,
     SiFlask,
-    SiPycharm,
-    DiAndroid,
+    SiDjango,
+    SiGooglecolab,
+    SiVisualstudiocode,
+    SiVercel,
+    SiGitpod,
   ];
   return (
     <div className="techstack">
       <div className="heading">
-        <h2>TechStack⚡</h2>
+        <h2 style={{ textTransform: "capitalize" }}>Languages and Tools⚡ </h2>
       </div>
       <div className="icon-box">
         {STACK.map((Icon, index) => (
