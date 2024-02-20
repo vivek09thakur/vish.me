@@ -1,12 +1,13 @@
 import PropTypes from "prop-types";
-import { GoLinkExternal } from "react-icons/go";
+import { IoIosLink } from "react-icons/io";
 
 const BlogCards = ({ Blog }) => {
   return (
     <div className="blogCard">
       <a href={Blog.link} target="_blank" rel="noopener noreferrer">
         <h5 className="blogTitle">
-          {Blog.title} <GoLinkExternal />
+         <IoIosLink style={{position:"relative",top:"3px",marginRight:"2%"}}/> 
+           {Blog.title}
         </h5>
       </a>
     </div>

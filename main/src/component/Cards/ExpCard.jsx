@@ -1,4 +1,5 @@
-import { CgToolbox } from "react-icons/cg";
+// import { CgToolbox } from "react-icons/cg";
+import { HiOutlineBookmarkAlt } from "react-icons/hi";
 import PropTypes from "prop-types";
 import "./Style.css";
 
@@ -14,7 +15,7 @@ const ExpCard = ({ exp }) => {
         {exp.start_date} - {displayEndDate}
       </p>
       <div className="heading">
-        <CgToolbox className="icon" color="var(--btn_color)" />
+        <HiOutlineBookmarkAlt className="icon" color="var(--btn_color)" />
         <h2>{exp.company_name}</h2>
       </div>
       <h4>

@@ -22,7 +22,7 @@
     padding: 0 .5rem .5rem .5rem;
 }
 
-.project_card a {
+.project_card .code-link{
     text-decoration: none;
     color: var(--dark1);
     background: var(--btn_color);
@@ -31,6 +31,12 @@
     font-weight: 500;
     padding: .3rem;
     margin: 0 .5rem .5rem .5rem;
+}
+
+.project_icon {
+    transform: rotateY(-180deg);
+    position: relative;
+    top: 2px;
 }
 
 .project_card:hover {

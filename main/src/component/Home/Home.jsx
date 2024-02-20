@@ -1,5 +1,6 @@
 import Data from "../Data.json";
 import TypedIntro from "./TypedIntro";
+import { IoDownloadOutline } from "react-icons/io5";
 
 import "./Styles/Style.css";
 
@@ -12,7 +13,7 @@ const Home = () => {
           <h2>
             <TypedIntro />
           </h2>
-          <a href={Data.myCV} className="resume-btn" download="VivekThakurCV.pdf">Download CV</a>
+          <a href={Data.myCV} className="resume-btn" download="VivekThakurCV.pdf">Download CV <IoDownloadOutline/></a>
         </div>
       </div>
     </div>
