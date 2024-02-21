@@ -18,7 +18,7 @@ const Cards = ({ project }) => {
       </a>
 
       <div className="project_description">
-        <p>{project.description}</p>
+        <p style={{opacity:".7"}}>{project.description}</p>
       </div>
       <a
         href={project.link}

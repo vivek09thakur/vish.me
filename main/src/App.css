@@ -7,22 +7,18 @@
 }
 
 :root {
-  --dark1: #10141c;
+  --dark1: #111826;
   --font_color1: #c7cfe0;
   --linecolor: #a4b1cd;
   --sideNavIconColor: #a4b1cd;
-  --card_backgroud: #161e29;
-  --card_highlight_bg:#1e1f33;
-  --card_highlight_border: 1px solid #795fb6a1;
+  --card_backgroud: #0a131f;
+  --card_highlight_bg:#1b2232;
+  --card_highlight_border: 1px solid #7b797a69;
   --blue1: --font_color1;
   --robotic_font: "Roboto Mono", monospace;
-  --btn_color: #8341ff;
+  --btn_color: #ff2684c6;
   --green1: #9fef00;
-  --border1:1px solid #a87ffb40;
-}
-
-::selection {
-  background: rgba(255, 0, 123, 0.43);
+  --border1:1px solid #ffffff25;
 }
 
 html {
