@@ -1,7 +1,5 @@
 import {
   SiJavascript,
-  SiNumpy,
-  SiPandas,
   SiJupyter,
   SiTensorflow,
   SiPytorch,
@@ -23,6 +21,8 @@ import {
   SiAstro,
   SiVercel,
   SiGitpod,
+  SiExpress,
+  SiFigma,
 } from "react-icons/si";
 import "./Styles/Techstack.css";
 
@@ -40,18 +40,18 @@ const TechStack = () => {
     SiNextdotjs,
     SiSvelte,
     SiAstro,
+    SiExpress,
+    SiVercel,
     SiPython,
     SiJupyter,
-    SiNumpy,
-    SiPandas,
     SiTensorflow,
     SiPytorch,
     SiFlask,
     SiDjango,
     SiGooglecolab,
-    SiVisualstudiocode,
-    SiVercel,
     SiGitpod,
+    SiVisualstudiocode,
+    SiFigma
   ];
   return (
     <div className="techstack">

@@ -42,6 +42,8 @@
 .project_card:hover {
     transform: scale(1.1);
     transition: all .5s ease-in-out;
+    background: var(--card_highlight_bg);
+    border: var(--card_highlight_border);
 }
 
 /* exp card */
@@ -96,6 +98,8 @@
 .expCard:hover {
     transform: translateY(-1rem);
     transition: all .4s ease-in-out;
+    background: var(--card_highlight_bg);
+    border: var(--card_highlight_border);
 }
 
 @media screen and (max-width: 680px) {

@@ -7,16 +7,18 @@
 }
 
 :root {
-  --dark1: #10151d;
+  --dark1: #10141c;
   --font_color1: #c7cfe0;
   --linecolor: #a4b1cd;
   --sideNavIconColor: #a4b1cd;
-  --card_backgroud: #151e2b;
+  --card_backgroud: #161e29;
+  --card_highlight_bg:#1e1f33;
+  --card_highlight_border: 1px solid #795fb6a1;
   --blue1: --font_color1;
   --robotic_font: "Roboto Mono", monospace;
-  --btn_color: #8043fc;
+  --btn_color: #8341ff;
   --green1: #9fef00;
-  --border1:1px solid #6717fb42;
+  --border1:1px solid #a87ffb40;
 }
 
 ::selection {
@@ -53,4 +55,3 @@ html {
 .pluto-orbit {
   overflow: hidden;
 }
-

@@ -41,7 +41,7 @@ const About = () => {
 
       {/* ------------ Random Talks ------------- */}
       <h1 className="h1" style={{textTransform:"uppercase"}}>{randomTitle}</h1>
-      <p className="p">{randomDescription}</p>
+      <p className="p" style={{opacity:"0.6"}}>{randomDescription}</p>
 
       {/* ------------ Projects ------------- */}
       <div className="project_container">

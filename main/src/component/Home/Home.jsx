@@ -1,7 +1,6 @@
 import Data from "../Data.json";
 import TypedIntro from "./TypedIntro";
 import { IoDownloadOutline } from "react-icons/io5";
-
 import "./Styles/Style.css";
 
 const Home = () => {
