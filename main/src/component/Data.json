@@ -46,13 +46,13 @@
     },
     "project3": {
       "name": "XDEA",
-      "description": "A Retrieval based Machine Learning Discord Bot which is capable of learning new responses over the time.The Machine Learning algorithim allow the bot to store and retrive new responses.",
+      "description": "A Retrieval based Machine Learning Bot which is capable of learning new responses over the time.The Machine Learning algorithim allow the bot to store and retrive new responses.",
       "link": "https://github.com/vivek09thakur/XDEA"
     },
     "project4": {
       "name": "LearnIT",
       "description": "An open source free of cost learning platform for all the computer science students pursuing their diplomas.",
-      "link": "https://github.com/vivek09thakur/"
+      "link": "https://learnit-io.vercel.app/"
     },
     "project5": {
       "name": "Baymax",
@@ -67,7 +67,7 @@
     "project7": {
       "name": "LECTURE2NOTES",
       "description": "It is a simple command-line python app that can record the notes or speaked lessons of teacher and convert them into Pdf Notes.",
-      "link": "https://vivek09thakur.github.io/Lecture2Notes/"
+      "link": "https://github.com/vivek09thakur/Lecture2Notes"
     }
   },
   "blogs": {
