@@ -28,7 +28,7 @@
 .line {
     background: var(--linecolor);
     width: 2px;
-    height: 20%;
+    height: 15%;
     position: relative;
 }
 

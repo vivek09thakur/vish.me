@@ -18,18 +18,17 @@ const SideNav = () => {
   };
   const Icons = {
     github: FiGithub,
+    stackoverflow: SiStackoverflow,
     linkedin: FiLinkedin,
     instagram: FaInstagram,
     twitter: FaXTwitter,
     discord: SiDiscord,
     gfg: SiGeeksforgeeks,
-    stackoverflow: SiStackoverflow,
   };
 
   return (
     <div className="sideNav">
       <div className="container">
-        <div className="line"></div>
         <div className="social_box">
           {Object.entries(socialLinks).map(([key, link], index) => {
             const Icon = Icons[key];
@@ -40,6 +39,7 @@ const SideNav = () => {
             );
           })}
         </div>
+        <div className="line"></div>
       </div>
     </div>
   );

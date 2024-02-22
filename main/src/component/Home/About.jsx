@@ -26,14 +26,8 @@ const About = () => {
         </div>
       </div>
 
-      {/* ----------- Experience -----------*/}
       <div className="experiences">
-        <h2
-          className="title"
-          style={{ textTransform: "uppercase", paddingLeft: "2%" }}
-        >
-          My Work Experiences 👨‍💻
-        </h2>
+        <h2 className="title" style={{ textTransform: "capitalize", paddingLeft: "2%" }}>My Experiences 👨‍💻</h2>
         <div className="exp-container">
           {ExpKeys.map((key, item) => (
             <ExpCard key={item} exp={Data.exp[key]} />
@@ -41,21 +35,10 @@ const About = () => {
         </div>
       </div>
 
-      {/* ----------- Tech Stack -----------*/}
       <TechStack />
-      {/* ------------ Random Talks ------------- */}
-      <h1
-        className="h1"
-        style={{ textTransform: "uppercase", paddingLeft: "2%" }}
-      >
-        {" "}
-        {randomTitle}
-      </h1>
-      <p className="p" style={{ opacity: "0.7", paddingLeft: "2%" }}>
-        {randomDescription}
-      </p>
+      <h1 className="h1" style={{ textTransform: "capitalize", paddingLeft: "2%" }}>{randomTitle}</h1>
+      <p className="p" style={{ opacity: "0.7", paddingLeft: "2%" }}>{randomDescription}</p>
 
-      {/* ------------ Projects ------------- */}
       <div className="project_container">
         {projectKeys.map((key, item) => (
           <Cards key={item} project={Data.projects[key]} />

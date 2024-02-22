@@ -22,22 +22,20 @@
     font-family: "Roboto Mono", monospace;
     color: var(--font_color1);
     font-weight: 400;
+    margin-top: 3%;
 }
 
 .text-box a {
     display: inline-block;
     text-decoration: none;
-    background: var(--btn_color);
-    color: var(--dark1);
-    padding: 7px 20px;
-    border-radius: .3rem;
-    border: 1px solid var(--btn_color);
+    color: var(--font_color1);
     font-weight: 500 !important;
+    position: absolute;
+    top:5%;
+    right: 5%;
 }
 
 .text-box a:hover {
-    background: var(--dark1);
-    border: 1px solid var(--btn_color);
     color: var(--btn_color);
     transition: all .5s ease-in-out;
 }
@@ -73,11 +71,11 @@
     }
 
     .text-part .text-box h2 {
-        font-size: 3rem !important;
+        font-size: 2.5rem !important;
     }
 
     .Typewriter {
-        height: 24rem !important;
+        height: 27rem !important;
         overflow: hidden !important;
     }
 }
