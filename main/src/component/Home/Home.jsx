@@ -14,7 +14,7 @@ const Home = () => {
             className="resume-btn"
             download="VivekThakurCV.pdf"
           >
-            Download CV <IoDownloadOutline />
+            <IoDownloadOutline style={{marginRight:"5px"}}/>RESUME
           </a>
           <h1 style={{ opacity: "0.6", fontSize: "1.4rem" }}>Hey There!</h1>
           <h1>{Data.user.IntroLine}</h1>

@@ -1,17 +1,25 @@
-import { FaXTwitter, FaInstagram } from "react-icons/fa6";
+import { FaInstagram, FaSpotify } from "react-icons/fa6";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
-import { SiGeeksforgeeks, SiDiscord, SiStackoverflow } from "react-icons/si";
+import { SiDiscord, SiStackoverflow } from "react-icons/si";
+import { RiTwitterXFill } from "react-icons/ri";
 import userData from "../Data.json";
 import "./SideNav.css";
 
 const SideNav = () => {
-  const { github, linkedin, instagram, twitter, discord, gfg, stackoverflow } =
-    userData.socials;
-  const socialLinks = {
+  const {
+    github,
     linkedin,
     instagram,
     twitter,
-    gfg,
+    discord,
+    spotify,
+    stackoverflow,
+  } = userData.socials;
+  const socialLinks = {
+    linkedin,
+    twitter,
+    instagram,
+    spotify,
     discord,
     stackoverflow,
     github,
@@ -21,9 +29,9 @@ const SideNav = () => {
     stackoverflow: SiStackoverflow,
     linkedin: FiLinkedin,
     instagram: FaInstagram,
-    twitter: FaXTwitter,
+    twitter: RiTwitterXFill,
     discord: SiDiscord,
-    gfg: SiGeeksforgeeks,
+    spotify: FaSpotify,
   };
 
   return (
@@ -39,7 +47,7 @@ const SideNav = () => {
             );
           })}
         </div>
-          <div className="line"></div>
+        <div className="line"></div>
       </div>
     </div>
   );

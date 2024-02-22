@@ -1,5 +1,5 @@
 import Data from "../Data.json";
-import ProfilePic from "../../assets/myPic.jpg";
+import ProfilePic from "../../assets/myPic2.png";
 import TechStack from "./Techstack";
 import Cards from "../Cards/Card";
 import ExpCard from "../Cards/ExpCard";

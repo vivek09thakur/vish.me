@@ -32,6 +32,8 @@
     position: absolute;
     top:5%;
     right: 5%;
+    font-size: x-large;
+    font-family: var(--robotic_font);
 }
 
 .text-box a:hover {
@@ -51,7 +53,7 @@
     height: 30vh !important;
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width:680px) {
     .home {
         flex-direction: column;
         width: 85%;
@@ -64,6 +66,7 @@
 
     .home .text-part h1 {
         font-size: 1.5rem;
+        margin-top: 5%;
     }
 
     .home .text-part .text-box {
@@ -72,10 +75,11 @@
 
     .text-part .text-box h2 {
         font-size: 2.5rem !important;
+        margin-top: 5%;
     }
 
     .Typewriter {
-        height: 27rem !important;
+        height: 18rem !important;
         overflow: hidden !important;
     }
 }
