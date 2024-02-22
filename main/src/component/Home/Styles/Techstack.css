@@ -37,10 +37,11 @@
 
     .icon-box {
         width: 100%;
-        margin-bottom: 10%;
+        margin: auto;
+        margin: auto auto auto 5%;
     }
 
     .icon {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
 }
