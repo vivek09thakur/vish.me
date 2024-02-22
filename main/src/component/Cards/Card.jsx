@@ -1,5 +1,7 @@
-import { FiGithub } from "react-icons/fi";
+// import { FiGithub } from "react-icons/fi";
+// import { BsTools } from "react-icons/bs";
 import { RxExternalLink } from "react-icons/rx";
+import { PiTagSimple } from "react-icons/pi";
 import PropTypes from "prop-types";
 import "./Style.css";
 
@@ -18,16 +20,12 @@ const Cards = ({ project }) => {
       </a>
 
       <div className="project_description">
-        <p style={{opacity:".7"}}>{project.description}</p>
+        <p style={{ opacity: ".85" }}>{project.description}</p>
       </div>
-      <a
-        href={project.link}
-        target="_blank"
-        rel="noreferrer"
-        className="code-link"
-      >
-        <FiGithub /> View Project
-      </a>
+      <p className="tech-stack">
+        <PiTagSimple style={{ position: "relative", bottom: "-2px" }} />{" "}
+        {project.tech_stack}
+      </p>
     </div>
   );
 };
@@ -35,5 +33,6 @@ Cards.propTypes = {
   project: PropTypes.object.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  tech_stack: PropTypes.string.isRequired,
 };
 export default Cards;

@@ -7,18 +7,16 @@
 }
 
 :root {
-  --dark1: #111826;
+  --dark1: #11141d;
   --font_color1: #c7cfe0;
   --linecolor: #a4b1cd;
   --sideNavIconColor: #a4b1cd;
-  --card_backgroud: #0a131f;
-  --card_highlight_bg:#1b2232;
-  --card_highlight_border: 1px solid #7b797a69;
+  --card_backgroud: #161e2d;
   --blue1: --font_color1;
   --robotic_font: "Roboto Mono", monospace;
-  --btn_color: #ff2684c6;
+  --btn_color: #9a67ff;
   --green1: #9fef00;
-  --border1:1px solid #ffffff25;
+  --border1: 1px solid #d45cff30;
 }
 
 html {

@@ -6,7 +6,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    background: url("../../../assets//bg-hero.svg") no-repeat center/cover;
+    background: url("../../../assets/bg-hero.svg") no-repeat center/cover;
 }
 
 .home .text-part {
@@ -29,9 +29,9 @@
     display: inline-block;
     text-decoration: none;
     background: var(--btn_color);
-    color: #1b202c;
+    color: var(--dark1);
     padding: 7px 20px;
-    border-radius: .2rem;
+    border-radius: .3rem;
     border: 1px solid var(--btn_color);
     font-weight: 500 !important;
 }
@@ -52,7 +52,6 @@
 .Typewriter {
     display: block;
     height: 30vh !important;
-    margin-top: 3%;
 }
 
 @media screen and (max-width:500px) {

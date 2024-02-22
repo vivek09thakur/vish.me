@@ -9,11 +9,10 @@
 }
 
 .project_card h2 {
-    font-family: var(--robotic_font);
     text-transform: uppercase;
     font-weight: 400;
     padding: .5rem;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 .project_card p {
@@ -22,12 +21,11 @@
     padding: 0 .5rem .5rem .5rem;
 }
 
-.project_card .code-link{
+.project_card .tech-stack{
     text-decoration: none;
-    color: var(--dark1);
-    background: var(--btn_color);
+    color: var(--font_color1);
     border-radius: .2rem;
-    font-size: 70%;
+    font-size: 75%;
     font-weight: 500;
     padding: .3rem;
     margin: 0 .5rem .5rem .5rem;
@@ -42,8 +40,6 @@
 .project_card:hover {
     transform: scale(1.1);
     transition: all .5s ease-in-out;
-    background: var(--card_highlight_bg);
-    border: var(--card_highlight_border);
 }
 
 /* exp card */
@@ -98,8 +94,6 @@
 .expCard:hover {
     transform: translateY(-1rem);
     transition: all .4s ease-in-out;
-    background: var(--card_highlight_bg);
-    border: var(--card_highlight_border);
 }
 
 @media screen and (max-width: 680px) {

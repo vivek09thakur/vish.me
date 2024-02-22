@@ -37,37 +37,44 @@
     "project1": {
       "name": "HIRO",
       "description": "Your Personal Healthcare Companion :D.It's a healthcare chatbot that uses Naive Bayes , Decision Tree Classifier and Random Forest Classifier to predict the disease by extracting symptoms from the user's prompt",
-      "link": "https://github.com/vivek09thakur/HIRO"
+      "link": "https://github.com/vivek09thakur/HIRO",
+      "tech_stack":"Machine Learning, Web APIs, Python"
     },
     "project2": {
       "name": "PANDA",
       "description": "Paradigm based Artificial Neural Dailog Agent(PANDA) medium sized LSTM language model. It's a text generation LM built using Keras and LSTM (Long Short Term Memory) neural network which is designed to generate the next sequence of text based on a given prompt.",
-      "link": "https://github.com/vivek09thakur/PANDA"
+      "link": "https://github.com/vivek09thakur/PANDA",
+      "tech_stack":"Deep Learning, NLP, Python"
     },
     "project3": {
       "name": "XDEA",
       "description": "A Retrieval based Machine Learning Bot which is capable of learning new responses over the time.The Machine Learning algorithim allow the bot to store and retrive new responses.",
-      "link": "https://github.com/vivek09thakur/XDEA"
+      "link": "https://github.com/vivek09thakur/XDEA",
+      "tech_stack":"Machine learning, Javascript"
     },
     "project4": {
       "name": "LearnIT",
       "description": "An open source free of cost learning platform for all the computer science students pursuing their diplomas.",
-      "link": "https://learnit-io.vercel.app/"
+      "link": "https://learnit-io.vercel.app/",
+      "tech_stack":"HTML5, CSS3, Javascript, Bootstrap"
     },
     "project5": {
       "name": "Baymax",
       "description": "As it's name suggests, you all time fav buddy",
-      "link": "https://github.com/vivek09thakur/Baymax"
+      "link": "https://github.com/vivek09thakur/Baymax",
+      "tech_stack":"Deep learning, NLP, Web Automation, Speech Recognition"
     },
     "project6": {
       "name": "Colab Web Server",
       "description": "A simple tool to use Google Colab as backend to host web apps. This project includes a flask web app that runs on google colab and a python scripts that sends your response to endpoint and fetches the response from flask app.",
-      "link": "https://github.com/vivek09thakur/GoogleColabServer"
+      "link": "https://github.com/vivek09thakur/GoogleColabServer",
+      "tech_stack":"Cloud Computing, Web APIs, Python"
     },
     "project7": {
       "name": "LECTURE2NOTES",
       "description": "It is a simple command-line python app that can record the notes or speaked lessons of teacher and convert them into Pdf Notes.",
-      "link": "https://github.com/vivek09thakur/Lecture2Notes"
+      "link": "https://github.com/vivek09thakur/Lecture2Notes",
+      "tech_stack":"Speech Recognition, Python"
     }
   },
   "blogs": {

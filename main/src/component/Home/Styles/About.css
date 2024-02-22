@@ -22,7 +22,7 @@
     display: flex;
     justify-content: center;
     flex-direction: row;
-    background: #1b2232;
+    background: var(--card_backgroud);
     margin-bottom: 5%;
 }
 
