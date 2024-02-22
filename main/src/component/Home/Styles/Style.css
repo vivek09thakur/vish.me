@@ -6,7 +6,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    background: url("../../../assets/bg-hero.svg") no-repeat center/cover;
+    background:url("../../../assets/bg-grid.svg") no-repeat center/cover;
 }
 
 .home .text-part {

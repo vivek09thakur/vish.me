@@ -6,8 +6,6 @@ const GithubActivity = () => {
     <div
       className="github-activity"
       style={{
-        width: "70%",
-        margin: "5% auto",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",

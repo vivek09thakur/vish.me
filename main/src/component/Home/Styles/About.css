@@ -2,6 +2,8 @@
     width: 90%;
     height: 100%;
     margin-left: 10%;
+    background:url("../../../assets/bg-grid.svg") no-repeat center/cover;
+    padding-bottom: 5%;
 }
 
 .about h1 {
