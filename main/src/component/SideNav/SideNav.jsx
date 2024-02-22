@@ -8,13 +8,13 @@ const SideNav = () => {
   const { github, linkedin, instagram, twitter, discord, gfg, stackoverflow } =
     userData.socials;
   const socialLinks = {
-    github,
     linkedin,
     instagram,
     twitter,
-    discord,
     gfg,
+    discord,
     stackoverflow,
+    github,
   };
   const Icons = {
     github: FiGithub,
@@ -39,7 +39,7 @@ const SideNav = () => {
             );
           })}
         </div>
-        <div className="line"></div>
+          <div className="line"></div>
       </div>
     </div>
   );

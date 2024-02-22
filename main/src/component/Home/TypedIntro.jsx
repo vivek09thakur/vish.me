@@ -12,7 +12,8 @@ function TypedIntro() {
           "My only hope is a pieace of Rope",
           "Internal Pointer Variable",
           "A story teller",
-          "Gotta catch em' all"
+          "Gotta catch em' all",
+          "A noobie sketch maker"
         ],
         autoStart: true,
         loop: true,
