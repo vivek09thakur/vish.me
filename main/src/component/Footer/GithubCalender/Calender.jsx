@@ -22,6 +22,7 @@ const GithubActivity = () => {
         blockMargin={5}
         color="#8043fc"
         fontSize={16}
+        style={{width:"80%"}}
       />
     </div>
   );

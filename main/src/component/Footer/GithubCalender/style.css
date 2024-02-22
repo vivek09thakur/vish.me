@@ -1,16 +1,15 @@
 .github-activity {
     width: 90%;
     margin-left: 10%;
-    background: url("../../../assets/bg-grid.svg") no-repeat center/cover;
-    padding-bottom: 5%;
+    padding-bottom: 3%;
 }
 
 .github-activity .heading {
     width: 100%;
     text-align: center;
     font-size: 1.5rem;
+    padding-bottom: 1em;
     font-weight: 600;
-    margin-bottom: 5%;
     height: 3.5rem;
     display: flex;
     align-items: center;
@@ -25,8 +24,9 @@
 
 @media screen and (max-width: 690px) {
     .github-activity {
-        width: 80%;
-        margin-left: 20% !important;
+        width: 90%;
+        margin-left: 10% !important;
+        padding-right: 5%;
     }
 
     .github-activity .heading {

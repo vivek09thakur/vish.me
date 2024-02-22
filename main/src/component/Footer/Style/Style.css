@@ -1,9 +1,10 @@
 .footer {
     width: 90%;
-    height: 25%;
+    height: 4vh;
+    padding-top: 5%;
     margin-left: 10%;
-    margin-bottom: 5%;
     margin-top: 3%;
+    background: var(--dark1) !important;
 }
 
 .footer .footer_container {

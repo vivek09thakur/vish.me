@@ -2,12 +2,10 @@
     width: 90%;
     height: 100%;
     margin-left: 10%;
-    background:url("../../../assets/bg-grid.svg") no-repeat center/cover;
-    padding-bottom: 5%;
+    padding-bottom: 3.9%;
 }
 
 .about h1 {
-    font-family: var(--robotic_font);
     font-weight: 400;
     padding-bottom: 2%;
 }
@@ -41,7 +39,6 @@
 
 .about .container .text h2 {
     padding: 0 5% 5% 5%;
-    font-family: var(--robotic_font);
     font-weight: 600;
     font-size: x-large;
 }
@@ -88,6 +85,7 @@
     .about {
         width: 80%;
         margin-left: 15%;
+        padding-right: 5%;
     }
 
     .about .container {

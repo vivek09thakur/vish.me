@@ -51,7 +51,7 @@ const TechStack = () => {
     SiGooglecolab,
     SiGitpod,
     SiVisualstudiocode,
-    SiFigma
+    SiFigma,
   ];
   return (
     <div className="techstack">
@@ -63,7 +63,16 @@ const TechStack = () => {
       </div>
       <div className="icon-box">
         {STACK.map((Icon, index) => (
-          <Icon key={index} className="icon" />
+          <Icon
+            key={index}
+            className="icon"
+            style={{
+              background: "var(--card_backgroud)",
+              padding: ".8rem",
+              borderRadius: ".8rem",
+              border:"var(--border1)"
+            }}
+          />
         ))}
       </div>
     </div>
