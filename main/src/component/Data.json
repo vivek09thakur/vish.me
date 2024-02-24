@@ -20,8 +20,8 @@
   "exp": {
     "exp1": {
       "company_name": "HacktoberFest 2k23",
-      "start_date": "October 1st, 2023",
-      "end_date": "October 31st, 2023",
+      "start_date": "Oct 1st, 2023",
+      "end_date": "Oct 31st, 2023",
       "designation": "Contributor",
       "description": "Participated in HacktoberFest 2023 and contributed to open source projects and made 4 pull requests accepted and merged."
     },

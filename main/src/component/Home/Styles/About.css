@@ -65,7 +65,7 @@
 }
 
 .exp-container {
-    width: 80%;
+    width: 95%;
     height: 100%;
     margin: auto;
     display: flex;
@@ -80,6 +80,7 @@
     flex-wrap: wrap;
     margin: auto;
 }
+
 
 @media screen and (max-width:680px) {
     .about {

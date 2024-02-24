@@ -8,14 +8,11 @@ import "./Styles/About.css";
 const About = () => {
   const { user, RandomAboutText } = Data;
   const [randomTitle, randomDescription] = RandomAboutText;
-  // ProjectKeys
   const projectKeys = Object.keys(Data.projects);
-  // ExpKeys
   const ExpKeys = Object.keys(Data.exp);
 
-  return (
-    <div className="about">
-      {/* ----------- About Me -----------*/}
+  const AboutMe = () => {
+    return (
       <div className="container">
         <div className="text">
           <h2>About Me??🤔</h2>
@@ -25,25 +22,60 @@ const About = () => {
           <img src={ProfilePic} alt="Profile Picture" />
         </div>
       </div>
+    );
+  };
 
+  const MyExp = () => {
+    return (
       <div className="experiences">
-        <h2 className="title" style={{ textTransform: "capitalize", paddingLeft: "2%" }}>My Experiences 👨‍💻</h2>
+        <h2
+          className="title"
+          style={{ textTransform: "capitalize", paddingLeft: "2%" }}
+        >
+          My Experiences ⚡
+        </h2>
         <div className="exp-container">
           {ExpKeys.map((key, item) => (
             <ExpCard key={item} exp={Data.exp[key]} />
           ))}
         </div>
       </div>
+    );
+  };
 
-      <TechStack />
-      <h1 className="h1" style={{ textTransform: "capitalize", paddingLeft: "2%" }}>{randomTitle}</h1>
-      <p className="p" style={{ opacity: "0.7", paddingLeft: "2%" }}>{randomDescription}</p>
+  const RandomText = () => {
+    return (
+      <>
+        <h1
+          className="h1"
+          style={{ textTransform: "capitalize", paddingLeft: "2%" }}
+        >
+          {randomTitle}
+        </h1>
+        <p className="p" style={{ opacity: "0.7", paddingLeft: "2%" }}>
+          {randomDescription}
+        </p>
+      </>
+    );
+  };
 
+  const Projects = () => {
+    return (
       <div className="project_container">
         {projectKeys.map((key, item) => (
           <Cards key={item} project={Data.projects[key]} />
         ))}
       </div>
+    );
+  };
+
+  return (
+    <div className="about">
+      <AboutMe />
+      <MyExp />
+      <TechStack />
+      <RandomText />
+      <Projects />
     </div>
   );
 };

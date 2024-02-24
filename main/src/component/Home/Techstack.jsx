@@ -58,7 +58,7 @@ const TechStack = () => {
       <div className="heading">
         <h2 style={{ textTransform: "capitalize" }}>
           Languages <span style={{ color: "var(--btn_color)" }}> and </span>
-          Tools⚡{" "}
+          Tools 📐
         </h2>
       </div>
       <div className="icon-box">

@@ -11,24 +11,51 @@ const ExpCard = ({ exp }) => {
   const displayEndDate = exp.end_date ? endDate : "Present";
   return (
     <div className="expCard">
-      <p id="duration" color="var(--btn_color)">
+      <p
+        id="duration"
+        style={{
+          fontWeight: "500",
+          textTransform: "capitalize",
+        }}
+      >
         {exp.start_date} - {displayEndDate}
       </p>
       <div className="heading">
         <HiOutlineBookmarkAlt className="icon" color="var(--btn_color)" />
-        <h2>{exp.company_name}</h2>
-      </div>
-      <h4>
-        <span
+        <h2
           style={{
-            fontFamily: "var(--robotic_font)",
+            fontWeight: "500",
+            textTransform: "uppercase",
           }}
         >
-          Designation :{" "}
-        </span>{" "}
+          {exp.company_name}
+        </h2>
+      </div>
+      <h4 style={{ fontWeight: "500" }}>
+        <span
+          style={{
+            textTransform: "uppercase",
+            color: "var(--btn_color)",
+            paddingRight:"3px"
+          }}
+        >
+          Designation : 
+        </span>
         {exp.designation}
       </h4>
-      <p>Roles & Responsibilities : {exp.description}</p>
+      <p>
+        <span
+          style={{
+            fontWeight: "500",
+            textTransform: "uppercase",
+            paddingRight:"3px",
+            color: "var(--btn_color)",
+          }}
+        >
+          Roles & Responsibilities :
+        </span>
+        {exp.description}
+      </p>
     </div>
   );
 };
