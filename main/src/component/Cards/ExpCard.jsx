@@ -1,5 +1,4 @@
-// import { CgToolbox } from "react-icons/cg";
-import { HiOutlineBookmarkAlt } from "react-icons/hi";
+import { HiOutlineBookmarkAlt, HiArrowCircleUp } from "react-icons/hi";
 import PropTypes from "prop-types";
 import "./Style.css";
 
@@ -11,6 +10,7 @@ const ExpCard = ({ exp }) => {
   const displayEndDate = exp.end_date ? endDate : "Present";
   return (
     <div className="expCard">
+      <HiArrowCircleUp id="up" style={{ fontSize: ".5rem" }} />
       <p
         id="duration"
         style={{
@@ -36,10 +36,10 @@ const ExpCard = ({ exp }) => {
           style={{
             textTransform: "uppercase",
             color: "var(--btn_color)",
-            paddingRight:"3px"
+            paddingRight: "3px",
           }}
         >
-          Designation : 
+          Designation :
         </span>
         {exp.designation}
       </h4>
@@ -48,7 +48,7 @@ const ExpCard = ({ exp }) => {
           style={{
             fontWeight: "500",
             textTransform: "uppercase",
-            paddingRight:"3px",
+            paddingRight: "3px",
             color: "var(--btn_color)",
           }}
         >

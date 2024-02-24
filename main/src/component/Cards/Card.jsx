@@ -23,7 +23,9 @@ const Cards = ({ project }) => {
         <p style={{ opacity: ".85" }}>{project.description}</p>
       </div>
       <p className="tech-stack">
-        <PiTagSimple style={{ position: "relative", bottom: "-2px" }} />{" "}
+        <PiTagSimple
+          style={{ position: "relative", bottom: "-2px", paddingRight: "5px" }}
+        />
         {project.tech_stack}
       </p>
     </div>
