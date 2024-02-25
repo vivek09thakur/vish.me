@@ -54,7 +54,7 @@ const ExpCard = ({ exp }) => {
         >
           Roles & Responsibilities :
         </span>
-        {exp.description}
+        <span style={{opacity:".69"}}>{exp.description}</span>
       </p>
     </div>
   );
