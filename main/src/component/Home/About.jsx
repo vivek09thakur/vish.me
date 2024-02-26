@@ -48,7 +48,11 @@ const About = () => {
       <>
         <h1
           className="h1"
-          style={{ textTransform: "capitalize", paddingLeft: "2%" }}
+          style={{
+            textTransform: "capitalize",
+            paddingLeft: "2%",
+            marginTop: "8%",
+          }}
         >
           {randomTitle}
         </h1>
@@ -73,9 +77,9 @@ const About = () => {
     <div className="about">
       <AboutMe />
       <MyExp />
-      <TechStack />
       <RandomText />
       <Projects />
+      <TechStack />
     </div>
   );
 };
