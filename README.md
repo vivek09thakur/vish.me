@@ -1,2 +1,2 @@
-Highlights of my journey as a developer : )
-### **[vishme.vercel.app](https://vishme.vercel.app)**
+## **[vishme.vercel.app](https://vishme.vercel.app)**
+> Highlights of my journey as a developer :)
