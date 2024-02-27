@@ -67,8 +67,8 @@
     "project6": {
       "name": "Colab Web Server",
       "description": "A simple tool to use Google Colab as backend to host web apps. This project includes a flask web app that runs on google colab and a python scripts that sends your response to endpoint and fetches the response from flask app.",
-      "link": "https://github.com/vivek09thakur/GoogleColabServer",
-      "tech_stack": "Cloud Computing, Web APIs, Python"
+      "link": "https://github.com/vivek09thakur/Colab-Web-Server",
+      "tech_stack": "Cloud Computing, Web APIs, Python, Jupyter"
     },
     "project7": {
       "name": "LECTURE2NOTES",
