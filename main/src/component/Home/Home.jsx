@@ -14,14 +14,17 @@ const Home = () => {
             className="resume-btn"
             download="VivekThakurCV.pdf"
           >
-            <IoDownloadOutline style={{marginRight:"5px"}}/>RESUME
+            <IoDownloadOutline style={{ marginRight: "5px" }} />
+            RESUME
           </a>
           <h1 style={{ opacity: "0.6", fontSize: "1.4rem" }}>Hey There!</h1>
           <h1>{Data.user.IntroLine}</h1>
           <h2>
             <TypedIntro />
           </h2>
-          <h1 style={{ opacity: "0.6", fontSize: "1.5rem" }}>from Bihar, India <CiLocationOn/></h1>
+          <h1 style={{ opacity: "0.6", fontSize: "1.5rem" }}>
+            <CiLocationOn /> Bihar, India
+          </h1>
         </div>
       </div>
     </div>

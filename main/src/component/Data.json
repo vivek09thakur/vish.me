@@ -107,5 +107,5 @@
       "link": "https://dev.to/vivek09thakur/view-your-local-react-app-on-your-phone-4c2i"
     }
   },
-  "myCV": "../assets/myCV.pdf"
+  "myCV": "/myCV.pdf"
 }
