@@ -5,15 +5,16 @@ function TypedIntro() {
     <Typewriter
       options={{
         strings: [
-          "A Undergrad Data Scientist",
-          "An AI/ML enthusiast",
+          "an Undergrad Data Scientist",
+          "an AI/ML enthusiast",
           "Just another python programmer",
-          "An open-source contributor",
+          "an Open-source contributor",
           "My only hope is a pieace of Rope",
-          "Internal Pointer Variable",
-          "A story teller",
+          "an Internal Pointer Variable",
+          "a Story Teller",
           "Gotta catch em' all",
-          "A noobie sketch maker"
+          "a Noobie Sketch-Artist",
+          "a guy who loves to shoot pictures not people"
         ],
         autoStart: true,
         loop: true,
