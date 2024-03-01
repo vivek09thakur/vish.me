@@ -1,123 +1,137 @@
 .project_card {
-    width: 30%;
-    height: 100%;
-    margin: 2% auto;
-    border: var(--border1);
-    border-radius: .2rem;
-    padding: .5rem 0 1rem 0;
-    background: var(--card_backgroud);
+  width: 30%;
+  height: 100%;
+  margin: 2% auto;
+  border: var(--border1);
+  border-radius: 0.2rem;
+  padding: 0.5rem 0 1rem 0;
+  background: var(--card_backgroud);
 }
 
 .project_card h2 {
-    text-transform: uppercase;
-    font-weight: 400;
-    padding: .5rem;
-    font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  padding: 0.5rem;
+  font-size: 1.1rem;
 }
 
 .project_card p {
-    font-size: 80%;
-    width: 90% !important;
-    padding: 0 .5rem .5rem .5rem;
+  font-size: 80%;
+  width: 90% !important;
+  padding: 0 0.5rem 0.5rem 0.5rem;
 }
 
 .project_card .tech-stack {
-    text-decoration: none;
-    color: var(--font_color1);
-    border-radius: .2rem;
-    font-size: 75%;
-    font-weight: 500;
-    padding: .3rem;
-    margin: 0 .5rem .5rem .5rem;
+  text-decoration: none;
+  color: var(--font_color1);
+  border-radius: 0.2rem;
+  font-size: 75%;
+  font-weight: 500;
+  padding: 0.3rem;
+  margin: 0 0.5rem 0.5rem 0.5rem;
 }
 
 .project_icon {
-    transform: rotateY(-180deg);
-    position: relative;
-    top: 2px;
+  transform: rotateY(-180deg);
+  position: relative;
+  top: 2px;
 }
 
 .project_card:hover {
-    transform: scale(1.1);
-    transition: all .5s ease-in-out;
+  transform: scale(1.1);
+  transition: all 0.5s ease-in-out;
 }
 
 /* exp card */
 .expCard {
-    width: 70%;
-    height: 100%;
-    border-left: 2px solid var(--btn_color);
-    padding: 0 0 0 0.8rem;
+  width: 70%;
+  height: 100%;
+  border-left: 2px solid var(--btn_color);
+  padding: 0 0 0 0.8rem;
 }
 
 .expCard #duration {
-    text-align: end;
-    padding-bottom: 2%;
+  text-align: end;
+  padding-bottom: 2%;
 }
 
 .expCard #up {
-    position: absolute;
-    left: 12%;
-    color: var(--btn_color);
-    background: var(--btn_color);
-    border-radius: 50%;
+  position: absolute;
+  left: 12%;
+  color: var(--btn_color);
+  background: var(--btn_color);
+  border-radius: 50%;
 }
 
 .expCard .heading {
-    width: 100%;
-    height: 1.6rem;
-    display: inline-flex;
-    justify-content: flex-start;
-    align-items: center;
-    color: var(--blue1);
-    overflow: hidden;
+  width: 100%;
+  height: 1.6rem;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: var(--blue1);
+  overflow: hidden;
 }
 
 .expCard .heading h2 {
-    font-size: 1rem;
-    overflow: hidden;
+  font-size: 1rem;
+  overflow: hidden;
 }
 
 .expCard .heading .icon {
-    padding: 0 !important;
-    margin: 0 1% 0 0 !important;
-    font-size: 1.3rem !important;
+  padding: 0 !important;
+  margin: 0 1% 0 0 !important;
+  font-size: 1.3rem !important;
 }
 
 .expCard p {
-    font-size: smaller;
-    width: 100% !important;
-    padding: .7rem .5rem .5rem 0;
-
+  font-size: smaller;
+  width: 100% !important;
+  padding: 0.7rem 0.5rem 0.5rem 0;
 }
 
+.HobbieCard {
+  width: fit-content;
+  padding: 0.3rem !important;
+  margin: 5% auto;
+}
+
+.HobbieCard img {
+  width: 25vw !important;
+  border-radius: 0.3rem;
+}
 
 @media screen and (max-width: 680px) {
-    .project_card {
-        width: 100%;
-        height: 100%;
-        margin: 5% auto;
-    }
+  .project_card {
+    width: 100%;
+    height: 100%;
+    margin: 5% auto;
+  }
 
-    .project_card:hover {
-        transform: scale(1);
-    }
+  .project_card:hover {
+    transform: scale(1);
+  }
 
-    .expCard {
-        width: 90%;
-        height: 100%;
-        padding-top: 15%;
-    }
+  .expCard {
+    width: 90%;
+    height: 100%;
+    padding-top: 15%;
+  }
 
-    .expCard:nth-last-child(1) {
-        padding-top: 0;
-    }
+  .expCard:nth-last-child(1) {
+    padding-top: 0;
+  }
 
-    .expCard #duration {
-        font-size: 70% !important;
-    }
+  .expCard #duration {
+    font-size: 70% !important;
+  }
 
-    .expCard #up {
-        left: 14.2%;
-    }
+  .expCard #up {
+    left: 14.2%;
+  }
+
+  .HobbieCard img {
+    width: 40vw !important;
+    border-radius: 0.3rem;
+  }
 }

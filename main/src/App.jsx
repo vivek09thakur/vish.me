@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import SideNav from "./component/SideNav/SideNav";
 import Home from "./component/Home/Home";
 import About from "./component/Home/About";
+import Hobbies from "./component/Hobbies/Hobbies";
 import BlogList from "./component/BlogsList/Blogs";
 import GithubActivity from "./component/Footer/GithubCalender/Calender";
 import Footer from "./component/Footer/Footer";
@@ -33,6 +34,7 @@ const App = () => {
         <SideNav />
         <Home />
         <About />
+        <Hobbies/>
         <BlogList />
         <GithubActivity />
         <Footer />

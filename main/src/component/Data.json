@@ -106,5 +106,19 @@
       "link": "https://dev.to/vivek09thakur/view-your-local-react-app-on-your-phone-4c2i"
     }
   },
+  "ArtWorks": {
+    "Work1": {
+      "img": "Clicks/01-art.jpg"
+    },
+    "Work2": {
+      "img": "Clicks/01-click.jpg"
+    },
+    "Work3": {
+      "img": "Clicks/02-click.jpg"
+    },
+    "Work4": {
+      "img": "Clicks/03-click.jpg"
+    }
+  },
   "myCV": "/myCV.pdf"
 }

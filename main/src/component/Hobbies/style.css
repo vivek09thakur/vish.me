@@ -1,0 +1,43 @@
+.hobbies {
+    width: 90%;
+    height: 100%;
+    margin-left: 10%;
+    padding-bottom: 3.9%;
+    font-family: "Poppins", sans-serif;
+}
+
+.hobbies h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+
+.hobbies .container {
+    width: 80%;
+    display: flex;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    margin: 5% auto 0 auto !important;
+}
+
+@media screen and (max-width:680px) {
+    .hobbies {
+        width: 85%;
+        margin: 10% 0 10% 15%;
+    }
+
+    .hobbies .container {
+        width: 100%;
+    }
+
+    .hobbies h1 {
+        font-size: 1.7rem;
+    }
+
+    .hobbies p {
+        font-size: .8rem;
+        width: 90%;
+        margin-bottom: 10%;
+    }
+}
