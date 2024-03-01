@@ -29,7 +29,8 @@
     background: var(--linecolor);
     width: 2px;
     height: 15%;
-    position: relative;
+    position: absolute;
+    bottom: 0;
 }
 
 .social_box .icon {

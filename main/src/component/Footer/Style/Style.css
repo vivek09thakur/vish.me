@@ -13,7 +13,7 @@
     align-items: center;
 }
 
-.footer .footer_container .line {
+.footer .footer_container .footline {
     width: 40%;
     height: 2px;
     background-color: var(--linecolor);
@@ -35,7 +35,7 @@
         padding-top: 3rem;
     }
 
-    .footer .footer_container .line {
+    .footer .footer_container .footline {
         width: 10%;
     }
 

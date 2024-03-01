@@ -22,8 +22,9 @@ const Home = () => {
           <h2>
             <TypedIntro />
           </h2>
-          <h1 style={{ opacity: "0.6", fontSize: "1.5rem" }}>
-            <CiLocationOn /> Bihar, India
+          <h1 id="#location" style={{ opacity: "0.6", fontSize: "1.5rem" }}>
+            <CiLocationOn style={{ position: "relative", bottom: "-4px" }} />{" "}
+            Bihar, India
           </h1>
         </div>
       </div>

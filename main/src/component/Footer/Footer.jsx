@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <div className="footer">
             <div className="footer_container">
-                <div className="line"></div>
+                <div className="footline"></div>
                 <div className="content">
                     <a href={Data.user.email} className="email">{Data.user.email}</a>
                 </div>

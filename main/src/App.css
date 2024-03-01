@@ -7,11 +7,11 @@
 }
 
 :root {
-  --dark1: #11141d;
+  --dark1: #141722;
   --font_color1: #c7cfe0;
   --linecolor: #a4b1cd;
   --sideNavIconColor: #a4b1cd;
-  --card_backgroud: #161e2d;
+  --card_backgroud: #182031;
   --blue1: --font_color1;
   --robotic_font: "Roboto Mono", monospace;
   --btn_color: #9a67ff;
@@ -29,7 +29,7 @@ html {
 }
 
 body {
-  background: #11141d url("./assets/bg-grid.svg") no-repeat center/cover fixed;
+  background: #141722 url("./assets/bg-grid.svg") no-repeat center/cover fixed;
 }
 
 /* Preloader styles */
