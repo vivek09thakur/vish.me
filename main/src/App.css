@@ -9,14 +9,14 @@
 :root {
   --dark1: #1a202c;
   --font_color1: #c7cfe0;
-  --linecolor: #a4b1cd;
-  --sideNavIconColor: #a4b1cd;
+  --linecolor: #98aad0;
+  --sideNavIconColor: #98aad0;
   --card_backgroud: #242f45;
   --blue1: --font_color1;
   --robotic_font: "Roboto Mono", monospace;
   --btn_color: #9f6eff;
   --green1: #9fef00;
-  --border1: 1px solid #9d9d9d39;
+  --border1: 1px solid #b8b8b839;
 }
 
 html {

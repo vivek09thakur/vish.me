@@ -72,12 +72,11 @@
     }
 
     .home .text-part h1 {
-        font-size: 1.5rem;
-        margin-top: 5%;
+        font-size: 2rem;
     }
 
     .home .text-part .text-box {
-        margin: 45% auto;
+        margin: 50% auto;
     }
 
     .text-part .text-box h2 {
