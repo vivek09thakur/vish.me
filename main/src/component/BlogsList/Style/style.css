@@ -1,7 +1,7 @@
 .blogList {
     width: 90%;
     margin-left: 10%;
-    padding-bottom:4%;
+    padding-bottom: 4%;
 }
 
 .blogList h3 {
@@ -11,27 +11,46 @@
 }
 
 .blogCard {
-    width: 50%;
+    width: fit-content;
+    min-width: 70%;
     margin: 1.7% 0 0 0;
-    border-radius: .1rem;
-}
+    border:var(--border1);
+    border-radius: .2rem;
+    background: var(--card_background);
+    padding: .5rem !important;}
 
-.blogCard h5 {
+.blogCard h2,.blogCard p, .blogCard a {
     font-size: 1rem;
     font-weight: 400;
     color: var(--blue1);
-    padding-left: 4%;
+}
+
+.blogCard p , .blogCard a{
+    font-size: small;
 }
 
 .blogCard a {
-    color: var(--blue1);
+    color: var(--btn_color);
     text-decoration: none;
-}
-.blogCard a:hover{
-    color:var(--btn_color);
+    font-size: .8rem;
 }
 
-@media screen and (max-width:680px) {
+.blogCard .user-info {
+    width: 100%;
+    display: flex;
+    justify-self: start;
+    align-items: center;
+}
+.blogCard .user-info p{
+    font-size: .7rem;
+    margin-left: 5px;
+}
+.blogCard .user-info img {
+    width: 35px;
+    border-radius: 50%;
+}
+
+@media screen and (max-width:780px) {
     .blogList {
         width: 85%;
         padding-top: 10%;
