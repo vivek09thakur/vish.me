@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
-import { AiOutlineLike } from "react-icons/ai";
-import { PiTagSimpleBold } from "react-icons/pi";
+import { CiTimer } from "react-icons/ci";
+import { IoMdHeartEmpty } from "react-icons/io";
+import { FaHashtag } from "react-icons/fa";
+import { FaRegComments } from "react-icons/fa6";
 import "./Style/style.css";
 
 const CreateBlogPosts = ({ posts }) => {
@@ -16,23 +18,23 @@ const CreateBlogPosts = ({ posts }) => {
       </div>
       <h2>{posts.title}</h2>
       <div className="description">
-        <p style={{ opacity: "0.6" }}>
-          {posts.description}
+        <p>
+          <span style={{ opacity: ".8" }}>{posts.description}</span>
           <a
             href={posts.url}
             target="_blank"
             rel="noopener noreferrer"
             className="read-more-btn"
-            style={{ marginLeft: "2%" }}
+            style={{ marginLeft: "1%" }}
           >
             Read More
           </a>
         </p>
       </div>
 
-      <div>
-        <p style={{ marginTop: "2%" }}>
-          <PiTagSimpleBold
+      <div style={{ marginTop: "1%" }}>
+        <p style={{ opacity: ".5" }}>
+          <FaHashtag
             style={{
               position: "relative",
               bottom: "-2px",
@@ -41,8 +43,9 @@ const CreateBlogPosts = ({ posts }) => {
           />
           {posts.tag_list.join(", ")}
         </p>
-        <p id="reactions">
-          <AiOutlineLike
+
+        <p id="reactions" style={{ marginTop: "1%" }}>
+          <IoMdHeartEmpty
             style={{
               position: "relative",
               bottom: "-1px",
@@ -50,11 +53,30 @@ const CreateBlogPosts = ({ posts }) => {
             }}
           />
           {posts.public_reactions_count}
+          <FaRegComments
+            style={{
+              position: "relative",
+              bottom: "-2px",
+              marginLeft: "7px",
+              marginRight: "5px",
+            }}
+          />
+          {posts.comments_count}
+          <CiTimer
+            style={{
+              position: "relative",
+              bottom: "-2px",
+              marginLeft: "7px",
+              marginRight: "3px",
+            }}
+          />
+          {posts.reading_time_minutes}{" "}
+          <span style={{ fontSize: "80%" }}>mins read</span>
         </p>
       </div>
     </div>
   );
-}
+};
 
 CreateBlogPosts.propTypes = {
   posts: PropTypes.object.isRequired,

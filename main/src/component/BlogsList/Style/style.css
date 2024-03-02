@@ -14,18 +14,22 @@
     width: fit-content;
     min-width: 70%;
     margin: 1.7% 0 0 0;
-    border:var(--border1);
+    border: var(--border1);
     border-radius: .2rem;
     background: var(--card_background);
-    padding: .5rem !important;}
+    padding: .5rem !important;
+}
 
-.blogCard h2,.blogCard p, .blogCard a {
+.blogCard h2,
+.blogCard p,
+.blogCard a {
     font-size: 1rem;
     font-weight: 400;
     color: var(--blue1);
 }
 
-.blogCard p , .blogCard a{
+.blogCard p,
+.blogCard a {
     font-size: small;
 }
 
@@ -41,10 +45,12 @@
     justify-self: start;
     align-items: center;
 }
-.blogCard .user-info p{
+
+.blogCard .user-info p {
     font-size: .7rem;
     margin-left: 5px;
 }
+
 .blogCard .user-info img {
     width: 35px;
     border-radius: 50%;
@@ -63,7 +69,14 @@
         margin: 5% 0 0 0;
     }
 
-    .blogCard h5 {
-        font-size: 60%;
+    .blogCard h2 {
+        font-size: 80%;
+        font-weight: 500;
+        margin-top: 2%;
+    }
+
+    .blogCard p {
+        font-size: 65%;
+        margin: 2% 0;
     }
 }
