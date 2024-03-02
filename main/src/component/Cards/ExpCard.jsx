@@ -54,7 +54,7 @@ const ExpCard = ({ exp }) => {
         >
           Roles & Responsibilities :
         </span>
-        <span style={{opacity:".69"}}>{exp.description}</span>
+        <span style={{ opacity: ".69" }}>{exp.description}</span>
       </p>
     </div>
   );
@@ -64,7 +64,7 @@ export default ExpCard;
 
 ExpCard.propTypes = {
   exp: PropTypes.object.isRequired,
-  company_name: PropTypes.string.isRequired,
-  start_date: PropTypes.string.isRequired,
-  end_date: PropTypes.string.isRequired,
+  company_name: PropTypes.string,
+  start_date: PropTypes.string,
+  end_date: PropTypes.string,
 };

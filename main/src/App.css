@@ -7,16 +7,16 @@
 }
 
 :root {
-  --dark1: #141722;
+  --dark1: #1a202c;
   --font_color1: #c7cfe0;
   --linecolor: #a4b1cd;
   --sideNavIconColor: #a4b1cd;
-  --card_backgroud: #182031;
+  --card_backgroud: #242f45;
   --blue1: --font_color1;
   --robotic_font: "Roboto Mono", monospace;
-  --btn_color: #9a67ff;
+  --btn_color: #9f6eff;
   --green1: #9fef00;
-  --border1: 1px solid #d45cff30;
+  --border1: 1px solid #9d9d9d39;
 }
 
 html {
@@ -29,7 +29,7 @@ html {
 }
 
 body {
-  background: #141722 url("./assets/bg-grid.svg") no-repeat center/cover fixed;
+  background: var(--dark1) url("./assets/bg-grid.svg") no-repeat center/cover fixed;
 }
 
 /* Preloader styles */

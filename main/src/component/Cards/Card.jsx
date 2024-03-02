@@ -33,8 +33,8 @@ const Cards = ({ project }) => {
 };
 Cards.propTypes = {
   project: PropTypes.object.isRequired,
-  name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  tech_stack: PropTypes.string.isRequired,
+  name: PropTypes.string,
+  description: PropTypes.string,
+  tech_stack: PropTypes.string,
 };
 export default Cards;
