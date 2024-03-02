@@ -90,17 +90,6 @@
   padding: 0.7rem 0.5rem 0.5rem 0;
 }
 
-.HobbieCard {
-  width: fit-content;
-  padding: 0.3rem !important;
-  margin: 5% auto;
-}
-
-.HobbieCard img {
-  width: 25vw !important;
-  border-radius: 0.3rem;
-}
-
 @media screen and (max-width: 680px) {
   .project_card {
     width: 100%;
@@ -128,10 +117,5 @@
 
   .expCard #up {
     left: 14.2%;
-  }
-
-  .HobbieCard img {
-    width: 40vw !important;
-    border-radius: 0.3rem;
   }
 }
