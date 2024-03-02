@@ -67,7 +67,7 @@ const TechStack = () => {
             key={index}
             className="icon"
             style={{
-              background: "var(--card_backgroud)",
+              background: "var(--card_background)",
               padding: ".8rem",
               borderRadius: ".8rem",
               border:"var(--border1)"
