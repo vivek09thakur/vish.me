@@ -8,18 +8,18 @@
 
 :root {
   --dark1: #10151d;
-  --font_color1: #c7cfe0;
+  --font_color1: #c9d2e5;
   --linecolor: #98aad0;
-  --sideNavIconColor: #98aad0;
-  --card_background: #263248;
-  --blog_cardBg: #1b2432;
-  --blue1: --font_color1;
+  --sideNavIconColor: var(--linecolor);
+  --card_background: #1d2639;
+  --blog_cardBg: #171e2c;
+  --blue1: var(--font_color1);
   --robotic_font: "Roboto Mono", monospace;
-  --btn_color: #a162ff;
+  --btn_color: #a96bfe;
   --green1: #9fef00;
   --border1: 1px solid #d45cff30;
-  --border2: 1px solid rgba(255, 255, 255, 0.1);
-  --shadow1: 3px 6px 10px 0 rgba(0, 0, 0, 0.3);
+  --border2: 1px solid rgba(162, 69, 255, 0.271);
+  --shadow1: 3px 6px 12px 0 rgba(0, 0, 0, 0.3);
 }
 
 html {
@@ -32,9 +32,18 @@ html {
 }
 
 body {
-  background: var(--dark1) url("./assets/bg-grid.svg") no-repeat center/cover fixed;
+  background: var(--dark1) url("./assets/bg-grid.svg") no-repeat center/cover;
 }
 
+body:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, var(--dark1) 100%);
+}
 
 /* Preloader styles */
 #planet {

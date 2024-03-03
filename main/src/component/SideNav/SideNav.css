@@ -5,6 +5,7 @@
     bottom: 0;
     left: 0;
     background: var(--dark1);
+    z-index: 10000 !important;
 }
 
 .container {
@@ -50,10 +51,12 @@
     .sideNav {
         width: 15%;
     }
-    .social_box{
+
+    .social_box {
         height: 60%;
     }
-    .line{
+
+    .line {
         height: 15%;
     }
 }
