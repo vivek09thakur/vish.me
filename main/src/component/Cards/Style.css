@@ -2,7 +2,7 @@
   width: 30%;
   height: 100%;
   margin: 2% auto;
-  border: var(--border1);
+  box-shadow: var(--shadow1);
   border-radius: 0.2rem;
   padding: 0.5rem 0 1rem 0;
   background: var(--card_background);

@@ -13,8 +13,13 @@ const GithubActivity = () => {
       }}
     >
       <h1 className="heading">
-        My <span style={{ color: "var(--btn_color)",margin:"0 1%" }}> Coding</span> Activity{" "}
-        <DiCode id="icon" style={{ color: "var(--btn_color)" }} />
+        My{" "}
+        <span style={{ color: "var(--btn_color)", margin: "0 10px" }}>
+          {" "}
+          Coding{" "}
+        </span>{" "}
+        Activity
+        <DiCode id="icon" style={{ color: "var(--btn_color)",fontSize:".3rem" }} />
       </h1>
       <GitHubCalendar
         username="vivek09thakur"
@@ -22,7 +27,7 @@ const GithubActivity = () => {
         blockMargin={5}
         color="#8043fc"
         fontSize={16}
-        style={{width:"80%"}}
+        style={{ width: "80%" }}
       />
     </div>
   );

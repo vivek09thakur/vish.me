@@ -35,7 +35,13 @@ const ExpCard = ({ exp }) => {
         <span
           style={{
             textTransform: "uppercase",
-            color: "var(--btn_color)",
+            _color: "var(--btn_color)",
+            get color() {
+              return this._color;
+            },
+            set color(value) {
+              this._color = value;
+            },
             paddingRight: "3px",
           }}
         >

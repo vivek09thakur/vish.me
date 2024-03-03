@@ -14,9 +14,9 @@
     width: fit-content;
     min-width: 70%;
     margin: 1.7% 0 0 0;
-    border: var(--border1);
+    border: var(--border2);
     border-radius: .2rem;
-    background: var(--card_background);
+    background: var(--blog_cardBg);
     padding: .5rem !important;
 }
 
@@ -27,7 +27,7 @@
     font-weight: 400;
     color: var(--blue1);
 }
-
+.blogCard h2{margin-top: 3px;}
 .blogCard p,
 .blogCard a {
     font-size: small;

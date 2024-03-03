@@ -7,16 +7,19 @@
 }
 
 :root {
-  --dark1: #11141d;
+  --dark1: #10151d;
   --font_color1: #c7cfe0;
   --linecolor: #98aad0;
   --sideNavIconColor: #98aad0;
-  --card_background: #161e2d;
+  --card_background: #263248;
+  --blog_cardBg: #1b2432;
   --blue1: --font_color1;
   --robotic_font: "Roboto Mono", monospace;
-  --btn_color: #9a67ff;
+  --btn_color: #a162ff;
   --green1: #9fef00;
   --border1: 1px solid #d45cff30;
+  --border2: 1px solid rgba(255, 255, 255, 0.1);
+  --shadow1: 3px 6px 10px 0 rgba(0, 0, 0, 0.3);
 }
 
 html {
@@ -31,6 +34,7 @@ html {
 body {
   background: var(--dark1) url("./assets/bg-grid.svg") no-repeat center/cover fixed;
 }
+
 
 /* Preloader styles */
 #planet {
