@@ -3,6 +3,7 @@ import { CiTimer } from "react-icons/ci";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { FaHashtag } from "react-icons/fa";
 import { FaRegComments } from "react-icons/fa6";
+import { FiExternalLink } from "react-icons/fi";
 import "./Style/style.css";
 
 const CreateBlogPosts = ({ posts }) => {
@@ -27,7 +28,7 @@ const CreateBlogPosts = ({ posts }) => {
             className="read-more-btn"
             style={{ marginLeft: "1%" }}
           >
-            Read More
+            Read More <FiExternalLink style={{ position: "relative", bottom: "-2px" }} />
           </a>
         </p>
       </div>

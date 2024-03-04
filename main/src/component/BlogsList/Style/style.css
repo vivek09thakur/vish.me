@@ -11,8 +11,7 @@
 }
 
 .blogCard {
-    width: fit-content;
-    min-width: 70%;
+    width: 70%;
     margin: 1.7% 0 0 0;
     border: var(--border2);
     border-radius: .2rem;
@@ -34,7 +33,7 @@
 }
 
 .blogCard a {
-    color: var(--btn_color);
+    color: var(--font_color1);
     text-decoration: none;
     font-size: .8rem;
 }
