@@ -7,18 +7,18 @@
 }
 
 :root {
-  --dark1: #1a202c;
-  --font_color1: #c9d2e5;
-  --linecolor: #c9d2e5;
+  --dark1: #161e2d;
+  --font_color1: #c7cfe0;
+  --linecolor: #98aad0;
   --sideNavIconColor: var(--linecolor);
   --card_background: #2e3953;
-  --blog_cardBg: #222a3b;
+  --blog_cardBg: #303d58;
   --blue1: var(--font_color1);
   --robotic_font: "Roboto Mono", monospace;
   --btn_color: #d81f53e8;
   --green1: #9fef00;
   --border1: 1px solid #47474745;
-  --border2: 1px solid rgba(79, 79, 80, 0.271);
+  --border2: 1px solid rgba(135, 135, 135, 0.271);
   --shadow1: 3px 6px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
