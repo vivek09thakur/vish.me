@@ -10,7 +10,7 @@ const ExpCard = ({ exp }) => {
   const displayEndDate = exp.end_date ? endDate : "Present";
   return (
     <div className="expCard">
-      <HiArrowCircleUp id="up" style={{ fontSize: ".5rem" }} />
+      <HiArrowCircleUp id="up" style={{ fontSize: ".5rem" ,zIndex:"10000"}} />
       <p
         id="duration"
         style={{
@@ -35,32 +35,24 @@ const ExpCard = ({ exp }) => {
         <span
           style={{
             textTransform: "uppercase",
-            _color: "var(--btn_color)",
-            get color() {
-              return this._color;
-            },
-            set color(value) {
-              this._color = value;
-            },
             paddingRight: "3px",
           }}
         >
           Designation :
         </span>
-        {exp.designation}
+        <span style={{opacity:"0.7"}}>{exp.designation}</span> 
       </h4>
       <p>
         <span
           style={{
             fontWeight: "500",
             textTransform: "uppercase",
-            paddingRight: "3px",
-            color: "var(--btn_color)",
+            paddingRight: "3px"
           }}
         >
           Roles & Responsibilities :
         </span>
-        <span style={{ opacity: ".69" }}>{exp.description}</span>
+        <span style={{ opacity: ".7" }}>{""} {exp.description}</span>
       </p>
     </div>
   );

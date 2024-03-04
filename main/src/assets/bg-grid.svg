@@ -1,7 +1,7 @@
 <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <pattern id="smallGrid" width="50" height="50" patternUnits="userSpaceOnUse">
-      <path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(255,255,255, 0.2)" stroke-width="0.5"/>
+      <path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(255,255,255, 0.23)" stroke-width="0.5"/>
     </pattern>
     <pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse">
       <rect width="100" height="100" fill="url(#smallGrid)"/>

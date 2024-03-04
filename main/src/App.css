@@ -7,15 +7,15 @@
 }
 
 :root {
-  --dark1: #10151d;
+  --dark1: #1b2330;
   --font_color1: #c9d2e5;
-  --linecolor: #98aad0;
+  --linecolor: #c9d2e5;
   --sideNavIconColor: var(--linecolor);
-  --card_background: #1d2639;
-  --blog_cardBg: #171e2c;
+  --card_background: #2b3957;
+  --blog_cardBg: #2b364d;
   --blue1: var(--font_color1);
   --robotic_font: "Roboto Mono", monospace;
-  --btn_color: #a96bfe;
+  --btn_color: #d43761e8;
   --green1: #9fef00;
   --border1: 1px solid #d45cff30;
   --border2: 1px solid rgba(162, 69, 255, 0.271);
@@ -42,7 +42,7 @@ body:after {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, var(--dark1) 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, var(--dark1) 80%);
 }
 
 /* Preloader styles */
