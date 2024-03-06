@@ -26,16 +26,18 @@
     font-weight: 400;
 }
 
-.text-box a {
+.text-box #resume,.text-box a{
     display: inline-block;
     text-decoration: none;
     color: var(--font_color1);
     font-weight: 500 !important;
     position: absolute;
-    top: 5%;
-    right: 5%;
-    font-size: x-large;
-    font-family: var(--robotic_font);
+    top: 3%;
+    right: 3%;
+    font-size: 1.2rem;
+    background: rgba(0, 0, 0, 0.281);
+    padding: .3rem .5rem;
+    border-radius: .3rem;
 }
 
 .text-box a:hover {

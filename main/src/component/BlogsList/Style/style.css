@@ -12,11 +12,11 @@
 
 .blogCard {
     width: 70%;
-    margin: 1.7% 0 0 0;
-    border: var(--border2);
+    margin: 2.7% 0 0 0;
+    padding: .5rem !important;
     border-radius: .2rem;
     background: var(--blog_cardBg);
-    padding: .5rem !important;
+    box-shadow: var(--shadow1);
 }
 
 .blogCard h2,
