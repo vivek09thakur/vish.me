@@ -17,7 +17,6 @@
     border-radius: .2rem;
     background: var(--blog_cardBg);
     border: var(--border1);
-    cursor: pointer;
 }
 
 .blogCard h2,

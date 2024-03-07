@@ -29,13 +29,13 @@
 .text-box #resume,.text-box a{
     display: inline-block;
     text-decoration: none;
-    color: rgba(0, 0,0, 0.8);
+    background: rgba(0, 0,0, 0.5);
     font-weight: 500 !important;
     position: absolute;
     top: 3%;
     right: 3%;
     font-size: 1.2rem;
-    background: rgba(255, 255, 255, 0.179);
+    color: rgb(224, 222, 255);
     padding: .3rem .5rem;
     border-radius: .3rem;
 }

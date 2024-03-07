@@ -7,6 +7,7 @@ import GithubActivity from "./component/Footer/GithubCalender/Calender";
 import Footer from "./component/Footer/Footer";
 import { Planets } from "react-preloaders";
 import { useEffect } from "react";
+import AnimatedCursor from "react-animated-cursor";
 import "./App.css";
 
 const App = () => {
@@ -30,6 +31,7 @@ const App = () => {
           time={70}
           color="var(--btn_color)"
         />
+        <AnimatedCursor />
         <SideNav />
         <Home />
         <About />

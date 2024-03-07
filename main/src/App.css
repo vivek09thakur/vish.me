@@ -7,17 +7,17 @@
 }
 
 :root {
-  --dark1: #0f1017;
+  --dark1: #151c29;
   --font_color1: #c7cfe0;
   --linecolor: #98aad0;
   --sideNavIconColor: var(--linecolor);
-  --card_background: #2a2d44;
+  --card_background: #2d3855;
   --blog_cardBg: var(--dark1);
   --blue1: var(--font_color1);
   --robotic_font: "Roboto Mono", monospace;
-  --btn_color: #cc41ffe8;
+  --btn_color: #8447ff;
   --green1: #9fef00;
-  --border1: 1px solid #47474745;
+  --border1: 1px solid #b3b3b345;
   --border2: 1px solid rgba(135, 135, 135, 0.271);
   --shadow1: 3px 6px 5px 0 rgba(0, 0, 0, 0.2);
 }
