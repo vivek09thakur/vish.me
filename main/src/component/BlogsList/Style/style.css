@@ -16,7 +16,8 @@
     padding: .5rem !important;
     border-radius: .2rem;
     background: var(--blog_cardBg);
-    box-shadow: var(--shadow1);
+    border: var(--border1);
+    cursor: pointer;
 }
 
 .blogCard h2,
@@ -53,6 +54,13 @@
 .blogCard .user-info img {
     width: 35px;
     border-radius: 50%;
+}
+
+.blogCard:hover{
+    box-shadow: var(--shadow1);
+    transition: all .3s ease-in-out;
+    transform: translateY(-5px);
+    background: var(--card_background);
 }
 
 @media screen and (max-width:780px) {

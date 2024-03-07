@@ -7,15 +7,15 @@
 }
 
 :root {
-  --dark1: #161e2d;
+  --dark1: #0f1017;
   --font_color1: #c7cfe0;
   --linecolor: #98aad0;
   --sideNavIconColor: var(--linecolor);
-  --card_background: #2e3953;
-  --blog_cardBg: #303d58;
+  --card_background: #2a2d44;
+  --blog_cardBg: var(--dark1);
   --blue1: var(--font_color1);
   --robotic_font: "Roboto Mono", monospace;
-  --btn_color: #d81f53e8;
+  --btn_color: #cc41ffe8;
   --green1: #9fef00;
   --border1: 1px solid #47474745;
   --border2: 1px solid rgba(135, 135, 135, 0.271);
