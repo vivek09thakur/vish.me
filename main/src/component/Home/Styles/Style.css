@@ -6,30 +6,39 @@
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    
 }
 
-.home .text-part {
+.home .container {
     width: 90%;
     height: 100%;
     z-index: 1000 !important;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
 }
 
-.text-part .text-box {
-    margin: 12% 5% 15% auto;
+.home .image-box {
+    width: 40%;
 }
 
-.text-part .text-box h2 {
-    font-size: 4rem !important;
-    font-family: var(--robotic_font);
-    color: var(--font_color1);
-    font-weight: 400;
+.home .image-box img {
+    width: 80%;
+    height: 80%;
+    margin: 10%;
+    object-fit: contain;
+    border-radius: .3rem;
 }
 
-.text-box #resume,.text-box a{
+.container .text-box {
+    margin: 15% auto 15% 0;
+    width: 60%;
+}
+
+.container #resume,
+.text-box a {
     display: inline-block;
     text-decoration: none;
-    background: rgba(0, 0,0, 0.5);
+    background: rgba(0, 0, 0, 0.5);
     font-weight: 500 !important;
     position: absolute;
     top: 3%;
@@ -40,27 +49,23 @@
     border-radius: .3rem;
 }
 
-.text-box a:hover {
-    color: var(--btn_color);
-    transition: all .5s ease-in-out;
-}
-
-.home .text-part h1 {
-    font-family: "Poppins", sans-serif;
+.home .container .text-box #myname {
     font-weight: 400;
+    font-size: 5rem !important;
+    font-family: "Archivo Black", sans-serif;
 }
 
-.Typewriter {
-    display: block;
-    height: 16rem !important;
-    margin-top: 1%;
+.home .container p {
+    opacity: .8;
+    margin: 5% auto;
 }
+
 
 #location {
     margin-top: 5%;
 }
 
-@media screen and (max-width:680px) {
+@media screen and (max-width:980px) {
     #location {
         padding-top: 5%;
     }
@@ -71,26 +76,34 @@
         margin-left: 15%;
     }
 
-    .home .text-part {
-        width: 93%;
+    .home .container {
+        width: 100%;
+        flex-direction: column-reverse;
     }
 
-    .home .text-part h1 {
-        font-size: 2rem;
+    .home .container .text-box #myname {
+        font-size: 4rem !important;
     }
 
-    .home .text-part .text-box {
-        margin: 50% auto;
+    .home .container .text-box {
+        width: 90%;
+        margin: 30% auto 5% !important;
     }
 
-    .text-part .text-box h2 {
-        font-size: 2.5rem !important;
-        line-height: 3rem;
-        margin-top: 5%;
+    .home .container .image-box {
+        width: 70%;
+        margin-right: 30%;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .home .container .text-box {
+        width: 90%;
+        margin: 30% auto;
     }
 
-    .Typewriter {
-        height: 20rem !important;
-        overflow: hidden !important;
+    .home .container .text-box p {
+        margin: 8% 4% 10% 0%;
+        width: 90%;
     }
 }
