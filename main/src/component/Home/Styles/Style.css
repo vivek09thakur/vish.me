@@ -99,11 +99,14 @@
 @media screen and (max-width:600px) {
     .home .container .text-box {
         width: 90%;
-        margin: 30% auto;
+        margin: 35% auto 0 !important;
     }
-
+    .home .container .text-box #myname {
+        font-size: 3.5rem !important;
+    }
     .home .container .text-box p {
-        margin: 8% 4% 10% 0%;
-        width: 90%;
+        margin: 8% 0 5% 0%;
+        width: 100%; 
+        font-size: 80%;
     }
 }
