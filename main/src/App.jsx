@@ -3,7 +3,6 @@ import SideNav from "./component/SideNav/SideNav";
 import Home from "./component/Home/Home";
 import About from "./component/Home/About";
 import BlogList from "./component/BlogsList/Blogs";
-import GithubActivity from "./component/Footer/GithubCalender/Calender";
 import Footer from "./component/Footer/Footer";
 import { Planets } from "react-preloaders";
 import { useEffect } from "react";
@@ -36,7 +35,6 @@ const App = () => {
         <Home />
         <About />
         <BlogList />
-        <GithubActivity />
         <Footer />
       </React.Fragment>
     </>
