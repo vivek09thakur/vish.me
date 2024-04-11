@@ -22,11 +22,11 @@
 }
 
 .home .image-box img {
-    width: 80%;
-    height: 80%;
+    width: 78%;
+    height: 78%;
     margin: 10%;
-    object-fit: contain;
-    border-radius: .3rem;
+    object-fit: fill;
+    border-radius: .5rem;
 }
 
 .container .text-box {
