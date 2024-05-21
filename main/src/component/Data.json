@@ -31,6 +31,13 @@
       "end_date": "Feb 25, 2024",
       "designation": "Student Ambassador",
       "description": "As a Student Ambassador, I organised workshops in my community with Lets Upgrade support, shared tech experiences and promoted free resources offered by Lets Upgrade"
+    },
+    "exp3":{
+      "company_name":"Wipro"
+      "start_date":"May 20, 2024",
+      "end_date":"present",
+      "designation":"Scholar Trainee",
+      "description":"Work as Scholar Trainee under Work Integrated Learning Program (WILP) , which offers Scholarship to pursue BTech from BITS, pilani along with Wipro's work culture."
     }
   },
   "projects": {
