@@ -146,3 +146,12 @@
         padding-bottom: 7%;
     }
 }
+
+
+@media screen and (max-width:1440px) {
+    .experiences .title
+    .about {
+        margin-top: 25%;
+        z-index: 10;
+    }
+}

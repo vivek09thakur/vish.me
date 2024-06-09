@@ -10,6 +10,9 @@ const About = () => {
   const projectKeys = Object.keys(Data.projects);
   const ExpKeys = Object.keys(Data.exp);
 
+  // const adjustMargin = (index) => {
+  //   const bodyHeight = document.body.clientHeight;
+    
 
   const MyExp = () => {
     return (

@@ -6,6 +6,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    margin-bottom: 5%;
 }
 
 .home .container {
@@ -65,15 +66,30 @@
     margin-top: 5%;
 }
 
+@media screen and (max-width:600px) {
+    .home .container .text-box {
+        width: 90%;
+        margin: 35% auto 0 !important;
+    }
+    .home .container .text-box #myname {
+        font-size: 3.5rem !important;
+    }
+    .home .container .text-box p {
+        margin: 8% 0 5% 0%;
+        width: 100%; 
+        font-size: 80%;
+    }
+}
+
 @media screen and (max-width:980px) {
     #location {
         padding-top: 5%;
     }
-
     .home {
         flex-direction: column;
         width: 85%;
         margin-left: 15%;
+    
     }
 
     .home .container {
@@ -93,20 +109,5 @@
     .home .container .image-box {
         width: 70%;
         margin-right: 30%;
-    }
-}
-
-@media screen and (max-width:600px) {
-    .home .container .text-box {
-        width: 90%;
-        margin: 35% auto 0 !important;
-    }
-    .home .container .text-box #myname {
-        font-size: 3.5rem !important;
-    }
-    .home .container .text-box p {
-        margin: 8% 0 5% 0%;
-        width: 100%; 
-        font-size: 80%;
     }
 }
