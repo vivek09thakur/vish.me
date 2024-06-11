@@ -2,6 +2,7 @@ import Data from "../Data.json";
 import TechStack from "./Techstack";
 import Cards from "../Cards/Card";
 import ExpCard from "../Cards/ExpCard";
+import CurrentPlaying from "../Cards/SpotifyCard";
 import "./Styles/About.css";
 
 const About = () => {
@@ -9,10 +10,6 @@ const About = () => {
   const [randomTitle, randomDescription] = RandomAboutText;
   const projectKeys = Object.keys(Data.projects);
   const ExpKeys = Object.keys(Data.exp);
-
-  // const adjustMargin = (index) => {
-  //   const bodyHeight = document.body.clientHeight;
-    
 
   const MyExp = () => {
     return (
@@ -64,6 +61,7 @@ const About = () => {
 
   return (
     <div className="about">
+      <CurrentPlaying />
       <MyExp />
       <RandomText />
       <Projects />

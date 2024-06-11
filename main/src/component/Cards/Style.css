@@ -90,6 +90,29 @@
   padding: 0.7rem 0.5rem 0.5rem 0;
 }
 
+.spotify-card {
+  width: 98%;
+  height: 100%;
+  margin-left: 2%;
+  padding: 0.5rem 0 1rem 0;
+  margin-bottom: 5%;
+}
+
+.spotify-card h1{
+  font-family: "Poppins", sans-serif !important;
+  text-transform: capitalize;
+  font-weight: 500;
+  font-family: 3.4rem;
+  margin: 2% 0 0 0;
+}
+
+.spotify-card img{
+  width: 25%;
+  height: 100%;
+  object-fit: fill;
+
+}
+
 @media screen and (max-width: 680px) {
   .project_card {
     width: 100%;
@@ -117,5 +140,12 @@
 
   .expCard #up {
     left: 14.2%;
+  }
+
+  .spotify-card h1{
+    font-size: 1.5rem;
+  }
+  .spotify-card img{
+    width: 80%;
   }
 }
