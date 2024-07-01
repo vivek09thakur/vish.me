@@ -2,7 +2,7 @@ import Data from "../Data.json";
 import TechStack from "./Techstack";
 import Cards from "../Cards/Card";
 import ExpCard from "../Cards/ExpCard";
-import CurrentPlaying from "../Cards/SpotifyCard";
+// import CurrentPlaying from "../Cards/SpotifyCard";
 import "./Styles/About.css";
 
 const About = () => {
@@ -61,7 +61,7 @@ const About = () => {
 
   return (
     <div className="about">
-      <CurrentPlaying />
+      {/* <CurrentPlaying /> */}
       <MyExp />
       <RandomText />
       <Projects />
