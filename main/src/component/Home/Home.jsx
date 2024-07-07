@@ -1,6 +1,6 @@
 import Data from "../Data.json";
 import { RiDownloadLine } from "react-icons/ri";
-import MyImage from "../../assets/my-pic3.jpg";
+import MyImage from "../../assets/my-pic.png";
 import { CiLocationOn } from "react-icons/ci";
 import "./Styles/Style.css";
 
