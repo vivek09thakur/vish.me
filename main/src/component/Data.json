@@ -2,14 +2,14 @@
   "user": {
     "IntroLine": "Hi, I'm Vivek.",
     "About": "An undergrad CSE major from india. Who loves to build new things, I always try to implement my creativity into my projects and all of my creations. Enjoys to learn about new technologies like AI, ML, Deep Learning, Neural Networks, Generative AI etc. Exploring the universe, cosmos and knowing more about my world makes me even more alive. Besides all of this I am also good at frontend, photography and sketching",
-    "email": "me.vivek.thakur09@gmail.com"
+    "email": "vivekthakurcse20509@gmail.com"
   },
   "socials": {
     "github": "https://github.com/vivek09thakur",
     "linkedin": "https://www.linkedin.com/in/vivek09thakur/",
     "twitter": "https://twitter.com/notexsisted",
     "discord": "https://discordapp.com/users/1008823092514144366",
-    "instagram": "https://www.instagram.com/vishme.dev/",
+    "instagram": "https://www.instagram.com/vi.sh.me/",
     "stackoverflow": "https://stackoverflow.com/users/22438160/vivek-thakur?tab=profile",
     "dev":"vivek09thakur"
   },
@@ -35,9 +35,16 @@
     "exp3":{
       "company_name":"Wipro",
       "start_date":"May 20, 2024",
-      "end_date":"present",
+      "end_date":"July 30, 2024",
       "designation":"Scholar Trainee",
       "description":"Work as Scholar Trainee under Work Integrated Learning Program (WILP) , which offers Scholarship to pursue BTech from BITS, pilani along with Wipro's work culture."
+    },
+    "exp4":{
+      "company_name":"Wipro",
+      "start_date":"August 1, 2024",
+      "end_date":"present",
+      "designation":"Server Admin - Data Center (Wintel Stack)",
+      "description":"Working as Server Admin in Data Center team, responsible for managing and maintaining the azure hosted servers and data centers."
     }
   },
   "projects": {
