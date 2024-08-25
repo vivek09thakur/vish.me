@@ -35,16 +35,9 @@
     "exp3":{
       "company_name":"Wipro",
       "start_date":"May 20, 2024",
-      "end_date":"July 30, 2024",
+      "end_date":"Present",
       "designation":"Scholar Trainee",
       "description":"Work as Scholar Trainee under Work Integrated Learning Program (WILP) , which offers Scholarship to pursue BTech from BITS, pilani along with Wipro's work culture."
-    },
-    "exp4":{
-      "company_name":"Wipro",
-      "start_date":"August 1, 2024",
-      "end_date":"present",
-      "designation":"Server Admin - Data Center (Wintel Stack)",
-      "description":"Working as Server Admin in Data Center team, responsible for managing and maintaining the azure hosted servers and data centers."
     }
   },
   "projects": {
