@@ -1,6 +1,6 @@
 import Data from "../Data.json";
 import { RiDownloadLine } from "react-icons/ri";
-import MyImage from "../../assets/mypic4.jpg";
+import MyImage from "../../assets/mypic5.png";
 import { CiLocationOn } from "react-icons/ci";
 import "./Styles/Style.css";
 
@@ -31,7 +31,7 @@ const Home = () => {
           <p>{Data.user.About}</p>
           <h1 id="#location" style={{ opacity: "0.6", fontSize: "1.5rem" }}>
             <CiLocationOn style={{ position: "relative", bottom: "-4px" }} />{" "}
-            Bihar, India
+            Mumbai, Maharashtra, India
           </h1>
         </div>
       </div>
