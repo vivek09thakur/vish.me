@@ -4,6 +4,7 @@
     margin-left: 10%;
     padding-bottom: 3.9%;
     margin-top: 15%;
+    background: var(--dark1) !important;
 }
 
 .about h1 {
@@ -72,6 +73,7 @@
     margin: auto;
     display: flex;
     flex-direction: column-reverse;
+    background: var(--dark1) !important;
 }
 
 .project_container {
@@ -82,6 +84,46 @@
     flex-wrap: wrap;
     margin: auto;
 }
+
+.designs {
+    width: 98%;
+    height: 100%;
+    margin-left: 2%;
+    margin-top: 5%;
+}
+
+.designs .header {
+    overflow-y: hidden;
+    margin: 2% auto;
+}
+
+.designs .header h1 {
+    font-weight: 500;
+}
+
+.designs .design-grid {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: auto;
+}
+
+.designs .design-grid iframe {
+    width: 48%;
+    height: 100%;
+    min-height: 20rem;
+    margin-bottom: 5%;
+    border: 1px solid rgba(255, 255, 255, .10);
+    border-radius: .3rem;
+    opacity: .7;
+
+}
+
+.cx_colorBg--XYMUF {
+    background-color: #202124;
+}
+
 
 @media screen and (max-width:680px) {
     .about {
@@ -146,12 +188,26 @@
     .about h1 {
         padding-bottom: 7%;
     }
+
+    .designs{
+        margin-top: 15%;
+    }
+
+    .designs .design-grid {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .designs .design-grid iframe {
+        width: 90%;
+        min-height: 17rem;
+        margin: 2% auto;
+    }
 }
 
 
 @media screen and (max-width:1440px) {
-    .experiences .title
-    .about {
+    .experiences .title .about {
         margin-top: 25%;
         z-index: 10;
     }
