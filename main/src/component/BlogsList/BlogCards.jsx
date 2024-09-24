@@ -4,6 +4,7 @@ import { IoMdHeartEmpty } from "react-icons/io";
 import { FaHashtag } from "react-icons/fa";
 import { FaRegComments } from "react-icons/fa6";
 import { FiExternalLink } from "react-icons/fi";
+import defaultImage from "../../assets/mypic5.png";
 import "./Style/style.css";
 
 const CreateBlogPosts = ({ posts }) => {
@@ -11,9 +12,13 @@ const CreateBlogPosts = ({ posts }) => {
     <div className="blogCard">
       <div className="user-info">
         <img
-          src={posts.user.profile_image}
-          alt={`${posts.user.name} Profile Image`}
+          src={posts.user.profile_image || defaultImage}
+          alt={`${posts.user.name}`}
           className="profile-image"
+          onError={(e) => {
+            e.target.onerror = null;
+            e.target.src = defaultImage;
+          }}
         />
         <p>{posts.user.name}</p>
       </div>
@@ -28,7 +33,8 @@ const CreateBlogPosts = ({ posts }) => {
             className="read-more-btn"
             style={{ marginLeft: "1%" }}
           >
-            Read More <FiExternalLink style={{ position: "relative", bottom: "-2px" }} />
+            Read More{" "}
+            <FiExternalLink style={{ position: "relative", bottom: "-2px" }} />
           </a>
         </p>
       </div>

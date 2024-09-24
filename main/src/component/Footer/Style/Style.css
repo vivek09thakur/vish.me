@@ -1,9 +1,8 @@
 .footer {
     width: 90%;
-    height: 4vh;
+    height: 15vh;
     padding-top: 5%;
     margin-left: 10%;
-    padding-bottom: 3%;
     background: var(--dark1) !important;
 }
 
@@ -28,6 +27,17 @@
     color: var(--sideNavIconColor);
     margin-left: 1rem;
     font-family: var(--robotic_font);
+}
+
+.footer .copyrights{
+    width: 100%;
+    text-align: center;
+    margin: 2% 0;
+}
+.footer .copyrights p{
+    font-size: .95rem;
+    opacity: .3;
+    font-weight: 300;
 }
 
 @media screen and (max-width:680px) {

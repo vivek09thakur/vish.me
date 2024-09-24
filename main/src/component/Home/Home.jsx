@@ -1,13 +1,13 @@
 import Data from "../Data.json";
 import { RiDownloadLine } from "react-icons/ri";
-import MyImage from "../../assets/mypic4.jpg";
+import MyImage from "../../assets/vector.svg";
 import { CiLocationOn } from "react-icons/ci";
 import "./Styles/Style.css";
 
 const Home = () => {
   return (
-    <div className="home">
-      <div className="container">
+    <div className="home grid-overlay">
+      <div className="container ">
         <div className="image-box">
           <img src={MyImage} alt="" />
         </div>

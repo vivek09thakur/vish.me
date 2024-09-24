@@ -23,9 +23,11 @@
 }
 
 .home .image-box img {
-    width: 78%;
-    height: 78%;
-    margin: 10%;
+    width: 100%;
+    height: 100%;
+    /* margin: 10%; */
+    max-width: 500px;
+    max-height: 500px;
     object-fit: fill;
     border-radius: .5rem;
 }

@@ -12,7 +12,12 @@ const BlogList = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await fetch(apiUrl);
+        const response = await fetch(apiUrl, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
         if (!response.ok) {
           throw new Error("Something went wrong!");
         }
@@ -23,7 +28,6 @@ const BlogList = () => {
         setError("Error fetching data from dev.to");
       }
     };
-
     fetchBlogs();
   }, [apiUrl]);
 

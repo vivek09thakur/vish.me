@@ -37,11 +37,15 @@ html {
   overflow-x: hidden;
 }
 
-body {
+body{
+  background: var(--dark1);
+}
+
+.grid-overlay {
   background: var(--dark1) url("./assets/bg-grid.svg") no-repeat center/cover;
 }
 
-body:after {
+.grid-overlay:after {
   content: "";
   position: absolute;
   top: 0;
