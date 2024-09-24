@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import CreateBlogPosts from "./BlogCards";
+import { MdRssFeed } from "react-icons/md";
 import Data from "../Data.json";
 import "./Style/style.css";
 
@@ -37,7 +38,7 @@ const BlogList = () => {
 
   return (
     <div className="blogList">
-      <h3>My Recent Blogs</h3>
+      <h3>My Recent Blogs <MdRssFeed style={{marginBottom:'-5px'}}/></h3>
       {posts.slice(0, 10).map((post) => (
         <CreateBlogPosts key={post.id} posts={post} />
       ))}

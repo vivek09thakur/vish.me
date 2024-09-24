@@ -3,6 +3,7 @@ import TechStack from "./Techstack";
 import Cards from "../Cards/Card";
 import ExpCard from "../Cards/ExpCard";
 import Designs from "./Designs";
+import { AiOutlineThunderbolt } from "react-icons/ai";
 import "./Styles/About.css";
 
 const About = () => {
@@ -18,7 +19,7 @@ const About = () => {
           className="title"
           style={{ textTransform: "capitalize", paddingLeft: "2%" }}
         >
-          My Experiences ⚡
+          My Experiences <AiOutlineThunderbolt style={{marginBottom:'-7px'}}/>
         </h2>
         <div className="exp-container">
           {ExpKeys.map((key, item) => (

@@ -124,6 +124,7 @@
     min-height: 18rem;
     border: none;
     border-radius: .3rem;
+    opacity: .8;
 }
 .designs .design-grid .iframe-container button{
     width: 30%;
@@ -134,7 +135,6 @@
     background: var(--btn_color);
     font-family: "Poppins", sans-serif;
     margin-top: 3%;
-    opacity: .9;
 }
 .cx_colorBg--XYMUF {
     background-color: #202124;
@@ -214,10 +214,18 @@
         flex-direction: column;
     }
 
-    .designs .design-grid iframe {
-        width: 90%;
-        min-height: 15rem;
+    .designs .design-grid .iframe-container {
+        width: 100%;
         margin: 2% auto;
+    }
+
+    .designs .design-grid .iframe-container iframe {
+        width: 90%;
+        min-height: 18rem;
+        margin: 2% auto;
+    }
+    .designs .design-grid .iframe-container button{
+        width: 50%;
     }
 }
 
