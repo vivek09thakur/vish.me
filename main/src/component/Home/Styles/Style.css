@@ -54,6 +54,7 @@
 
 .home .container .text-box #myname {
     font-weight: 400;
+    height: 6rem !important; ;
     font-size: 5rem !important;
     font-family: "Archivo Black", sans-serif;
 }
@@ -101,6 +102,7 @@
 
     .home .container .text-box #myname {
         font-size: 4rem !important;
+        height: 12rem !important;
     }
 
     .home .container .text-box {
