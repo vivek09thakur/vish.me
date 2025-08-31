@@ -7,7 +7,7 @@
   overflow-x: hidden;
 }
 
-:root {
+/* :root {
   --dark1: #151c29;
   --font_color1: #c7cfe0;
   --linecolor: #98aad0;
@@ -20,6 +20,22 @@
   --green1: #9fef00;
   --border1: 1px solid #b3b3b345;
   --border2: 1px solid rgba(135, 135, 135, 0.271);
+  --shadow1: 3px 6px 5px 0 rgba(0, 0, 0, 0.2);
+} */
+
+:root {
+  --dark1: #ededed;
+  --font_color1: #0f1010;
+  --linecolor: #0f0f10;
+  --sideNavIconColor: var(--linecolor);
+  --card_background: #d4d4d4;
+  --blog_cardBg: var(--dark1);
+  --blue1: var(--font_color1);
+  --robotic_font: "Roboto Mono", monospace;
+  --btn_color: #9665f7;
+  --green1: #9fef00;
+  --border1: 1px solid #14141445;
+  --border2: 1px solid rgba(15, 15, 15, 0.271);
   --shadow1: 3px 6px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
