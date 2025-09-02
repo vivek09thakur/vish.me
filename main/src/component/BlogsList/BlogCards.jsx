@@ -4,7 +4,7 @@ import { IoMdHeartEmpty } from "react-icons/io";
 import { FaHashtag } from "react-icons/fa";
 import { FaRegComments } from "react-icons/fa6";
 import { FiExternalLink } from "react-icons/fi";
-import defaultImage from "../../assets/mypic5.png";
+import defaultImage from "../../assets/vector-image.png";
 import "./Style/style.css";
 
 const CreateBlogPosts = ({ posts }) => {

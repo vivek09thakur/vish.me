@@ -49,6 +49,7 @@ const Designs = () => {
             <iframe
               src={design}
               allowFullScreen
+              title={`Design ${index + 1}`}
               style={{
                 pointerEvents: interactiveIndex === index ? "auto" : "none",
                 display: loading[index] ? "none" : "block",

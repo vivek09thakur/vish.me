@@ -63,7 +63,7 @@ const About = () => {
   return (
     <div className="about">
       <MyExp />
-      {/* <Designs /> */}
+      <Designs />
       <RandomText />
       <Projects />
       <TechStack />
