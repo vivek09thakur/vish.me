@@ -24,7 +24,7 @@
 } */
 
 :root {
-  --dark1: #ededed;
+  --dark1: #ffff;
   --font_color1: #0f1010;
   --linecolor: #0f0f10;
   --sideNavIconColor: var(--linecolor);
