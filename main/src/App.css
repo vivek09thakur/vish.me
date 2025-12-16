@@ -28,11 +28,11 @@
   --font_color1: #0f1010;
   --linecolor: #0f0f10;
   --sideNavIconColor: var(--linecolor);
-  --card_background: #d4d4d4;
+  --card_background: #ffffff;
   --blog_cardBg: var(--dark1);
   --blue1: var(--font_color1);
   --robotic_font: "Roboto Mono", monospace;
-  --btn_color: #9665f7;
+  --btn_color: #1b1b1b;
   --green1: #9fef00;
   --border1: 1px solid #14141445;
   --border2: 1px solid rgba(15, 15, 15, 0.271);

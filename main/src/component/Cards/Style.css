@@ -1,31 +1,64 @@
+/* Cards — organized & optimized */
 .project_card {
-  width: 30%;
-  height: 100%;
+  width: 100%;
+  height: 20rem;
   margin: 2% auto;
+  /* padding: 0.5rem 0 1rem; */
+  display: flex;
+  gap: 0.5rem;
+  align-items: stretch;
+  background: var(--card_background);
   box-shadow: var(--shadow1);
   border-radius: 0.2rem;
-  padding: 0.5rem 0 1rem 0;
-  background: var(--card_background);
+  transition: transform 0.5s ease-in-out;
+  will-change: transform;
+  box-sizing: border-box;
 }
 
+.project_card:hover {
+  transform: scale(0.96);
+}
+
+/* image / media */
+.project_card .project-image {
+  flex: 0 0 40%;
+  width: 40%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.2rem;
+  display: block;
+  overflow: hidden;
+}
+
+.project_card .project-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* content inside card (headings, paragraphs, tags) */
 .project_card h2 {
   text-transform: uppercase;
   font-weight: 400;
-  padding: 0.5rem;
   font-size: 1.1rem;
+  padding: 0.5rem 0;
+  margin: 0;
 }
 
 .project_card p {
-  font-size: 80%;
-  width: 90% !important;
-  padding: 0 0.5rem 0.5rem 0.5rem;
+  font-size: 0.8rem;
+  padding: 0 0.5rem 0.5rem;
+  margin: 0;
+  max-width: 90%;
+  line-height: 1.3;
 }
 
 .project_card .tech-stack {
+  display: inline-block;
   text-decoration: none;
   color: var(--font_color1);
   border-radius: 0.2rem;
-  font-size: 75%;
+  font-size: 0.75rem;
   font-weight: 500;
   padding: 0.3rem;
   margin: 0 0.5rem 0.5rem 0.5rem;
@@ -37,96 +70,98 @@
   top: 2px;
 }
 
-.project_card:hover {
-  transform: scale(1.1);
-  transition: all 0.5s ease-in-out;
-}
-
-/* exp card */
+/* Experience card */
 .expCard {
-  width: 70%;
+  position: relative;
   height: 100%;
+  padding-left: 0.8rem;
   border-left: 2px solid var(--btn_color);
-  padding: 0 0 0 0.8rem;
+  box-sizing: border-box;
 }
 
 .expCard #duration {
-  text-align: end;
+  text-align: right;
   padding-bottom: 2%;
 }
 
 .expCard #up {
   position: absolute;
-  left: 12%;
+  left: -0.36%;
   color: var(--btn_color);
   background: var(--btn_color);
   border-radius: 50%;
 }
 
 .expCard .heading {
-  width: 100%;
-  height: 1.6rem;
   display: inline-flex;
-  justify-content: flex-start;
+  width: 100%;
   align-items: center;
+  gap: 0.5rem;
+  height: 1.6rem;
   color: var(--blue1);
   overflow: hidden;
+  margin: 0;
 }
 
 .expCard .heading h2 {
   font-size: 1rem;
+  margin: 0;
   overflow: hidden;
 }
 
 .expCard .heading .icon {
-  padding: 0 !important;
-  margin: 0 1% 0 0 !important;
-  font-size: 1.3rem !important;
+  padding: 0;
+  margin: 0 1% 0 0;
+  font-size: 1.3rem;
 }
 
 .expCard p {
-  font-size: smaller;
-  width: 100% !important;
+  font-size: 0.9rem;
   padding: 0.7rem 0.5rem 0.5rem 0;
+  margin: 0;
+  width: auto;
 }
 
+/* Spotify card */
 .spotify-card {
   width: 98%;
   height: 100%;
   margin-left: 2%;
-  padding: 0.5rem 0 1rem 0;
   margin-bottom: 5%;
+  padding: 0.5rem 0 1rem;
+  box-sizing: border-box;
 }
 
-.spotify-card h1{
-  font-family: "Poppins", sans-serif !important;
+.spotify-card h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.4rem;
   text-transform: capitalize;
   font-weight: 500;
-  font-family: 3.4rem;
   margin: 2% 0 0 0;
 }
 
-.spotify-card img{
+.spotify-card img {
   width: 25%;
+  max-width: 200px;
   height: 100%;
-  object-fit: fill;
-
+  object-fit: cover;
+  display: block;
 }
 
+/* Responsive */
 @media screen and (max-width: 680px) {
   .project_card {
-    width: 100%;
-    height: 100%;
+    /* height: auto; */
     margin: 5% auto;
+    flex-direction: column;
   }
 
   .project_card:hover {
-    transform: scale(1);
+    transform: none;
   }
 
   .expCard {
     width: 90%;
-    height: 100%;
     padding-top: 15%;
   }
 
@@ -135,17 +170,20 @@
   }
 
   .expCard #duration {
-    font-size: 70% !important;
+    font-size: 0.7rem;
   }
 
   .expCard #up {
     left: 14.2%;
   }
 
-  .spotify-card h1{
+  .spotify-card h1 {
     font-size: 1.5rem;
   }
-  .spotify-card img{
+
+  .spotify-card img {
     width: 80%;
+    max-width: none;
+    height: auto;
   }
 }

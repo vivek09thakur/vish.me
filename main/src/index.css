@@ -5,3 +5,8 @@ html{
 /* *{
     border: 1px solid red;
 } */
+
+#root{
+    max-width: 1440px;
+    margin: auto;
+}
