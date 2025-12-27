@@ -73,7 +73,7 @@
       "description": "A Python-based local web app with a React.js UI that analyzes a star topology LAN network, providing details on connected devices, bandwidth usage, network interfaces, Wi-Fi, vEthernet, and DNS server information.",
       "link": "https://github.com/vivek09thakur/LAN-Analysis",
       "tech_stack": "React.js, Python, Flask, Web APIs",
-      "image": "assets/lan-banner.png"
+      "image": "./main/src/assets/lan-banner.png"
     }
   },
 
