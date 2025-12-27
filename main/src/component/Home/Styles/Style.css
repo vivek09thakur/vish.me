@@ -70,7 +70,7 @@
     margin-top: 5%;
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:500px) {
     .home .container .text-box {
         width: 90%;
         margin: 35% auto 0 !important;
@@ -85,7 +85,7 @@
     }
 }
 
-@media screen and (max-width:980px) {
+@media screen and (max-width:780px) {
     #location {
         padding-top: 5%;
     }
@@ -103,11 +103,11 @@
 
     .home .container .text-box #myname {
         font-size: 4rem !important;
-        height: 12rem !important;
+        height: 10rem !important;
     }
 
     .home .container .text-box {
-        width: 90%;
+        width: 100%;
         margin: 30% auto 5% !important;
     }
 
@@ -120,6 +120,6 @@
 @media screen and (min-width: 1024px){
 
     .home .container .text-box #myname {
-        height: 14rem !important;
+        height: 8rem !important;
     }
 }
