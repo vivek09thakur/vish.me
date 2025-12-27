@@ -45,13 +45,15 @@
       "name": "LearnIT",
       "description": "An open source free of cost learning platform for all the computer science students pursuing their diplomas.",
       "link": "https://learnit-io.vercel.app/",
-      "tech_stack": "HTML5, CSS3, Javascript, Bootstrap"
+      "tech_stack": "HTML5, CSS3, Javascript, Bootstrap",
+      "image": "./src/assets/learnit-banner.png"
     },
     "project2": {
       "name": "LECTURE2NOTES",
       "description": "It is a simple command-line python app that can record the notes or speaked lessons of teacher and convert them into Pdf Notes.",
       "link": "https://github.com/vivek09thakur/Lecture2Notes",
-      "tech_stack": "Speech Recognition, Python"
+      "tech_stack": "Speech Recognition, Python",
+      "image": "./src/assets/l2n-banner.png"
     },
     "project3": {
       "name": "HIRO",
@@ -63,13 +65,15 @@
       "name": "Colab Web Server",
       "description": "A simple tool to use Google Colab as backend to host web apps. This project includes a flask web app that runs on google colab and a python scripts that sends your response to endpoint and fetches the response from flask app.",
       "link": "https://github.com/vivek09thakur/Colab-Web-Server",
-      "tech_stack": "Cloud Computing, Web APIs, Python, Jupyter"
+      "tech_stack": "Cloud Computing, Web APIs, Python, Jupyter",
+      "image": "./src/assets/colab-web-server-banner.png"
     },
     "project5": {
       "name": "LAN-Analysis",
       "description": "A Python-based local web app with a React.js UI that analyzes a star topology LAN network, providing details on connected devices, bandwidth usage, network interfaces, Wi-Fi, vEthernet, and DNS server information.",
       "link": "https://github.com/vivek09thakur/LAN-Analysis",
-      "tech_stack": "React.js, Python, Flask, Web APIs"
+      "tech_stack": "React.js, Python, Flask, Web APIs",
+      "image": "./src/assets/lan-banner.png"
     }
   },
 

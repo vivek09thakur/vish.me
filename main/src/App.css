@@ -24,9 +24,9 @@
 } */
 
 :root {
-  --dark1: #ffff;
-  --font_color1: #0f1010;
-  --linecolor: #0f0f10;
+  --dark1: #fffffe;
+  --font_color1: #161616;
+  --linecolor: #161616;
   --sideNavIconColor: var(--linecolor);
   --card_background: #ffffff;
   --blog_cardBg: var(--dark1);

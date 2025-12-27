@@ -17,7 +17,7 @@ const About = () => {
       <div className="experiences">
         <h2
           className="title"
-          style={{ textTransform: "capitalize", paddingLeft: "2%" }}
+          style={{ textTransform: "capitalize", }}
         >
           My Experiences <AiOutlineThunderbolt style={{marginBottom:'-7px'}}/>
         </h2>
@@ -37,13 +37,13 @@ const About = () => {
           className="h1"
           style={{
             textTransform: "capitalize",
-            paddingLeft: "2%",
+            
             marginTop: "8%",
           }}
         >
           {randomTitle}
         </h1>
-        <p className="p" style={{ opacity: "0.7", paddingLeft: "2%" }}>
+        <p className="p" style={{ opacity: "0.7" }}>
           {randomDescription}
         </p>
       </>
