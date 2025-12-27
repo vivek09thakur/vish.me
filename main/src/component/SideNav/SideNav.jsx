@@ -1,6 +1,6 @@
 import { FaInstagram} from "react-icons/fa6";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
-import { SiDiscord, SiStackoverflow } from "react-icons/si";
+import { SiDiscord, SiStackoverflow,SiExpo } from "react-icons/si";
 import { RiTwitterXFill } from "react-icons/ri";
 import userData from "../../Data.json";
 import "./SideNav.css";
@@ -10,24 +10,24 @@ const SideNav = () => {
     github,
     linkedin,
     instagram,
-    twitter,
+    expo,
     discord,
     stackoverflow,
   } = userData.socials;
   const socialLinks = {
     linkedin,
-    twitter,
     instagram,
     discord,
     stackoverflow,
     github,
+    expo,
   };
   const Icons = {
     github: FiGithub,
     stackoverflow: SiStackoverflow,
     linkedin: FiLinkedin,
     instagram: FaInstagram,
-    twitter: RiTwitterXFill,
+    expo: SiExpo,
     discord: SiDiscord,
   };
 
