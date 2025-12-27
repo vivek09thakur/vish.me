@@ -46,7 +46,7 @@
       "description": "An open source free of cost learning platform for all the computer science students pursuing their diplomas.",
       "link": "https://learnit-io.vercel.app/",
       "tech_stack": "HTML5, CSS3, Javascript, Bootstrap",
-      "image": "./src/assets/learnit-banner.png"
+      "image": "/assets/learnit-banner.png"
     },
     "project2": {
       "name": "LECTURE2NOTES",
