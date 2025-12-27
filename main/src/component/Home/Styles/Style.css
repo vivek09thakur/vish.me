@@ -42,13 +42,13 @@
 .text-box a {
     display: inline-block;
     text-decoration: none;
-    background: rgba(175, 92, 243, 0.884);
+    /* background: rgba(175, 92, 243, 0.884); */
     font-weight: 500 !important;
     position: absolute;
     top: 3%;
     right: 3%;
-    font-size: 1.2rem;
-    color: rgb(224, 222, 255);
+    font-size: 1.5rem;
+    color: var(--font_color1);
     padding: .3rem .5rem;
     border-radius: .3rem;
 }

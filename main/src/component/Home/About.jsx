@@ -1,10 +1,11 @@
+import React, { Suspense, lazy } from "react";
 import Data from "../../Data.json";
 import TechStack from "./Techstack";
-import Cards from "../Cards/Card";
 import ExpCard from "../Cards/ExpCard";
-import Designs from "./Designs";
 import { AiOutlineThunderbolt } from "react-icons/ai";
 import "./Styles/About.css";
+
+const Cards = lazy(() => import("../Cards/Card"));
 
 const About = () => {
   const { RandomAboutText } = Data;
@@ -15,11 +16,8 @@ const About = () => {
   const MyExp = () => {
     return (
       <div className="experiences">
-        <h2
-          className="title"
-          style={{ textTransform: "capitalize", }}
-        >
-          My Experiences <AiOutlineThunderbolt style={{marginBottom:'-7px'}}/>
+        <h2 className="title" style={{ textTransform: "capitalize" }}>
+          My Experiences <AiOutlineThunderbolt style={{ marginBottom: '-7px' }} />
         </h2>
         <div className="exp-container">
           {ExpKeys.map((key, item) => (
@@ -33,14 +31,7 @@ const About = () => {
   const RandomText = () => {
     return (
       <>
-        <h1
-          className="h1"
-          style={{
-            textTransform: "capitalize",
-            
-            marginTop: "8%",
-          }}
-        >
+        <h1 className="h1" style={{ textTransform: "capitalize", marginTop: "8%" }}>
           {randomTitle}
         </h1>
         <p className="p" style={{ opacity: "0.7" }}>
@@ -63,9 +54,10 @@ const About = () => {
   return (
     <div className="about">
       <MyExp />
-      {/* <Designs /> */}
       <RandomText />
-      <Projects />
+      <Suspense fallback={<div>Loading projects...</div>}>
+        <Projects />
+      </Suspense>
       <TechStack />
     </div>
   );
