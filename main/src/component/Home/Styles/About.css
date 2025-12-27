@@ -2,7 +2,7 @@
     width: 90%;
     height: 100%;
     margin-left: 10%;
-    padding: 6% 0 6% 0;
+    position: relative;
     background: var(--dark1) !important;
 }
 
