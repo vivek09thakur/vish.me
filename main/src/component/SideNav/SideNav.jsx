@@ -2,7 +2,7 @@ import { FaInstagram} from "react-icons/fa6";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
 import { SiDiscord, SiStackoverflow } from "react-icons/si";
 import { RiTwitterXFill } from "react-icons/ri";
-import userData from "../Data.json";
+import userData from "../../Data.json";
 import "./SideNav.css";
 
 const SideNav = () => {

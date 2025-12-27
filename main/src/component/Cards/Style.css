@@ -94,102 +94,76 @@
 /* Experience card */
 .expCard {
   position: relative;
-  height: 100%;
-  padding-left: 0.8rem;
+  padding-left: 1.2rem;
   border-left: 2px solid var(--btn_color);
   box-sizing: border-box;
 }
 
-.expCard #duration {
-  text-align: right;
-  padding-bottom: 2%;
-}
-
-.expCard #up {
+.expCard .dot {
   position: absolute;
-  left: -0.36%;
-  color: var(--btn_color);
+  left: -6px;
+  top: 1.8rem;
+  width: 10px;
+  height: 10px;
   background: var(--btn_color);
   border-radius: 50%;
 }
 
+.expCard #duration {
+  text-align: right;
+  padding-bottom: 0.4rem;
+  font-weight: 500;
+}
+
 .expCard .heading {
   display: inline-flex;
-  width: 100%;
   align-items: center;
-  gap: 0.5rem;
-  height: 1.6rem;
   color: var(--blue1);
-  overflow: hidden;
-  margin: 0;
+  width: 100%;
+  margin-left: -0.5rem;
 }
 
 .expCard .heading h2 {
   font-size: 1rem;
+  font-weight: 500;
   margin: 0;
-  overflow: hidden;
 }
 
 .expCard .heading .icon {
-  padding: 0;
-  margin: 0 1% 0 0;
   font-size: 1.3rem;
 }
 
 .expCard p {
   font-size: 0.9rem;
-  padding: 0.7rem 0.5rem 0.5rem 0;
+  padding: 0.6rem 0.5rem 0.5rem 0;
   margin: 0;
-  width: auto;
 }
 
-/* Spotify card */
-.spotify-card {
-  width: 98%;
-  height: 100%;
-  margin-left: 2%;
-  margin-bottom: 5%;
-  padding: 0.5rem 0 1rem;
-  box-sizing: border-box;
-}
 
-.spotify-card h1 {
-  font-family: "Poppins", sans-serif;
-  font-size: 1.4rem;
-  text-transform: capitalize;
-  font-weight: 500;
-  margin: 2% 0 0 0;
-}
 
-.spotify-card img {
-  width: 25%;
-  max-width: 200px;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
 
 /* Responsive */
 @media screen and (max-width: 680px) {
   .project_card {
     margin: 5% auto;
     flex-direction: column !important;
-    height: 30rem;
+    height: calc(20rem + 10rem); /* 20 rem more than the images height */
   }
   .project_card .project-content, .project_card .project-content .project_description{
     width: 100% !important;
     padding: .02rem 0 !important;
   }
 
-
   .project_card:hover {
     transform: none;
   }
-  
 
   .expCard {
-    width: 90%;
+    width: 100%;
     padding-top: 15%;
+  }
+  .expCard h4, .expCard .heading{
+    font-size: 1rem;
   }
 
   .expCard:nth-last-child(1) {
@@ -203,9 +177,13 @@
   .expCard #up {
     left: 14.2%;
   }
+  .expCard p{
+    width: 98% !important;
+    font-size: 0.8rem !important;
+  }
 
   .spotify-card h1 {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 
   .spotify-card img {

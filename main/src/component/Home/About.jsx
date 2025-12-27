@@ -1,4 +1,4 @@
-import Data from "../Data.json";
+import Data from "../../Data.json";
 import TechStack from "./Techstack";
 import Cards from "../Cards/Card";
 import ExpCard from "../Cards/ExpCard";

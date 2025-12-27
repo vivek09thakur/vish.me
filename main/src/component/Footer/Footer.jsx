@@ -1,4 +1,4 @@
-import Data from "../Data.json";
+import Data from "../../Data.json";
 import "./Style/Style.css";
 
 const Footer = () => {

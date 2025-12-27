@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import CreateBlogPosts from "./BlogCards";
 import { MdRssFeed } from "react-icons/md";
-import Data from "../Data.json";
+import Data from "../../Data.json";
 import "./Style/style.css";
 
 const BlogList = () => {

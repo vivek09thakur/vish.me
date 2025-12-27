@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import Data from "../Data.json";
+import Data from "../../Data.json";
 import MyImage from "../../assets/vector-image.png";
 import { RiDownloadLine } from "react-icons/ri";
 import { CiLocationOn } from "react-icons/ci";
