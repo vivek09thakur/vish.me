@@ -46,14 +46,14 @@
       "description": "An open source free of cost learning platform for all the computer science students pursuing their diplomas.",
       "link": "https://learnit-io.vercel.app/",
       "tech_stack": "HTML5, CSS3, Javascript, Bootstrap",
-      "image": "./assets/learnit-banner.png"
+      "image": "./src/assets/learnit-banner.png"
     },
     "project2": {
       "name": "LECTURE2NOTES",
       "description": "It is a simple command-line python app that can record the notes or speaked lessons of teacher and convert them into Pdf Notes.",
       "link": "https://github.com/vivek09thakur/Lecture2Notes",
       "tech_stack": "Speech Recognition, Python",
-      "image": "./assets/l2n-banner.png"
+      "image": "./l2n-banner.png"
     },
     "project3": {
       "name": "HIRO",
@@ -73,7 +73,7 @@
       "description": "A Python-based local web app with a React.js UI that analyzes a star topology LAN network, providing details on connected devices, bandwidth usage, network interfaces, Wi-Fi, vEthernet, and DNS server information.",
       "link": "https://github.com/vivek09thakur/LAN-Analysis",
       "tech_stack": "React.js, Python, Flask, Web APIs",
-      "image": "./assets/lan-banner.png"
+      "image": "./lan-banner.png"
     }
   },
 
