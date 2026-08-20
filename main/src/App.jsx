@@ -1,14 +1,15 @@
 import { useState, useEffect, Fragment } from "react";
+import { Routes, Route } from "react-router-dom";
 import AnimatedCursor from "react-animated-cursor";
 import Pre from "./component/PreLoader";
 import SideNav from "./component/SideNav/SideNav";
 import Home from "./component/Home/Home";
 import About from "./component/Home/About";
 import BlogList from "./component/BlogsList/Blogs";
+import BlogPost from "./component/BlogsList/BlogPost";
 import Footer from "./component/Footer/Footer";
-import "./App.css";
 
-const App = () => {
+const Portfolio = () => {
   const [load, updateLoad] = useState(true);
 
   useEffect(() => {
@@ -20,17 +21,24 @@ const App = () => {
   }, []);
 
   return (
-    <>
-      <Fragment>
-        <Pre load={load} />
-        <AnimatedCursor />
-        <SideNav />
-        <Home />
-        <About />
-        <BlogList />
-        <Footer />
-      </Fragment>
-    </>
+    <Fragment>
+      <Pre load={load} />
+      <AnimatedCursor />
+      <SideNav />
+      <Home />
+      <About />
+      <BlogList />
+      <Footer />
+    </Fragment>
+  );
+};
+
+const App = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<Portfolio />} />
+      <Route path="/blog/:id" element={<BlogPost />} />
+    </Routes>
   );
 };
 

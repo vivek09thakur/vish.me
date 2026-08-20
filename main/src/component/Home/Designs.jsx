@@ -26,13 +26,16 @@ const Designs = () => {
   }, []);
 
   return (
-    <div className="designs">
-      <div className="header">
-        <h1>UI/UX Designs <TbPencilMinus style={{marginBottom:'-5px'}}/></h1>
+    <div className="w-[98%] h-full ml-[2%] mt-[5%] max-[680px]:mt-[15%]">
+      <div className="overflow-y-hidden my-[2%] mx-auto">
+        <h1 className="font-medium">UI/UX Designs <TbPencilMinus style={{marginBottom:'-5px'}}/></h1>
       </div>
-      <div className="design-grid">
+      <div className="w-[80%] flex flex-wrap justify-evenly mx-auto max-[680px]:w-full max-[680px]:flex-col">
         {designs.map((design, index) => (
-          <div key={index} className="iframe-container relative">
+          <div
+            key={index}
+            className="w-[48%] h-full min-h-[20rem] mb-[5%] opacity-70 text-center relative max-[680px]:w-full max-[680px]:my-[2%] max-[680px]:mx-auto"
+          >
             {loading[index] && (
               <div
                 style={{
@@ -50,13 +53,17 @@ const Designs = () => {
               src={design}
               allowFullScreen
               title={`Design ${index + 1}`}
+              className="w-full h-full min-h-[18rem] border-none rounded-[.3rem] opacity-80 max-[680px]:w-[90%] max-[680px]:my-[2%] max-[680px]:mx-auto"
               style={{
                 pointerEvents: interactiveIndex === index ? "auto" : "none",
                 display: loading[index] ? "none" : "block",
               }}
               onLoad={() => handleIframeLoad(index)}
             />
-            <button onClick={() => toggleInteraction(index)}>
+            <button
+              onClick={() => toggleInteraction(index)}
+              className="w-[30%] mx-auto p-2 border-none rounded-[.2rem] bg-btn font-poppins mt-[3%] max-[680px]:w-[50%]"
+            >
               {interactiveIndex === index ? (
                 <AiOutlineClose size={15} />
               ) : (

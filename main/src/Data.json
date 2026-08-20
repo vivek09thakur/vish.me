@@ -1,13 +1,14 @@
 {
   "user": {
     "IntroLine": "Hi, I'm Vivek.",
-    "About": "An undergrad CSE student from India, passionate about building innovative projects and learning new technologies like AI, ML, and Deep Learning. I also enjoy exploring the universe, frontend development, photography, and sketching - always seeking to create and discover something new!",
+    "About": "A Computer Science undergraduate at BITS Pilani and a Cloud Architect at Wipro, working onsite for HPE on private, air-gapped cloud solutions built with HPE GreenLake. I'm passionate about cloud infrastructure, AI/ML and frontend development — and outside of tech I enjoy exploring the universe, photography, and sketching.",
+    "location": "Bengaluru, Karnataka, India",
     "email": "vivekthakurcse20509@gmail.com"
   },
   "socials": {
     "github": "https://github.com/vivek09thakur",
     "linkedin": "https://www.linkedin.com/in/vivek09thakur/",
-    "expo": "https://expo.dev/accounts/vivek09thakur",
+    "x": "https://x.com/",
     "discord": "https://discordapp.com/users/1008823092514144366",
     "instagram": "https://www.instagram.com/vivekthakur.sh/",
     "stackoverflow": "https://stackoverflow.com/users/22438160/vivek-thakur?tab=profile",
@@ -19,25 +20,46 @@
   ],
   "exp": {
     "exp1": {
-      "company_name": "HacktoberFest 2k23",
-      "start_date": "Oct 1st, 2023",
-      "end_date": "Oct 31st, 2023",
-      "designation": "Contributor",
-      "description": "Participated in HacktoberFest 2023 and contributed to open source projects and made 4 pull requests accepted and merged."
+      "company_name": "Hacktoberfest 2023",
+      "start_date": "Oct 2023",
+      "end_date": "Nov 2023",
+      "designation": "Open Source Contributor",
+      "description": "Featured in the Hacktoberfest 2023 Hall of Fame after completing the challenge — contributed to open-source projects with 4 pull requests accepted and merged."
     },
     "exp2": {
-      "company_name": "Lets Upgrade",
-      "start_date": "Jan 25, 2024",
-      "end_date": "Feb 25, 2024",
-      "designation": "Student Ambassador",
-      "description": "As a Student Ambassador, I organised workshops in my community with Lets Upgrade support, shared tech experiences and promoted free resources offered by Lets Upgrade"
+      "company_name": "InnoByte Services",
+      "start_date": "Jan 2024",
+      "end_date": "May 2024",
+      "designation": "Frontend Developer Intern",
+      "description": "Built and shipped responsive web interfaces remotely using HTML5, CSS3 and modern frontend tooling."
     },
     "exp3": {
       "company_name": "Wipro",
-      "start_date": "May 20, 2024",
-      "end_date": "Present",
+      "start_date": "May 2024",
+      "end_date": "Jul 2024",
       "designation": "Scholar Trainee",
-      "description": "As a Scholar Trainee (SIM) under Work Integrated Learning Program (WILP) , which offers Scholarship to pursue BTech from BITS, pilani along with Wipro's work culture."
+      "description": "Joined under the Work Integrated Learning Program (WILP) — a scholarship to pursue a BTech from BITS Pilani alongside Wipro's work culture — working with DevOps and Azure DevOps Server."
+    },
+    "exp4": {
+      "company_name": "Wipro",
+      "start_date": "Jul 2024",
+      "end_date": "Jan 2025",
+      "designation": "Windows Server Administrator",
+      "description": "Administered Windows Server environments with Microsoft Azure and Azure Active Directory as part of an on-site apprenticeship."
+    },
+    "exp5": {
+      "company_name": "Wipro",
+      "start_date": "Jan 2025",
+      "end_date": "Mar 2026",
+      "designation": "WebSphere Administrator",
+      "description": "Managed and maintained IBM WebSphere application server environments on-site."
+    },
+    "exp6": {
+      "company_name": "Wipro",
+      "start_date": "Mar 2026",
+      "end_date": "Present",
+      "designation": "Cloud Architect",
+      "description": "Architecting and implementing a private, disconnected (air-gapped) cloud solution for Hewlett Packard Enterprise (HPE) using HPE GreenLake — delivering secure, scalable infrastructure with zero public internet connectivity while maintaining enterprise-grade capabilities."
     }
   },
   "projects": {
