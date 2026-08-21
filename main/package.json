@@ -12,6 +12,7 @@
   "dependencies": {
     "framer-motion": "^13.1.1",
     "lucide-react": "^0.445.0",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-animated-cursor": "^2.11.2",
     "react-dom": "^18.2.0",
@@ -21,6 +22,7 @@
     "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "@vitejs/plugin-react": "^4.2.1",
@@ -30,6 +32,7 @@
     "eslint-plugin-react-refresh": "^0.4.5",
     "sharp": "^0.35.3",
     "svgo": "^4.0.2",
+    "tailwindcss": "^4.3.3",
     "vite": "^5.0.8",
     "vite-plugin-image-optimizer": "^2.0.3"
   }
