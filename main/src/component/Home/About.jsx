@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from "react";
 import { motion } from "framer-motion";
 import Data from "../../Data.json";
 import TechStack from "./Techstack";
+import GCPBadges from "./GCPBadges";
 import ExpCard from "../Cards/ExpCard";
 import { AiOutlineThunderbolt } from "react-icons/ai";
 
@@ -83,6 +84,7 @@ const About = () => {
       <Suspense fallback={<div>Loading projects...</div>}>
         <Projects />
       </Suspense>
+      <GCPBadges />
       <TechStack />
     </div>
   );

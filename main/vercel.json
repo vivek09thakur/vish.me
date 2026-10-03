@@ -1,3 +1,9 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "rewrites": [
+    {
+      "source": "/gcp-badges/:path*",
+      "destination": "https://google-cloud-skill-boost-badges-api.vercel.app/:path*"
+    },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }

@@ -16,4 +16,17 @@ export default defineConfig({
       includePublic: true,
     }),
   ],
+  server: {
+    proxy: {
+      // Proxy badge API requests server-side to avoid CORS.
+      // Override target with VITE_SKILLBOOST_API (e.g. your local http://127.0.0.1:8000).
+      "/gcp-badges": {
+        target:
+          process.env.VITE_SKILLBOOST_API ||
+          "https://google-cloud-skill-boost-badges-api.vercel.app",
+        changeOrigin: true,
+        rewrite: (p) => p.replace(/^\/gcp-badges/, ""),
+      },
+    },
+  },
 })

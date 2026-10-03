@@ -109,5 +109,10 @@
       "img": "Clicks/03-click.jpg"
     }
   },
-  "myCV": "/Vivek @Resume.pdf"
+  "myCV": "/Vivek @Resume.pdf",
+  "gcpSkillBoost": {
+    "profileId": "49e66b41-798d-4bbf-860e-35a9040ac66d",
+    "apiBaseUrl": "https://google-cloud-skill-boost-badges-api.vercel.app",
+    "profileUrl": "https://www.skills.google/public_profiles/49e66b41-798d-4bbf-860e-35a9040ac66d"
+  }
 }
