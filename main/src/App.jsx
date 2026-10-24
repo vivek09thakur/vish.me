@@ -11,6 +11,7 @@ import Footer from "./component/Footer/Footer";
 
 const Portfolio = () => {
   const [load, updateLoad] = useState(true);
+  const [hasPointer, setHasPointer] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -20,10 +21,19 @@ const Portfolio = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  // touch devices have no hover cursor, so skip the custom one there
+  useEffect(() => {
+    const mq = window.matchMedia("(hover: hover) and (pointer: fine)");
+    const update = () => setHasPointer(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+
   return (
     <Fragment>
       <Pre load={load} />
-      <AnimatedCursor />
+      {hasPointer && <AnimatedCursor />}
       <SideNav />
       <Home />
       <About />
