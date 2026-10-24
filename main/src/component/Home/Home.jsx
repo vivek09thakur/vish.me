@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 import Data from "../../Data.json";
-import MyImage from "../../assets/profile.webp";
+import MyImage from "../../assets/myimage.jpg";
 import { RiDownloadLine } from "react-icons/ri";
 import { CiLocationOn } from "react-icons/ci";
 
@@ -41,8 +41,48 @@ Typewriter.propTypes = {
   text: PropTypes.string.isRequired,
 };
 
+const SPOT_RADIUS = 90;
+
+// grayscale copy of the image revealed only inside a circle that follows the cursor
+const SpotlightImage = ({ src, alt }) => {
+  const ref = useRef(null);
+
+  const move = (e) => {
+    const r = ref.current.getBoundingClientRect();
+    ref.current.style.setProperty("--x", `${e.clientX - r.left}px`);
+    ref.current.style.setProperty("--y", `${e.clientY - r.top}px`);
+    ref.current.style.setProperty("--r", `${SPOT_RADIUS}px`);
+  };
+  const leave = () => ref.current.style.setProperty("--r", "0px");
+
+  const imgClass = "w-full h-full object-cover rounded-2xl";
+  return (
+    <div
+      ref={ref}
+      onMouseMove={move}
+      onMouseLeave={leave}
+      className="relative w-full max-w-[400px] aspect-square -rotate-3 shadow-card rounded-2xl"
+      style={{ "--r": "0px" }}
+    >
+      <img src={src} alt={alt} width="400" height="400" fetchpriority="high" decoding="async" className={imgClass} />
+      <img
+        src={src}
+        alt=""
+        aria-hidden="true"
+        className={`${imgClass} absolute inset-0 grayscale pointer-events-none`}
+        style={{ clipPath: "circle(var(--r) at var(--x, 50%) var(--y, 50%))" }}
+      />
+    </div>
+  );
+};
+
+SpotlightImage.propTypes = {
+  src: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
+};
+
 const Home = () => (
-  <div className="grid-overlay w-[90%] ml-[10%] flex items-center py-16 max-[780px]:w-[85%] max-[780px]:ml-[15%] max-[780px]:py-24 max-[500px]:py-20">
+  <div className="grid-overlay w-[90%] ml-[10%] flex items-center pt-48 pb-10 max-[780px]:w-[85%] max-[780px]:ml-[15%] max-[780px]:py-20 max-[500px]:py-16">
     <div className="relative z-10 w-full flex items-center justify-between gap-10 flex-row-reverse max-[780px]:flex-col-reverse max-[780px]:gap-8">
       <motion.div
         className="w-2/5 flex justify-center shrink-0 max-[780px]:w-[60%] max-[500px]:w-[75%]"
@@ -51,20 +91,12 @@ const Home = () => (
         viewport={{ once: false, amount: 0.3 }}
         transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
       >
-        <img
-          src={MyImage}
-          alt="Vivek Thakur"
-          width="400"
-          height="400"
-          fetchpriority="high"
-          decoding="async"
-          className="w-full max-w-[400px] aspect-square object-cover rounded-2xl shadow-card"
-        />
+        <SpotlightImage src={MyImage} alt="Vivek Thakur" />
       </motion.div>
       <div className="w-[55%] max-[780px]:w-full max-[780px]:text-center max-[500px]:text-left">
         <a
           href={Data.myCV}
-          className="group no-underline absolute top-5 right-5 z-[1200] inline-flex items-center gap-2 rounded-full bg-btn px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-btn/30 ring-1 ring-white/15 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-btn/40 transition-all duration-300 max-[780px]:static max-[780px]:mb-6 max-[500px]:mb-4"
+          className="group no-underline absolute top-5 right-5 z-[1200] inline-flex items-center gap-2 rounded-lg bg-btn px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-btn/30 ring-1 ring-white/15 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-btn/40 transition-all duration-300 max-[780px]:static max-[780px]:mb-6 max-[500px]:mb-4"
           download="VivekThakurCV.pdf"
         >
           <RiDownloadLine className="text-base transition-transform group-hover:translate-y-0.5" />

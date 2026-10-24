@@ -1,9 +1,41 @@
-// import { FiGithub } from "react-icons/fi";
-// import { BsTools } from "react-icons/bs";
 import { motion } from "framer-motion";
 import { RxExternalLink } from "react-icons/rx";
 import { PiTagSimple } from "react-icons/pi";
+import { SiNextdotjs, SiGooglecloud, SiPokemon } from "react-icons/si";
+import { RiRobot2Line } from "react-icons/ri";
+import { LuNetwork } from "react-icons/lu";
 import PropTypes from "prop-types";
+
+// placeholder thumbnails keyed by Data.json `icon` until real screenshots are added
+const ICONS = {
+  nextjs: SiNextdotjs,
+  robot: RiRobot2Line,
+  gcp: SiGooglecloud,
+  pokemon: SiPokemon,
+  network: LuNetwork,
+};
+
+const Thumbnail = ({ project }) => {
+  const Icon = ICONS[project.icon];
+  if (!Icon) {
+    return (
+      <img
+        src={project.image}
+        alt=""
+        loading="lazy"
+        decoding="async"
+        className="w-full h-full object-cover transition-transform duration-500 ease-in-out rounded-[.8rem]"
+        style={{ zoom: 1.1 }}
+      />
+    );
+  }
+  return (
+    <div className="w-full h-full flex items-center justify-center rounded-[.8rem] border-2 border-dashed border-white/20">
+      <Icon className="text-[6rem] text-font1 opacity-60" />
+    </div>
+  );
+};
+Thumbnail.propTypes = { project: PropTypes.object.isRequired };
 
 const Cards = ({ project }) => {
   return (
@@ -16,14 +48,7 @@ const Cards = ({ project }) => {
       whileHover={{ scale: 0.97 }}
     >
       <div className="flex-[0_0_40%] w-full h-full rounded-[.2rem] block overflow-hidden shrink-0">
-        <img
-          src={project.image}
-          alt=""
-          loading="lazy"
-          decoding="async"
-          className="w-full h-full object-cover transition-transform duration-500 ease-in-out rounded-[.8rem]"
-          style={{ zoom: 1.1 }}
-        />
+        <Thumbnail project={project} />
       </div>
 
       <div className="flex flex-col justify-between items-start px-4 py-2 max-[680px]:w-full! max-[680px]:px-0! max-[680px]:py-[.02rem]!">

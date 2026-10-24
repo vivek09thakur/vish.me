@@ -3,8 +3,7 @@ import { motion } from "framer-motion";
 import Data from "../../Data.json";
 import TechStack from "./Techstack";
 import GCPBadges from "./GCPBadges";
-import ExpCard from "../Cards/ExpCard";
-import { AiOutlineThunderbolt } from "react-icons/ai";
+import ExpTimeline from "./ExpTimeline";
 
 const Cards = lazy(() => import("../Cards/Card"));
 
@@ -12,29 +11,24 @@ const About = () => {
   const { RandomAboutText } = Data;
   const [randomTitle, randomDescription] = RandomAboutText;
   const projectKeys = Object.keys(Data.projects);
-  const ExpKeys = Object.keys(Data.exp);
+  // newest first
+  const experiences = Object.values(Data.exp).reverse();
 
   const MyExp = () => {
     return (
       <div className="max-[680px]:w-full">
         <motion.h2
-          className="text-[2.5rem] font-normal my-[3.5%] mx-0 max-[680px]:mt-[2.2rem] max-[680px]:mb-[2rem] max-[680px]:text-[1.4rem]"
+          className="text-[2.5rem] font-normal mt-[2%] mb-0 mx-0 max-[680px]:mt-[2.2rem] max-[680px]:mb-[2rem] max-[680px]:text-[1.4rem]"
           style={{ textTransform: "capitalize" }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.6 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
-          My Experiences <AiOutlineThunderbolt style={{ marginBottom: '-7px' }} />
+          My Experiences
         </motion.h2>
-        <div className="relative mt-10 max-[680px]:mt-8">
-          {/* vertical line: left on mobile/tablet, centered on large screens */}
-          <div className="absolute top-3 bottom-3 w-0.5 bg-btn/40 left-[7px] min-[1024px]:left-1/2 min-[1024px]:-translate-x-1/2"></div>
-          <div className="flex flex-col-reverse">
-            {ExpKeys.map((key, item) => (
-              <ExpCard key={item} exp={Data.exp[key]} index={item} />
-            ))}
-          </div>
+        <div className="mt-6 max-[680px]:mt-8">
+          <ExpTimeline experiences={experiences} />
         </div>
       </div>
     );

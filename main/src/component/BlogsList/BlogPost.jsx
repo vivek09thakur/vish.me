@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { FiArrowLeft, FiExternalLink } from "react-icons/fi";
 import { CiTimer } from "react-icons/ci";
-import defaultImage from "../../assets/profile.webp";
+import defaultImage from "../../assets/myimage.jpg";
 
 const BlogPost = () => {
   const { id } = useParams();

@@ -6,7 +6,7 @@ import { IoMdHeartEmpty } from "react-icons/io";
 import { FaHashtag } from "react-icons/fa";
 import { FaRegComments } from "react-icons/fa6";
 import { FiArrowRight } from "react-icons/fi";
-import defaultImage from "../../assets/profile.webp";
+import defaultImage from "../../assets/myimage.jpg";
 
 const CreateBlogPosts = ({ posts }) => {
   return (
