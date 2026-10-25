@@ -16,6 +16,21 @@ const ICONS = {
 };
 
 const Thumbnail = ({ project }) => {
+  if (project.video) {
+    return (
+      <div className="w-full h-full flex items-center justify-center">
+        <video
+          src={project.video}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          className="max-w-full max-h-full object-contain rounded-[.8rem] max-[680px]:w-full"
+        />
+      </div>
+    );
+  }
   const Icon = ICONS[project.icon];
   if (!Icon) {
     return (
@@ -47,7 +62,14 @@ const Cards = ({ project }) => {
       transition={{ duration: 0.5, ease: "easeOut" }}
       whileHover={{ scale: 0.97 }}
     >
-      <div className="flex-[0_0_40%] w-full h-full rounded-[.2rem] block overflow-hidden shrink-0">
+      {/* wide clips get a wider column so they aren't tiny when letterboxed */}
+      <div
+        className={`${
+          project.video
+            ? "flex-[0_0_55%] max-[680px]:flex-none max-[680px]:h-auto"
+            : "flex-[0_0_40%]"
+        } w-full h-full rounded-[.2rem] block overflow-hidden shrink-0`}
+      >
         <Thumbnail project={project} />
       </div>
 

@@ -89,7 +89,7 @@
       "description": "A web app that allows users to create and analyze Pokémon team's weaknesses, defensive coverage, and type distribution using data from the PokéAPI.",
       "link": "https://pokemon-team-analyzer.vercel.app/",
       "tech_stack": "HTML5, CSS3, Javascript, Tailwind CSS, API, PokeAPI",
-      "icon": "pokemon"
+      "video": "/projects/pokemon-team-analyzer.mp4"
     },
     "project5": {
       "name": "LAN-Analysis",
