@@ -15,37 +15,31 @@ const ICONS = {
   network: LuNetwork,
 };
 
+const mediaClass =
+  "max-w-full max-h-full object-contain rounded-[.8rem] max-[680px]:w-full";
+
 const Thumbnail = ({ project }) => {
   if (project.video) {
     return (
-      <div className="w-full h-full flex items-center justify-center">
-        <video
-          src={project.video}
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="metadata"
-          className="max-w-full max-h-full object-contain rounded-[.8rem] max-[680px]:w-full"
-        />
-      </div>
+      <video
+        src={project.video}
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="metadata"
+        className={mediaClass}
+      />
     );
   }
   const Icon = ICONS[project.icon];
   if (!Icon) {
     return (
-      <img
-        src={project.image}
-        alt=""
-        loading="lazy"
-        decoding="async"
-        className="w-full h-full object-cover transition-transform duration-500 ease-in-out rounded-[.8rem]"
-        style={{ zoom: 1.1 }}
-      />
+      <img src={project.image} alt="" loading="lazy" decoding="async" className={mediaClass} />
     );
   }
   return (
-    <div className="w-full h-full flex items-center justify-center rounded-[.8rem] border-2 border-dashed border-white/20">
+    <div className="w-full aspect-video max-h-full flex items-center justify-center rounded-[.8rem] border-2 border-dashed border-white/20">
       <Icon className="text-[6rem] text-font1 opacity-60" />
     </div>
   );
@@ -55,21 +49,14 @@ Thumbnail.propTypes = { project: PropTypes.object.isRequired };
 const Cards = ({ project }) => {
   return (
     <motion.div
-      className="w-full h-[20rem] my-[2%] mx-auto flex gap-2 items-stretch rounded-[.2rem] box-border brightness-90 even:flex-row-reverse max-[680px]:my-[5%] max-[680px]:flex-col! max-[680px]:h-[30rem]"
+      className="w-full h-[20rem] my-16 mx-auto flex gap-2 items-stretch rounded-[.2rem] box-border brightness-90 even:flex-row-reverse max-[680px]:my-[12%] max-[680px]:flex-col! max-[680px]:h-[30rem]"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: false, amount: 0.2 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
       whileHover={{ scale: 0.97 }}
     >
-      {/* wide clips get a wider column so they aren't tiny when letterboxed */}
-      <div
-        className={`${
-          project.video
-            ? "flex-[0_0_55%] max-[680px]:flex-none max-[680px]:h-auto"
-            : "flex-[0_0_40%]"
-        } w-full h-full rounded-[.2rem] block overflow-hidden shrink-0`}
-      >
+      <div className="flex-[0_0_55%] min-[1280px]:flex-[0_0_64%] w-full h-full flex items-center justify-center rounded-[.2rem] overflow-hidden shrink-0 max-[680px]:flex-none max-[680px]:h-auto">
         <Thumbnail project={project} />
       </div>
 
