@@ -49,7 +49,7 @@ Thumbnail.propTypes = { project: PropTypes.object.isRequired };
 const Cards = ({ project }) => {
   return (
     <motion.div
-      className="w-full h-[20rem] my-16 mx-auto flex gap-2 items-stretch rounded-[.2rem] box-border brightness-90 even:flex-row-reverse max-[680px]:my-[12%] max-[680px]:flex-col! max-[680px]:h-[30rem]"
+      className="w-full h-[20rem] my-16 mx-auto flex gap-2 items-stretch rounded-[.2rem] box-border opacity-90 even:flex-row-reverse max-[680px]:my-[12%] max-[680px]:flex-col! max-[680px]:h-[30rem]"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: false, amount: 0.2 }}

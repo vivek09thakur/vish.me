@@ -70,7 +70,10 @@ const SpotlightImage = ({ src, alt }) => {
         alt=""
         aria-hidden="true"
         className={`${imgClass} absolute inset-0 grayscale pointer-events-none`}
-        style={{ clipPath: "circle(var(--r) at var(--x, 50%) var(--y, 50%))" }}
+        style={{
+          clipPath: "circle(var(--r) at var(--x, 50%) var(--y, 50%))",
+          willChange: "clip-path",
+        }}
       />
     </div>
   );

@@ -11,14 +11,20 @@ import Footer from "./component/Footer/Footer";
 
 const Portfolio = () => {
   const [load, updateLoad] = useState(true);
+  const [showPre, setShowPre] = useState(true);
   const [hasPointer, setHasPointer] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       updateLoad(false);
     }, 1200);
+    // unmount the preloader after its slide-out so its orbit animations stop running
+    const unmount = setTimeout(() => setShowPre(false), 2400);
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      clearTimeout(unmount);
+    };
   }, []);
 
   // touch devices have no hover cursor, so skip the custom one there
@@ -32,7 +38,7 @@ const Portfolio = () => {
 
   return (
     <Fragment>
-      <Pre load={load} />
+      {showPre && <Pre load={load} />}
       {hasPointer && <AnimatedCursor />}
       <SideNav />
       <Home />
