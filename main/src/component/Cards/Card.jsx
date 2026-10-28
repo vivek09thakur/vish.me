@@ -1,4 +1,3 @@
-import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { RxExternalLink } from "react-icons/rx";
 import { PiTagSimple } from "react-icons/pi";
@@ -18,29 +17,13 @@ const ICONS = {
 const mediaClass =
   "max-w-full max-h-full object-contain rounded-[.8rem] max-[680px]:w-full";
 
-const LazyVideo = ({ src }) => {
-  const ref = useRef(null);
-  useEffect(() => {
-    const el = ref.current;
-    const io = new IntersectionObserver(
-      ([e]) => (e.isIntersecting ? el.play().catch(() => {}) : el.pause()),
-      { threshold: 0.25 }
-    );
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
-  return <video ref={ref} src={src} loop muted playsInline preload="metadata" className={mediaClass} />;
-};
-LazyVideo.propTypes = { src: PropTypes.string.isRequired };
-
 const Thumbnail = ({ project }) => {
-  if (project.video) return <LazyVideo src={project.video} />;
-  const Icon = ICONS[project.icon];
-  if (!Icon) {
+  if (project.image) {
     return (
       <img src={project.image} alt="" loading="lazy" decoding="async" className={mediaClass} />
     );
   }
+  const Icon = ICONS[project.icon];
   return (
     <div className="w-full aspect-video max-h-full flex items-center justify-center rounded-[.8rem] border-2 border-dashed border-white/20">
       <Icon className="text-[6rem] text-font1 opacity-60" />

@@ -68,7 +68,7 @@
       "description": "A community platform for people who love to code — open freelance-style projects with applications, study materials organised by topic, a member-written blog, a showcase of shipped apps and an admin panel managing all of it.",
       "link": "https://ishvarax.vercel.app",
       "tech_stack": "Next.js 15, TypeScript, Tailwind CSS v4, Material 3, FastAPI",
-      "icon": "nextjs"
+      "image": "/projects/ishvarax.png"
     },
     "project2": {
       "name": "JERN",
@@ -89,14 +89,14 @@
       "description": "A web app that allows users to create and analyze Pokémon team's weaknesses, defensive coverage, and type distribution using data from the PokéAPI.",
       "link": "https://pokemon-team-analyzer.vercel.app/",
       "tech_stack": "HTML5, CSS3, Javascript, Tailwind CSS, API, PokeAPI",
-      "video": "/projects/pokemon-team-analyzer.mp4"
+      "image": "/projects/pokemon-team-analyzer.png"
     },
     "project5": {
       "name": "LAN-Analysis",
       "description": "A Python-based local web app with a React.js UI that analyzes a star topology LAN network, providing details on connected devices, bandwidth usage, network interfaces, Wi-Fi, vEthernet, and DNS server information.",
       "link": "https://github.com/vivek09thakur/LAN-Analysis",
       "tech_stack": "React.js, Python, Flask, Web APIs",
-      "image": "/project3.png"
+      "image": "/projects/lan-analyzer.png"
     }
   },
 
