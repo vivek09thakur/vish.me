@@ -26,7 +26,7 @@ const ARROW_SHAPES = {
 // filled arrowhead sitting on the line, pointing in the direction of travel
 const Arrow = ({ dir = "right", className = "" }) => (
   <span
-    className={`absolute bg-btn z-10 ${dir === "down" ? "w-3 h-3.5" : "w-3.5 h-3"} ${className}`}
+    className={`absolute bg-green1 z-10 ${dir === "down" ? "w-3 h-3.5" : "w-3.5 h-3"} ${className}`}
     style={{ clipPath: ARROW_SHAPES[dir] }}
   />
 );

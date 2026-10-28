@@ -61,7 +61,7 @@ const SpotlightImage = ({ src, alt }) => {
       ref={ref}
       onMouseMove={move}
       onMouseLeave={leave}
-      className="relative w-full max-w-[400px] aspect-square -rotate-3 shadow-card rounded-2xl"
+      className="relative w-full max-w-[400px] aspect-square -rotate-3 rounded-2xl"
       style={{ "--r": "0px" }}
     >
       <img src={src} alt={alt} width="400" height="400" fetchpriority="high" decoding="async" className={imgClass} />
@@ -99,7 +99,7 @@ const Home = () => (
       <div className="w-[55%] max-[780px]:w-full max-[780px]:text-center max-[500px]:text-left">
         <a
           href={Data.myCV}
-          className="group no-underline absolute top-5 right-5 z-[1200] inline-flex items-center gap-2 rounded-lg bg-btn px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-btn/30 ring-1 ring-white/15 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-btn/40 transition-all duration-300 max-[780px]:static max-[780px]:mb-6 max-[500px]:mb-4"
+          className="group no-underline absolute top-5 right-5 z-[1200] inline-flex items-center gap-2 rounded-lg bg-btn px-5 py-2.5 text-sm font-semibold text-white hover:brightness-110 transition max-[780px]:static max-[780px]:mb-6 max-[500px]:mb-4"
           download="VivekThakurCV.pdf"
         >
           <RiDownloadLine className="text-base transition-transform group-hover:translate-y-0.5" />

@@ -90,7 +90,7 @@ const Cards = ({ project }) => {
           href={project.link}
           target="_blank"
           rel="noreferrer"
-          className="mx-2 mb-2 inline-flex items-center gap-1.5 rounded-md bg-btn px-3 py-1.5 text-xs font-semibold text-white no-underline shadow-sm ring-1 ring-white/10 hover:brightness-110 transition"
+          className="mx-2 mb-2 inline-flex items-center gap-1.5 rounded-md bg-btn px-3 py-1.5 text-xs font-semibold text-white no-underline hover:brightness-110 transition"
         >
           Open Project <RxExternalLink />
         </a>

@@ -18,8 +18,6 @@
   --font-poppins: "Poppins", sans-serif;
   --font-mono: "Roboto Mono", monospace;
   --font-archivo: "Archivo Black", sans-serif;
-
-  --shadow-card: 3px 6px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
 /* Legacy CSS variables kept for inline var() references */
@@ -32,11 +30,10 @@
   --blog_cardBg: var(--dark1);
   --blue1: var(--font_color1);
   --robotic_font: "Roboto Mono", monospace;
-  --btn_color: #8447ff;
-  --green1: #9fef00;
+  --btn_color: #9b6bff;
+  --green1: #c6f26e;
   --border1: 1px solid #b3b3b345;
   --border2: 1px solid rgba(135, 135, 135, 0.271);
-  --shadow1: 3px 6px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
 @layer base {
@@ -65,20 +62,10 @@
   }
 }
 
-/* Hero grid background with fade overlay (pseudo-element not expressible as utilities) */
+/* Hero grid background */
 .grid-overlay {
   position: relative;
   background: var(--dark1) url("./assets/bg-grid.svg") no-repeat center/cover;
-}
-
-.grid-overlay::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  max-height: 800px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, var(--dark1) 80%);
 }
 
 /* Preloader */

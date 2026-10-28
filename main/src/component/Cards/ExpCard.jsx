@@ -2,7 +2,8 @@ import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 
 const ExpCard = ({ exp }) => {
-  const endDate = exp.end_date || "Present";
+  const isCurrent = !exp.end_date || exp.end_date === "Present";
+  const endDate = isCurrent ? "Present" : exp.end_date;
 
   return (
     <motion.div
@@ -13,7 +14,8 @@ const ExpCard = ({ exp }) => {
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <p className="text-xs font-medium opacity-60 mb-2">
-        {exp.start_date} - {endDate}
+        {exp.start_date} -{" "}
+        <span className={isCurrent ? "text-green1 opacity-100" : ""}>{endDate}</span>
       </p>
 
       <h2 className="text-base font-semibold m-0 text-font1">{exp.company_name}</h2>

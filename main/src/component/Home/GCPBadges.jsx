@@ -37,16 +37,12 @@ const BadgeCard = ({ badge }) => (
     whileHover={{ y: -6 }}
     transition={{ type: "spring", stiffness: 280, damping: 20 }}
   >
-    <span
-      aria-hidden
-      className="absolute inset-4 rounded-full bg-btn/40 blur-2xl opacity-0 group-hover:opacity-80 transition-opacity duration-300"
-    />
     <img
       src={badge.image_url}
       alt={badge.title}
       loading="lazy"
       decoding="async"
-      className="relative w-full h-full object-cover rounded-2xl transition-transform duration-300 group-hover:scale-110 drop-shadow-[0_6px_14px_rgba(0,0,0,0.45)]"
+      className="relative w-full h-full object-cover rounded-2xl transition-transform duration-300 group-hover:scale-110"
     />
   </motion.a>
 );
@@ -139,7 +135,7 @@ const GCPBadges = () => {
               href={profileUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-md bg-btn px-4 py-2 text-sm font-semibold text-white no-underline shadow-sm ring-1 ring-white/10 hover:brightness-110 transition"
+              className="inline-flex items-center gap-1.5 rounded-md bg-btn px-4 py-2 text-sm font-semibold text-white no-underline hover:brightness-110 transition"
             >
               View full profile <RxExternalLink />
             </a>

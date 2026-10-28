@@ -1,101 +1,47 @@
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { CiTimer } from "react-icons/ci";
-import { IoMdHeartEmpty } from "react-icons/io";
-import { FaHashtag } from "react-icons/fa";
-import { FaRegComments } from "react-icons/fa6";
 import { FiArrowRight } from "react-icons/fi";
-import defaultImage from "../../assets/myimage.jpg";
+
+const formatDate = (iso) =>
+  new Date(iso).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
 
 const CreateBlogPosts = ({ posts }) => {
+  const href = `/blog/${posts.id}`;
   return (
-    <motion.div
-      className="w-[70%] mt-[2.7%] p-2 rounded-[.2rem] bg-dark1 border border-white/10 transition-[background-color,box-shadow] duration-300 ease-in-out hover:shadow-card hover:bg-card max-[780px]:w-[90%] max-[780px]:mt-[5%]"
-      initial={{ opacity: 0, y: 30 }}
+    <motion.article
+      className="group w-[80%] py-6 border-b border-white/10 max-[780px]:w-full"
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false, amount: 0.2 }}
-      transition={{ duration: 0.45, ease: "easeOut" }}
-      whileHover={{ y: -5 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
     >
-      <div className="w-full flex justify-self-start items-center">
-        <img
-          src={posts.user.profile_image || defaultImage}
-          alt={`${posts.user.name}`}
-          loading="lazy"
-          decoding="async"
-          className="w-[35px] rounded-full"
-          onError={(e) => {
-            e.target.onerror = null;
-            e.target.src = defaultImage;
-          }}
-        />
-        <p className="text-[.7rem] ml-[5px]">{posts.user.name}</p>
-      </div>
-      <h2 className="text-font1 text-[1rem] font-normal mt-[3px] max-[780px]:text-[80%] max-[780px]:font-medium max-[780px]:mt-[2%]">
-        {posts.title}
+      <p className="text-xs opacity-50 mb-2">
+        {formatDate(posts.published_at)} · {posts.reading_time_minutes} min read
+        {posts.public_reactions_count > 0 &&
+          ` · ${posts.public_reactions_count} ${posts.public_reactions_count === 1 ? "reaction" : "reactions"}`}
+      </p>
+
+      <h2 className="text-[1.15rem] font-medium leading-snug m-0 max-[780px]:text-base">
+        <Link to={href} className="no-underline text-font1 group-hover:text-green1 transition-colors">
+          {posts.title}
+        </Link>
       </h2>
-      <div>
-        <p className="text-font1 font-normal text-[small] max-[780px]:text-[65%] max-[780px]:my-[2%]">
-          <span style={{ opacity: ".8" }}>{posts.description}</span>
-          <Link
-            to={`/blog/${posts.id}`}
-            className="text-btn no-underline text-[.8rem] font-medium hover:underline"
-            style={{ marginLeft: "1%" }}
-          >
-            Read More{" "}
-            <FiArrowRight style={{ position: "relative", bottom: "-2px" }} />
-          </Link>
-        </p>
-      </div>
 
-      <div style={{ marginTop: "1%" }}>
-        <p className="text-font1 font-normal text-[small]" style={{ opacity: ".5" }}>
-          <FaHashtag
-            style={{
-              position: "relative",
-              bottom: "-2px",
-              marginRight: "5px",
-            }}
-          />
-          {posts.tag_list.join(", ")}
-        </p>
+      <p className="text-sm opacity-70 mt-2 max-w-2xl leading-relaxed">{posts.description}</p>
 
-        <p
-          id="reactions"
-          className="text-font1 font-normal text-[small]"
-          style={{ marginTop: "1%" }}
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mt-3">
+        <Link
+          to={href}
+          className="inline-flex items-center gap-1 text-sm text-btn no-underline hover:text-green1 transition-colors"
         >
-          <IoMdHeartEmpty
-            style={{
-              position: "relative",
-              bottom: "-1px",
-              marginRight: "5px",
-            }}
-          />
-          {posts.public_reactions_count}
-          <FaRegComments
-            style={{
-              position: "relative",
-              bottom: "-2px",
-              marginLeft: "7px",
-              marginRight: "5px",
-            }}
-          />
-          {posts.comments_count}
-          <CiTimer
-            style={{
-              position: "relative",
-              bottom: "-2px",
-              marginLeft: "7px",
-              marginRight: "3px",
-            }}
-          />
-          {posts.reading_time_minutes}{" "}
-          <span style={{ fontSize: "80%" }}>mins read</span>
-        </p>
+          Read more <FiArrowRight className="transition-transform group-hover:translate-x-0.5" />
+        </Link>
+        {posts.tag_list.length > 0 && (
+          <span className="text-xs opacity-40">{posts.tag_list.map((t) => `#${t}`).join("  ")}</span>
+        )}
       </div>
-    </motion.div>
+    </motion.article>
   );
 };
 
