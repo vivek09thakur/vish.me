@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import ExpCard from "../Cards/ExpCard";
 
 const MOBILE_MAX = 680;
-// one card per row, occupying half the row, so the path turns after every card
 const PER_ROW = 1;
 const CELL_WIDTH = "50%";
 
@@ -23,7 +22,6 @@ const ARROW_SHAPES = {
   down: "polygon(0 0, 100% 0, 50% 100%)",
 };
 
-// filled arrowhead sitting on the line, pointing in the direction of travel
 const Arrow = ({ dir = "right", className = "" }) => (
   <span
     className={`absolute bg-green1 z-10 ${dir === "down" ? "w-3 h-3.5" : "w-3.5 h-3"} ${className}`}
@@ -57,14 +55,12 @@ const ExpTimeline = ({ experiences }) => {
   }
 
   return (
-    // horizontal padding reserves room for the U-turn arcs outside the rows
     <div className="w-[80%] mx-auto px-14 pb-3">
       {rows.map((row, r) => {
         const reversed = r % 2 === 1;
         return (
           <div key={r} className={`relative ${r > 0 ? "pt-14" : ""}`}>
             {r > 0 && (
-              // arc runs from the previous row's line down to this row's line
               <span
                 className={`absolute -top-0.5 bottom-0 w-14 border-2 border-btn/50 ${
                   reversed

@@ -11,7 +11,6 @@ const About = () => {
   const { RandomAboutText } = Data;
   const [randomTitle, randomDescription] = RandomAboutText;
   const projectKeys = Object.keys(Data.projects);
-  // newest first
   const experiences = Object.values(Data.exp).reverse();
 
   const MyExp = () => {

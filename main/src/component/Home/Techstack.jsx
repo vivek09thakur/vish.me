@@ -36,11 +36,9 @@ import {
 
 const TechStack = () => {
   const STACK = [
-    // Languages & scripting
     SiPython,
     SiGnubash,
     SiJavascript,
-    // Frontend
     SiHtml5,
     SiCss3,
     SiReact,
@@ -51,32 +49,24 @@ const TechStack = () => {
     SiExpress,
     SiVercel,
     SiFigma,
-    // Version control & CI/CD
     SiGit,
     SiGithub,
     SiGithubactions,
     SiGitlab,
     SiJenkins,
-    // Containers & orchestration
     SiDocker,
     SiKubernetes,
     SiHelm,
-    // Infrastructure as code & config management
     SiTerraform,
     SiAnsible,
-    // Data / workflow orchestration
     SiApacheairflow,
-    // OS & infrastructure
     SiLinux,
     SiRedhat,
     SiNginx,
     SiVmware,
-    // Observability
     SiPrometheus,
     SiGrafana,
-    // Private cloud
     SiOpenstack,
-    // Editor
     SiVisualstudiocode,
   ];
   return (
@@ -95,7 +85,7 @@ const TechStack = () => {
         variants={{ hidden: {}, show: { transition: { staggerChildren: 0.035 } } }}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: false, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.2 }}
       >
         {STACK.map((Icon, index) => (
           <motion.span

@@ -5,8 +5,6 @@ import { RxExternalLink } from "react-icons/rx";
 import { SiGooglecloud } from "react-icons/si";
 import Data from "../../Data.json";
 
-// Prefer the same-origin path (proxied by Vite in dev, rewritten by Vercel in prod);
-// fall back to the direct API URL so it also works on other hosts/devices.
 const API_BASE = "/gcp-badges";
 const { profileId, profileUrl, apiBaseUrl } = Data.gcpSkillBoost;
 
@@ -60,7 +58,7 @@ BadgeCard.propTypes = {
 
 const GCPBadges = () => {
   const [profile, setProfile] = useState(null);
-  const [status, setStatus] = useState("loading"); // loading | ready | empty | error
+  const [status, setStatus] = useState("loading");
 
   useEffect(() => {
     const controller = new AbortController();

@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { RxExternalLink } from "react-icons/rx";
 import { PiTagSimple } from "react-icons/pi";
@@ -6,7 +7,6 @@ import { RiRobot2Line } from "react-icons/ri";
 import { LuNetwork } from "react-icons/lu";
 import PropTypes from "prop-types";
 
-// placeholder thumbnails keyed by Data.json `icon` until real screenshots are added
 const ICONS = {
   nextjs: SiNextdotjs,
   robot: RiRobot2Line,
@@ -18,20 +18,23 @@ const ICONS = {
 const mediaClass =
   "max-w-full max-h-full object-contain rounded-[.8rem] max-[680px]:w-full";
 
-const Thumbnail = ({ project }) => {
-  if (project.video) {
-    return (
-      <video
-        src={project.video}
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="metadata"
-        className={mediaClass}
-      />
+const LazyVideo = ({ src }) => {
+  const ref = useRef(null);
+  useEffect(() => {
+    const el = ref.current;
+    const io = new IntersectionObserver(
+      ([e]) => (e.isIntersecting ? el.play().catch(() => {}) : el.pause()),
+      { threshold: 0.25 }
     );
-  }
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+  return <video ref={ref} src={src} loop muted playsInline preload="metadata" className={mediaClass} />;
+};
+LazyVideo.propTypes = { src: PropTypes.string.isRequired };
+
+const Thumbnail = ({ project }) => {
+  if (project.video) return <LazyVideo src={project.video} />;
   const Icon = ICONS[project.icon];
   if (!Icon) {
     return (

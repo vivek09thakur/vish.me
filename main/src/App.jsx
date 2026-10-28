@@ -16,7 +16,6 @@ const Portfolio = () => {
     const timer = setTimeout(() => {
       updateLoad(false);
     }, 1200);
-    // unmount the preloader after its slide-out so its orbit animations stop running
     const unmount = setTimeout(() => setShowPre(false), 2400);
 
     return () => {

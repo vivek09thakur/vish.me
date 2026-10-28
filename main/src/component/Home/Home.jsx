@@ -7,32 +7,38 @@ import { RiDownloadLine } from "react-icons/ri";
 import { CiLocationOn } from "react-icons/ci";
 
 const Typewriter = ({ text }) => {
-  const [displayedText, setDisplayedText] = useState("");
   const [index, setIndex] = useState(0);
+  const [active, setActive] = useState(true);
+  const ref = useRef(null);
 
   useEffect(() => {
-    if (!text) return;
-    if (index < text.length) {
-      const timeout = setTimeout(() => {
-        setDisplayedText(text.slice(0, index + 1));
-        setIndex(index + 1);
-      }, 100);
-      return () => clearTimeout(timeout);
-    }
-    const resetTimeout = setTimeout(() => {
-      setDisplayedText("");
-      setIndex(0);
-    }, 1000);
-    return () => clearTimeout(resetTimeout);
-  }, [index, text]);
+    const el = ref.current;
+    const io = new IntersectionObserver(([e]) => setActive(e.isIntersecting && !document.hidden));
+    io.observe(el);
+    const onVis = () => setActive(!document.hidden && el.getBoundingClientRect().bottom > 0);
+    document.addEventListener("visibilitychange", onVis);
+    return () => {
+      io.disconnect();
+      document.removeEventListener("visibilitychange", onVis);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!text || !active) return;
+    const done = index >= text.length;
+    const t = setTimeout(() => setIndex(done ? 0 : index + 1), done ? 1000 : 100);
+    return () => clearTimeout(t);
+  }, [index, text, active]);
 
   return (
-    <h1 className="relative font-normal text-[5rem] font-archivo leading-[1.1] max-[780px]:text-[4rem] max-[500px]:text-[3.5rem]">
-      {/* invisible full text reserves the wrapped height so typing never reflows the layout */}
+    <h1
+      ref={ref}
+      className="relative font-normal text-[5rem] font-archivo leading-[1.1] max-[780px]:text-[4rem] max-[500px]:text-[3.5rem]"
+    >
       <span aria-hidden="true" className="invisible">
         {text}
       </span>
-      <span className="absolute inset-0">{displayedText}</span>
+      <span className="absolute inset-0">{text.slice(0, index)}</span>
     </h1>
   );
 };
@@ -43,7 +49,6 @@ Typewriter.propTypes = {
 
 const SPOT_RADIUS = 90;
 
-// grayscale copy of the image revealed only inside a circle that follows the cursor
 const SpotlightImage = ({ src, alt }) => {
   const ref = useRef(null);
 

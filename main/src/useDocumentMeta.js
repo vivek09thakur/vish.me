@@ -8,7 +8,6 @@ const setMeta = (selector, attr, value) => {
   el.setAttribute(attr, value);
 };
 
-// Swap document title/description/canonical for a route and restore the defaults on unmount
 const useDocumentMeta = ({ title, description, path, image }) => {
   useEffect(() => {
     if (!title) return;
