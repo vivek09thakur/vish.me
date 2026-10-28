@@ -115,12 +115,12 @@ const Home = () => (
           <p className="opacity-80 mt-6 max-w-xl leading-relaxed max-[780px]:mx-auto max-[500px]:mx-0 max-[500px]:text-[90%]">
             {Data.user.About}
           </p>
-          <h1
+          <p
             className="mt-6 flex items-center gap-1 max-[780px]:justify-center max-[500px]:justify-start"
             style={{ opacity: 0.6, fontSize: "1.5rem" }}
           >
             <CiLocationOn /> {Data.user.location}
-          </h1>
+          </p>
         </motion.div>
       </div>
     </div>

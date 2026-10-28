@@ -1,11 +1,19 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { FiArrowLeft, FiExternalLink } from "react-icons/fi";
+import useDocumentMeta from "../../useDocumentMeta";
 
 const BlogPost = () => {
   const { id } = useParams();
   const [post, setPost] = useState(null);
   const [error, setError] = useState(null);
+
+  useDocumentMeta({
+    title: post ? `${post.title} | Vivek Thakur` : undefined,
+    description: post?.description,
+    path: `/blog/${id}`,
+    image: post?.cover_image || post?.social_image,
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);

@@ -37,8 +37,8 @@ const About = () => {
   const RandomText = () => {
     return (
       <>
-        <motion.h1
-          className="font-normal pb-[2%] max-[680px]:pb-[7%] max-[680px]:text-[1.5rem] max-[680px]:mb-[10%] max-[680px]:mt-[28%]"
+        <motion.h2
+          className="font-normal text-[2em] pb-[2%] max-[680px]:pb-[7%] max-[680px]:text-[1.5rem] max-[680px]:mb-[10%] max-[680px]:mt-[28%]"
           style={{ textTransform: "capitalize", marginTop: "8%" }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -46,7 +46,7 @@ const About = () => {
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
           {randomTitle}
-        </motion.h1>
+        </motion.h2>
         <motion.p
           className="w-[70%] pb-[5%] max-[680px]:w-full max-[680px]:mb-[10%]"
           style={{ opacity: "0.7" }}
