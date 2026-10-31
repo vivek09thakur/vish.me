@@ -46,7 +46,7 @@ const useFetch = (path, pick) => {
 };
 
 const pickBadges = (json) => json.badges || [];
-const pickAchievements = (json) => (Array.isArray(json) ? json : json.achievements || []);
+const pickAchievements = (json) => json.achievements || [];
 
 const BadgeCard = ({ href, title, image, tier }) => (
   <motion.a
