@@ -20,7 +20,7 @@ export default defineConfig({
       "/gcp-badges": {
         target:
           process.env.VITE_SKILLBOOST_API ||
-          "https://google-cloud-skill-boost-badges-api.vercel.app",
+          "https://dev-badges.vercel.app",
         changeOrigin: true,
         rewrite: (p) => p.replace(/^\/gcp-badges/, ""),
       },
