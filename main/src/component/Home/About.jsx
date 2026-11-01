@@ -77,8 +77,8 @@ const About = () => {
       <Suspense fallback={<div>Loading projects...</div>}>
         <Projects />
       </Suspense>
-      <GCPBadges />
       <TechStack />
+      <GCPBadges />
     </div>
   );
 };

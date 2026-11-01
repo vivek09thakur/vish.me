@@ -63,40 +63,47 @@
     }
   },
   "projects": {
-    "project1": {
+    "project6": {
       "name": "IshvaraX",
       "description": "A community platform for people who love to code — open freelance-style projects with applications, study materials organised by topic, a member-written blog, a showcase of shipped apps and an admin panel managing all of it.",
       "link": "https://ishvarax.vercel.app",
       "tech_stack": "Next.js 15, TypeScript, Tailwind CSS v4, Material 3, FastAPI",
       "image": "/projects/ishvarax.png"
     },
-    "project2": {
+    "project5": {
       "name": "JERN",
       "description": "Just an Experimental Response Network — a personal AI assistant with a cloud-GPU brain and local hands. A fine-tuned Qwen2.5-1.5B model runs on a free Colab GPU while file, shell, web-search and MCP tools execute on your own machine.",
       "link": "https://github.com/IshvaraX/JERN",
       "tech_stack": "Python, PyTorch, Hugging Face, FastAPI, MCP, Google Colab",
       "icon": "robot"
     },
-    "project3": {
+    "project4": {
       "name": "Google Cloud Skill Boost Badges API",
       "description": "A lightweight API that scrapes a Google Cloud Skills Boost public profile and returns its earned badges as JSON — the same API that powers the badges section on this site.",
       "link": "https://github.com/vivek09thakur/Google-Cloud-Skill-Boost_Badges-API",
       "tech_stack": "Python, Flask, BeautifulSoup, Vercel",
       "icon": "gcp"
     },
-    "project4": {
+    "project3": {
       "name": "Pokemon Team Analyzer",
       "description": "A web app that allows users to create and analyze Pokémon team's weaknesses, defensive coverage, and type distribution using data from the PokéAPI.",
       "link": "https://pokemon-team-analyzer.vercel.app/",
       "tech_stack": "HTML5, CSS3, Javascript, Tailwind CSS, API, PokeAPI",
       "image": "/projects/pokemon-team-analyzer.png"
     },
-    "project5": {
+    "project2": {
       "name": "LAN-Analysis",
       "description": "A Python-based local web app with a React.js UI that analyzes a star topology LAN network, providing details on connected devices, bandwidth usage, network interfaces, Wi-Fi, vEthernet, and DNS server information.",
       "link": "https://github.com/vivek09thakur/LAN-Analysis",
       "tech_stack": "React.js, Python, Flask, Web APIs",
       "image": "/projects/lan-analyzer.png"
+    },
+    "project1":{
+      "name":"LearnIT | Open-Source Book distribution platform",
+      "description": "A platform for distributing and accessing open-source books, enabling users to share and discover educational resources.",
+      "link": "https://learn-it.vercel.app",
+      "tech_stack": "Python, Django, React.js",
+      "image": "/projects/learnit.png"
     }
   },
 
