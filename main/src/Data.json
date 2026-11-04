@@ -75,7 +75,8 @@
       "description": "Just an Experimental Response Network — a personal AI assistant with a cloud-GPU brain and local hands. A fine-tuned Qwen2.5-1.5B model runs on a free Colab GPU while file, shell, web-search and MCP tools execute on your own machine.",
       "link": "https://github.com/IshvaraX/JERN",
       "tech_stack": "Python, PyTorch, Hugging Face, FastAPI, MCP, Google Colab",
-      "icon": "robot"
+      "icon": "robot",
+      "image": "/projects/jern.png"
     },
     "project4": {
       "name": "Google Cloud Skill Boost Badges API",
