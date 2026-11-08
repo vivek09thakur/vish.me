@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import PropTypes from "prop-types";
 import Data from "../../Data.json";
 import MyImage from "../../assets/myimage.jpg";
 import { RiDownloadLine } from "react-icons/ri";
 import { CiLocationOn } from "react-icons/ci";
+import { bounceSoft, fadeUp, squishHover, squishTap, stagger } from "../../motion";
 
 const Typewriter = ({ text }) => {
   const [index, setIndex] = useState(0);
@@ -91,44 +92,55 @@ SpotlightImage.propTypes = {
 
 const Home = () => (
   <div className="grid-overlay w-[90%] ml-[10%] flex items-center pt-48 pb-10 max-[780px]:w-[85%] max-[780px]:ml-[15%] max-[780px]:py-20 max-[500px]:py-16">
-    <div className="relative z-10 w-full flex items-center justify-between gap-10 flex-row-reverse max-[780px]:flex-col-reverse max-[780px]:gap-8">
-      <motion.div
+    <m.div
+      className="relative z-10 w-full flex items-center justify-between gap-10 flex-row-reverse max-[780px]:flex-col-reverse max-[780px]:gap-8"
+      variants={stagger(0.08, 0.1)}
+      initial="hidden"
+      animate="show"
+    >
+      <m.div
         className="w-2/5 flex justify-center shrink-0 max-[780px]:w-[60%] max-[500px]:w-[75%]"
-        initial={{ opacity: 0, x: 40, scale: 0.96 }}
-        whileInView={{ opacity: 1, x: 0, scale: 1 }}
-        viewport={{ once: false, amount: 0.3 }}
-        transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+        variants={{
+          hidden: { opacity: 0, x: 80, scale: 0.7, rotate: 10 },
+          show: { opacity: 1, x: 0, scale: 1, rotate: 0, transition: bounceSoft },
+        }}
+        whileHover={{ scale: 1.04, rotate: 2, transition: bounceSoft }}
       >
         <SpotlightImage src={MyImage} alt="Vivek Thakur" />
-      </motion.div>
-      <div className="w-[55%] max-[780px]:w-full max-[780px]:text-center max-[500px]:text-left">
-        <a
+      </m.div>
+      <m.div
+        className="w-[55%] max-[780px]:w-full max-[780px]:text-center max-[500px]:text-left"
+        variants={stagger(0.1)}
+      >
+        <m.a
           href={Data.myCV}
           className="group no-underline absolute top-5 right-5 z-[1200] inline-flex items-center gap-2 rounded-lg bg-btn px-5 py-2.5 text-sm font-semibold text-white hover:brightness-110 transition max-[780px]:static max-[780px]:mb-6 max-[500px]:mb-4"
           download="VivekThakurCV.pdf"
+          variants={fadeUp}
+          whileHover={squishHover}
+          whileTap={squishTap}
         >
           <RiDownloadLine className="text-base transition-transform group-hover:translate-y-0.5" />
           Resume
-        </a>
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: false, amount: 0.3 }}
-          transition={{ duration: 0.7, ease: "easeOut", delay: 0.25 }}
-        >
+        </m.a>
+        <m.div variants={fadeUp}>
           <Typewriter text={Data.user.IntroLine} />
-          <p className="opacity-80 mt-6 max-w-xl leading-relaxed max-[780px]:mx-auto max-[500px]:mx-0 max-[500px]:text-[90%]">
-            {Data.user.About}
-          </p>
-          <p
-            className="mt-6 flex items-center gap-1 max-[780px]:justify-center max-[500px]:justify-start"
-            style={{ opacity: 0.6, fontSize: "1.5rem" }}
-          >
-            <CiLocationOn /> {Data.user.location}
-          </p>
-        </motion.div>
-      </div>
-    </div>
+        </m.div>
+        <m.p
+          className="opacity-80 mt-6 max-w-xl leading-relaxed max-[780px]:mx-auto max-[500px]:mx-0 max-[500px]:text-[90%]"
+          variants={fadeUp}
+        >
+          {Data.user.About}
+        </m.p>
+        <m.p
+          className="mt-6 flex items-center gap-1 max-[780px]:justify-center max-[500px]:justify-start"
+          style={{ opacity: 0.6, fontSize: "1.5rem" }}
+          variants={fadeUp}
+        >
+          <CiLocationOn /> {Data.user.location}
+        </m.p>
+      </m.div>
+    </m.div>
   </div>
 );
 

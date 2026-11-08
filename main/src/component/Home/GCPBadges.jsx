@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import PropTypes from "prop-types";
 import { RxExternalLink } from "react-icons/rx";
 import { SiGooglecloud } from "react-icons/si";
 import { FiGithub } from "react-icons/fi";
 import Data from "../../Data.json";
+import { fadeUp, pop, scaleIn, squishHover, squishTap, stagger, viewportOnce } from "../../motion";
 
 const API_BASE = "/gcp-badges";
 const { profileId, profileUrl, apiBaseUrl } = Data.gcpSkillBoost;
@@ -49,29 +50,29 @@ const pickBadges = (json) => json.badges || [];
 const pickAchievements = (json) => json.achievements || [];
 
 const BadgeCard = ({ href, title, image, tier }) => (
-  <motion.a
+  <m.a
     href={href}
     target="_blank"
     rel="noreferrer"
     title={title}
     className="group relative flex items-center justify-center w-36 h-36 max-[680px]:w-28 max-[680px]:h-28"
-    variants={{ hidden: { opacity: 0, scale: 0.8 }, show: { opacity: 1, scale: 1 } }}
-    whileHover={{ y: -6 }}
-    transition={{ type: "spring", stiffness: 280, damping: 20 }}
+    variants={scaleIn}
+    whileHover={{ y: -12, scale: 1.15, rotate: -4, transition: pop }}
+    whileTap={squishTap}
   >
     <img
       src={image}
       alt={title}
       loading="lazy"
       decoding="async"
-      className="relative w-full h-full object-contain rounded-2xl transition-transform duration-300 group-hover:scale-110"
+      className="relative w-full h-full object-contain rounded-2xl"
     />
     {tier > 1 && (
       <span className="absolute bottom-1 right-1 rounded-full bg-card px-2 py-0.5 text-xs font-semibold text-font1">
         x{tier}
       </span>
     )}
-  </motion.a>
+  </m.a>
 );
 
 BadgeCard.propTypes = {
@@ -83,17 +84,17 @@ BadgeCard.propTypes = {
 
 const Section = ({ icon: Icon, title, accent, subtitle, status, items, renderItem, link, linkLabel, emptyText }) => (
   <div className="w-full h-full my-[5%] mx-auto relative">
-    <motion.h2
+    <m.h2
       className="text-[2.5rem] font-normal p-4 text-center mb-[1%] max-[680px]:text-[2rem]"
       style={{ textTransform: "capitalize" }}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false, amount: 0.6 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
+      variants={fadeUp}
+      initial="hidden"
+      whileInView="show"
+      viewport={viewportOnce}
     >
       <Icon style={{ marginBottom: "-6px", color: "var(--btn_color)" }} /> {title}{" "}
       <span style={{ color: "var(--btn_color)" }}>{accent}</span>
-    </motion.h2>
+    </m.h2>
 
     {subtitle && status === "ready" && (
       <p className="text-center mb-[3%]" style={{ opacity: 0.7 }}>
@@ -124,24 +125,26 @@ const Section = ({ icon: Icon, title, accent, subtitle, status, items, renderIte
 
     {status === "ready" && (
       <>
-        <motion.div
+        <m.div
           className="w-[80%] mx-auto flex flex-wrap justify-center items-center gap-6 max-[680px]:w-full max-[680px]:gap-4"
-          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.06 } } }}
+          variants={stagger(0.06)}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={viewportOnce}
         >
           {items.map(renderItem)}
-        </motion.div>
+        </m.div>
         <div className="text-center mt-[3%]">
-          <a
+          <m.a
             href={link}
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-1.5 rounded-md bg-btn px-4 py-2 text-sm font-semibold text-white no-underline hover:brightness-110 transition"
+            whileHover={squishHover}
+            whileTap={squishTap}
           >
             {linkLabel} <RxExternalLink />
-          </a>
+          </m.a>
         </div>
       </>
     )}

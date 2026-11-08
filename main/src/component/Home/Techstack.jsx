@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
+import { pop, scaleIn, squishTap, stagger, viewportOnce } from "../../motion";
 import {
   SiPython,
   SiJavascript,
@@ -80,15 +81,15 @@ const TechStack = () => {
           Tools 📐
         </h2>
       </div>
-      <motion.div
+      <m.div
         className="w-[70%] mx-auto text-center max-[680px]:w-full"
-        variants={{ hidden: {}, show: { transition: { staggerChildren: 0.035 } } }}
+        variants={stagger(0.03)}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={viewportOnce}
       >
         {STACK.map((Icon, index) => (
-          <motion.span
+          <m.span
             key={index}
             className="inline-flex align-middle text-[3rem] m-[1%] text-font1 hover:text-btn transition-colors duration-300 max-[680px]:text-[1.25rem]"
             style={{
@@ -97,14 +98,14 @@ const TechStack = () => {
               borderRadius: ".8rem",
               border: "var(--border1)",
             }}
-            variants={{ hidden: { opacity: 0, scale: 0.4 }, show: { opacity: 1, scale: 1 } }}
-            whileHover={{ scale: 1.3 }}
-            transition={{ type: "spring", stiffness: 300, damping: 18 }}
+            variants={scaleIn}
+            whileHover={{ scale: 1.35, rotate: -8, y: -4, transition: pop }}
+            whileTap={squishTap}
           >
             <Icon />
-          </motion.span>
+          </m.span>
         ))}
-      </motion.div>
+      </m.div>
     </div>
   );
 };

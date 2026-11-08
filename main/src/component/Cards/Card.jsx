@@ -1,10 +1,10 @@
-import { motion } from "framer-motion";
-import { RxExternalLink } from "react-icons/rx";
-import { PiTagSimple } from "react-icons/pi";
+import { m } from "framer-motion";
+import { FiArrowUpRight, FiGithub } from "react-icons/fi";
 import { SiNextdotjs, SiGooglecloud, SiPokemon } from "react-icons/si";
 import { RiRobot2Line } from "react-icons/ri";
 import { LuNetwork } from "react-icons/lu";
 import PropTypes from "prop-types";
+import { fadeUp, pop } from "../../motion";
 
 const ICONS = {
   nextjs: SiNextdotjs,
@@ -14,81 +14,88 @@ const ICONS = {
   network: LuNetwork,
 };
 
-const mediaClass =
-  "max-w-full max-h-full object-contain rounded-[.8rem] max-[680px]:w-full";
-
-const Thumbnail = ({ project }) => {
+const Cover = ({ project }) => {
   if (project.image) {
     return (
-      <img src={project.image} alt="" loading="lazy" decoding="async" className={mediaClass} />
+      <img
+        src={project.image}
+        alt=""
+        loading="lazy"
+        decoding="async"
+        className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.06]"
+      />
     );
   }
   const Icon = ICONS[project.icon];
   return (
-    <div className="w-full aspect-video max-h-full flex items-center justify-center rounded-[.8rem] border-2 border-dashed border-white/20">
-      <Icon className="text-[6rem] text-font1 opacity-60" />
+    <div className="w-full h-full flex items-center justify-center border-2 border-dashed border-white/15">
+      {Icon && <Icon className="text-[4.5rem] text-font1 opacity-50" />}
     </div>
   );
 };
-Thumbnail.propTypes = { project: PropTypes.object.isRequired };
+Cover.propTypes = { project: PropTypes.object.isRequired };
 
-const Cards = ({ project }) => {
+const isGithub = (url) => /github\.com/.test(url);
+
+const Cards = ({ project, featured = false }) => {
+  const tags = project.tech_stack.split(",").map((t) => t.trim()).filter(Boolean);
+  const [title, subtitle] = project.name.split("|").map((s) => s.trim());
+
   return (
-    <motion.div
-      className="w-full h-[20rem] my-16 mx-auto flex gap-2 items-stretch rounded-[.2rem] box-border opacity-90 even:flex-row-reverse max-[680px]:my-[12%] max-[680px]:flex-col! max-[680px]:h-[30rem]"
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false, amount: 0.2 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
-      whileHover={{ scale: 0.97 }}
+    <m.a
+      href={project.link}
+      target="_blank"
+      rel="noreferrer"
+      className={`group no-underline text-font1 flex flex-col rounded-2xl border border-white/10 bg-card/40 overflow-hidden hover:border-white/25 transition-colors duration-300 ${
+        featured ? "md:col-span-2 md:flex-row" : ""
+      }`}
+      variants={fadeUp}
+      whileHover={{ y: -8, scale: 1.02, transition: pop }}
+      whileTap={{ scaleX: 1.03, scaleY: 0.96, transition: pop }}
     >
-      <div className="flex-[0_0_55%] min-[1280px]:flex-[0_0_64%] w-full h-full flex items-center justify-center rounded-[.2rem] overflow-hidden shrink-0 max-[680px]:flex-none max-[680px]:h-auto">
-        <Thumbnail project={project} />
+      <div
+        className={`relative overflow-hidden bg-dark1 shrink-0 ${
+          featured ? "aspect-video md:aspect-auto md:w-[58%]" : "aspect-video"
+        }`}
+      >
+        <Cover project={project} />
       </div>
 
-      <div className="flex flex-col justify-between items-start px-4 py-2 max-[680px]:w-full! max-[680px]:px-0! max-[680px]:py-[.02rem]!">
-        <h2 className="uppercase font-normal text-[1.1rem] py-2 m-0">
-          <RxExternalLink
-            className="relative top-[2px]"
-            style={{ transform: "rotateY(-180deg)" }}
-          />{" "}
-          {project.name}
-        </h2>
-        <div className="my-auto mx-0 max-[680px]:w-full! max-[680px]:px-0! max-[680px]:py-[.02rem]!">
-          <p
-            className="text-[.8rem] pt-0 px-2 pb-2 m-0 max-w-[90%] leading-[1.3]"
-            style={{ opacity: ".85" }}
-          >
-            {project.description}
-          </p>
+      <div className="flex flex-col gap-3 p-5 flex-1">
+        <div className="flex items-start justify-between gap-3">
+          <div>
+            <h3 className={`font-semibold leading-tight m-0 ${featured ? "text-xl" : "text-base"}`}>
+              {title}
+            </h3>
+            {subtitle && <p className="text-xs opacity-50 mt-1">{subtitle}</p>}
+          </div>
+          <span className="shrink-0 inline-flex items-center justify-center w-8 h-8 rounded-full border border-white/10 text-font1 opacity-70 group-hover:opacity-100 group-hover:bg-btn group-hover:border-btn group-hover:text-white group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:rotate-12 group-hover:scale-110 transition-[color,background-color,border-color,transform] duration-300">
+            {isGithub(project.link) ? <FiGithub /> : <FiArrowUpRight />}
+          </span>
         </div>
-        <p className="inline-block no-underline text-font1 rounded-[.2rem] text-[.75rem] font-medium p-[.3rem] mt-0 mx-2 mb-2">
-          <PiTagSimple
-            style={{
-              position: "relative",
-              bottom: "-2px",
-              paddingRight: "5px",
-            }}
-          />
-          {project.tech_stack}
+
+        <p className={`text-sm opacity-70 leading-relaxed m-0 ${featured ? "" : "line-clamp-3"}`}>
+          {project.description}
         </p>
-        <a
-          href={project.link}
-          target="_blank"
-          rel="noreferrer"
-          className="mx-2 mb-2 inline-flex items-center gap-1.5 rounded-md bg-btn px-3 py-1.5 text-xs font-semibold text-white no-underline hover:brightness-110 transition"
-        >
-          Open Project <RxExternalLink />
-        </a>
+
+        <ul className="flex flex-wrap gap-1.5 mt-auto pt-2 list-none p-0 m-0">
+          {tags.slice(0, featured ? 8 : 5).map((t) => (
+            <li
+              key={t}
+              className="text-[0.7rem] px-2 py-0.5 rounded-md border border-white/10 opacity-70"
+            >
+              {t}
+            </li>
+          ))}
+        </ul>
       </div>
-    </motion.div>
+    </m.a>
   );
 };
+
 Cards.propTypes = {
   project: PropTypes.object.isRequired,
-  name: PropTypes.string,
-  description: PropTypes.string,
-  tech_stack: PropTypes.string,
-  image: PropTypes.string,
+  featured: PropTypes.bool,
 };
+
 export default Cards;

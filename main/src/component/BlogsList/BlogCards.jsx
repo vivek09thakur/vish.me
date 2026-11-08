@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FiArrowRight } from "react-icons/fi";
+import { fadeUp, pop, viewportOnce } from "../../motion";
 
 const formatDate = (iso) =>
   new Date(iso).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
@@ -9,12 +10,13 @@ const formatDate = (iso) =>
 const CreateBlogPosts = ({ posts }) => {
   const href = `/blog/${posts.id}`;
   return (
-    <motion.article
+    <m.article
       className="group w-[80%] py-6 border-b border-white/10 max-[780px]:w-full"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.4, ease: "easeOut" }}
+      variants={fadeUp}
+      initial="hidden"
+      whileInView="show"
+      viewport={viewportOnce}
+      whileHover={{ x: 10, transition: pop }}
     >
       <p className="text-xs opacity-50 mb-2">
         {formatDate(posts.published_at)} · {posts.reading_time_minutes} min read
@@ -35,13 +37,13 @@ const CreateBlogPosts = ({ posts }) => {
           to={href}
           className="inline-flex items-center gap-1 text-sm text-btn no-underline hover:text-green1 transition-colors"
         >
-          Read more <FiArrowRight className="transition-transform group-hover:translate-x-0.5" />
+          Read more <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1.5" />
         </Link>
         {posts.tag_list.length > 0 && (
           <span className="text-xs opacity-40">{posts.tag_list.map((t) => `#${t}`).join("  ")}</span>
         )}
       </div>
-    </motion.article>
+    </m.article>
   );
 };
 

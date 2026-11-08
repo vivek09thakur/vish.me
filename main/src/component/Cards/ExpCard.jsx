@@ -1,17 +1,18 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import PropTypes from "prop-types";
+import { fadeUp, viewportOnce } from "../../motion";
 
 const ExpCard = ({ exp }) => {
   const isCurrent = !exp.end_date || exp.end_date === "Present";
   const endDate = isCurrent ? "Present" : exp.end_date;
 
   return (
-    <motion.div
+    <m.div
       className="w-full px-1 pb-4"
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false, amount: 0.3 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
+      variants={fadeUp}
+      initial="hidden"
+      whileInView="show"
+      viewport={viewportOnce}
     >
       <p className="text-xs font-medium opacity-60 mb-2">
         {exp.start_date} -{" "}
@@ -29,7 +30,7 @@ const ExpCard = ({ exp }) => {
         <span className="font-medium uppercase">Roles &amp; Responsibilities :</span>{" "}
         <span className="opacity-70">{exp.description}</span>
       </p>
-    </motion.div>
+    </m.div>
   );
 };
 

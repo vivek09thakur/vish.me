@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
+import { m } from "framer-motion";
 import { FiArrowLeft, FiExternalLink } from "react-icons/fi";
 import useDocumentMeta from "../../useDocumentMeta";
+import { fadeUp, stagger } from "../../motion";
 
 const BlogPost = () => {
   const { id } = useParams();
@@ -68,29 +70,41 @@ const BlogPost = () => {
   );
 
   return (
-    <div className="max-w-3xl mx-auto px-5 py-14 max-[680px]:py-10">
-      <BackLink />
+    <m.div
+      className="max-w-3xl mx-auto px-5 py-14 max-[680px]:py-10"
+      variants={stagger(0.08)}
+      initial="hidden"
+      animate="show"
+    >
+      <m.div variants={fadeUp}>
+        <BackLink />
+      </m.div>
 
-      <h1 className="mt-8 text-4xl font-archivo leading-tight max-[680px]:text-3xl">
+      <m.h1
+        className="mt-8 text-4xl font-archivo leading-tight max-[680px]:text-3xl"
+        variants={fadeUp}
+      >
         {post.title}
-      </h1>
+      </m.h1>
 
-      <p className="mt-4 text-sm opacity-50">
+      <m.p className="mt-4 text-sm opacity-50" variants={fadeUp}>
         {post.readable_publish_date} · {post.reading_time_minutes} min read
-      </p>
+      </m.p>
 
       {post.cover_image && (
-        <img
+        <m.img
           src={post.cover_image}
           alt=""
           loading="lazy"
           decoding="async"
           className="w-full rounded-xl mt-8"
+          variants={fadeUp}
         />
       )}
 
-      <article
+      <m.article
         className="blog-content mt-10"
+        variants={fadeUp}
         dangerouslySetInnerHTML={{ __html: post.body_html }}
       />
 
@@ -98,7 +112,7 @@ const BlogPost = () => {
         <BackLink />
         <DevToLink />
       </div>
-    </div>
+    </m.div>
   );
 };
 
