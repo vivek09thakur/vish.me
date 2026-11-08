@@ -2,9 +2,24 @@ import { m } from "framer-motion";
 import PropTypes from "prop-types";
 import { fadeUp, viewportOnce } from "../../motion";
 
-const ExpCard = ({ exp }) => {
+const ExpCard = ({ exp, color, compact = false }) => {
   const isCurrent = !exp.end_date || exp.end_date === "Present";
   const endDate = isCurrent ? "Present" : exp.end_date;
+
+  if (compact) {
+    return (
+      <div className="w-full">
+        <p className="text-sm font-semibold m-0 leading-tight" style={{ color }}>
+          {exp.start_date} – {endDate}
+        </p>
+        <h3 className="text-[0.95rem] font-semibold mt-2 m-0 text-font1 leading-snug max-[680px]:text-base">
+          {exp.company_name}
+          <span className="font-normal opacity-60"> · {exp.designation}</span>
+        </h3>
+        <p className="text-xs opacity-65 mt-3 m-0 leading-relaxed line-clamp-4 max-[680px]:text-[0.85rem] max-[680px]:leading-[1.8] max-[680px]:line-clamp-none">{exp.description}</p>
+      </div>
+    );
+  }
 
   return (
     <m.div
@@ -36,6 +51,8 @@ const ExpCard = ({ exp }) => {
 
 ExpCard.propTypes = {
   exp: PropTypes.object.isRequired,
+  color: PropTypes.string,
+  compact: PropTypes.bool,
 };
 
 export default ExpCard;

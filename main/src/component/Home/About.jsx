@@ -16,18 +16,18 @@ const About = () => {
 
   const MyExp = () => {
     return (
-      <div className="max-[680px]:w-full">
+      <div className="max-[680px]:w-full px-6 pt-4 pb-10 md:px-10 md:pt-6 md:pb-14">
         <m.h2
-          className="text-[2.5rem] font-normal mt-[2%] mb-0 mx-0 max-[680px]:mt-[2.2rem] max-[680px]:mb-[2rem] max-[680px]:text-[1.4rem]"
+          className="text-[2.5rem] font-normal mt-0 mb-10 mx-0 text-center max-[680px]:text-left max-[680px]:text-[1.6rem] max-[680px]:mb-6"
           style={{ textTransform: "capitalize" }}
           variants={fadeUp}
           initial="hidden"
           whileInView="show"
           viewport={viewportOnce}
         >
-          My Experiences
+          My Journey So Far
         </m.h2>
-        <div className="mt-6 max-[680px]:mt-8">
+        <div className="max-[680px]:mt-8">
           <ExpTimeline experiences={experiences} />
         </div>
       </div>

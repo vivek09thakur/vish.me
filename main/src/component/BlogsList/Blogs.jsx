@@ -39,7 +39,7 @@ const BlogList = () => {
   return (
     <div className="w-[90%] ml-[10%] pb-[4%] max-[780px]:w-[85%] max-[780px]:pt-[10%] max-[780px]:pb-[15%] max-[780px]:mt-0 max-[780px]:mr-0 max-[780px]:mb-0 max-[780px]:ml-[15%]">
       <m.h3
-        className="text-[2rem] font-medium mb-2"
+        className="text-[2rem] font-medium mb-6"
         variants={fadeUp}
         initial="hidden"
         whileInView="show"
@@ -47,9 +47,11 @@ const BlogList = () => {
       >
         My Recent Blogs
       </m.h3>
-      {posts.slice(0, 10).map((post) => (
-        <CreateBlogPosts key={post.id} posts={post} />
-      ))}
+      <div className="flex flex-col gap-4">
+        {posts.slice(0, 10).map((post) => (
+          <CreateBlogPosts key={post.id} posts={post} />
+        ))}
+      </div>
     </div>
   );
 };
