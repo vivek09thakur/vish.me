@@ -15,8 +15,12 @@
     "dev": "vivek09thakur"
   },
   "RandomAboutText": [
-    "My Projects and Contributions",
+    "Major Projects",
     "Things like 'Completed Projects' doesn't exsist in my life as I got an idea about a project and I start working on them. There's always something there which I find that can be improved. So every project is ongoing. "
+  ],
+  "weekendIntro": [
+    "Weekend Projects",
+    "Small side projects I built while learning machine learning algorithms — quick experiments, each one shipped as a tiny web app."
   ],
   "exp": {
     "exp1": {
@@ -63,47 +67,73 @@
     }
   },
   "projects": {
-    "project6": {
+    "ishvarax": {
       "name": "IshvaraX",
       "description": "A community platform for people who love to code — open freelance-style projects with applications, study materials organised by topic, a member-written blog, a showcase of shipped apps and an admin panel managing all of it.",
       "link": "https://ishvarax.vercel.app",
       "tech_stack": "Next.js 15, TypeScript, Tailwind CSS v4, Material 3, FastAPI",
       "image": "/projects/ishvarax.png"
     },
-    "project5": {
+    "saturday": {
+      "name": "Saturday",
+      "description": "A small framework for building and training your own voice assistant on a small language model — describe a persona, write a few example conversations, optionally add tools, and Saturday handles LoRA fine-tuning, speech in and out, speaker logins, and running the model on a free Colab GPU. Published on PyPI as saturday-ai; JERN is built on it.",
+      "link": "https://github.com/vivek09thakur/SATURDAY",
+      "tech_stack": "Python, Hugging Face, PEFT (LoRA), llama.cpp, faster-whisper, Google Colab",
+      "icon": "robot"
+    },
+    "jern": {
       "name": "JERN",
       "description": "Just an Experimental Response Network — a personal AI assistant with a cloud-GPU brain and local hands. A fine-tuned Qwen2.5-1.5B model runs on a free Colab GPU while file, shell, web-search and MCP tools execute on your own machine.",
       "link": "https://github.com/IshvaraX/JERN",
       "tech_stack": "Python, PyTorch, Hugging Face, FastAPI, MCP, Google Colab",
       "image": "/projects/jern.png"
     },
-    "project4": {
-      "name": "Google Cloud Skill Boost Badges API",
-      "description": "A lightweight API that scrapes a Google Cloud Skills Boost public profile and returns its earned badges as JSON — the same API that powers the badges section on this site.",
-      "link": "https://github.com/vivek09thakur/Google-Cloud-Skill-Boost_Badges-API",
-      "tech_stack": "Python, Flask, BeautifulSoup, Vercel",
-      "icon": "gcp"
-    },
-    "project3": {
-      "name": "Pokemon Team Analyzer",
-      "description": "A web app that allows users to create and analyze Pokémon team's weaknesses, defensive coverage, and type distribution using data from the PokéAPI.",
-      "link": "https://pokemon-team-analyzer.vercel.app/",
-      "tech_stack": "HTML5, CSS3, Javascript, Tailwind CSS, API, PokeAPI",
-      "image": "/projects/pokemon-team-analyzer.png"
-    },
-    "project2": {
+    "lan": {
       "name": "LAN-Analysis",
       "description": "A Python-based local web app with a React.js UI that analyzes a star topology LAN network, providing details on connected devices, bandwidth usage, network interfaces, Wi-Fi, vEthernet, and DNS server information.",
       "link": "https://github.com/vivek09thakur/LAN-Analysis",
       "tech_stack": "React.js, Python, Flask, Web APIs",
       "image": "/projects/lan-analyzer.png"
     },
-    "project1":{
-      "name":"LearnIT | Open-Source Book distribution platform",
+    "devbadges": {
+      "name": "DevBadges API | formerly Google Cloud Skill Boost Badges API",
+      "description": "Read-only API for showing off a dev profile — Google Cloud Skills Boost badges and GitHub achievements as JSON or embeddable SVG grids, plus a Google weather-card scraper. It powers the badges section on this site.",
+      "link": "https://dev-badges.vercel.app/docs",
+      "tech_stack": "Python, FastAPI, Pydantic, Vercel",
+      "image": "/projects/dev-badges.png"
+    },
+    "learnit": {
+      "name": "LearnIT | Open-Source Book distribution platform",
       "description": "A platform for distributing and accessing open-source books, enabling users to share and discover educational resources.",
       "link": "https://learn-it.vercel.app",
       "tech_stack": "Python, Django, React.js",
       "image": "/projects/learnit.png"
+    }
+  },
+  "weekendProjects": {
+    "hiro": {
+      "name": "HIRO",
+      "description": "Your personal healthcare companion — an ML model that analyzes reported symptoms and suggests likely conditions, wrapped in a simple web UI.",
+      "link": "https://hiro-ml-disease-symptoms-analyzer.vercel.app/",
+      "repo": "https://github.com/vivek09thakur/HIRO",
+      "tech_stack": "Python, scikit-learn, Flask, JavaScript",
+      "icon": "network"
+    },
+    "imageclf": {
+      "name": "ML Image Classification",
+      "description": "Groups images that resemble a sample image using ImageNet features extracted with Keras and ranked by cosine similarity — now served as a small web model.",
+      "link": "https://ml-image-classification.vercel.app/",
+      "repo": "https://github.com/vivek09thakur/ML-Image-Classification",
+      "tech_stack": "Python, Keras, ImageNet, FastAPI",
+      "icon": "network"
+    },
+    "tictactoe": {
+      "name": "TicTacToe AI",
+      "description": "An unbeatable Tic-Tac-Toe agent using memoised minimax with a stateless FastAPI backend — ships as a single Vercel function and comes with an exhaustive test proving it never loses.",
+      "link": "https://tic-tac-toeee-ai.vercel.app/",
+      "repo": "https://github.com/vivek09thakur/TicTacToe-AI",
+      "tech_stack": "Python, FastAPI, Minimax, HTML/CSS/JS",
+      "icon": "pokemon"
     }
   },
 

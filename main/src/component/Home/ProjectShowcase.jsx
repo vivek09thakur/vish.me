@@ -5,7 +5,8 @@ import { FiArrowUpRight, FiGithub } from "react-icons/fi";
 import { SiNextdotjs, SiGooglecloud, SiPokemon } from "react-icons/si";
 import { RiRobot2Line } from "react-icons/ri";
 import { LuNetwork } from "react-icons/lu";
-import { bounce, bounceSoft, fadeUp, pop, squishHover, squishTap, stagger, viewportOnce } from "../../motion";
+import SourcePreview from "./SourcePreview";
+import { bounce, bounceSoft, fadeUp, pop, squishTap, stagger, viewportOnce } from "../../motion";
 
 const ICONS = {
   nextjs: SiNextdotjs,
@@ -20,6 +21,20 @@ const splitName = (name) => name.split("|").map((s) => s.trim());
 
 const Preview = ({ project }) => {
   const Icon = ICONS[project.icon];
+  let media;
+  if (project.image) {
+    media = (
+      <img src={project.image} alt="" decoding="async" className="w-full h-full object-cover object-top" />
+    );
+  } else if (isGithub(project.link)) {
+    media = <SourcePreview />;
+  } else {
+    media = (
+      <div className="w-full h-full flex items-center justify-center border border-dashed border-white/15 rounded-xl">
+        {Icon && <Icon className="text-[4rem] text-font1 opacity-40" />}
+      </div>
+    );
+  }
   return (
     <m.div
       className="relative overflow-hidden rounded-xl bg-dark1 aspect-video"
@@ -27,18 +42,7 @@ const Preview = ({ project }) => {
       animate={{ opacity: 1, y: 0, transition: bounceSoft }}
       exit={{ opacity: 0, y: -12, transition: { duration: 0.18 } }}
     >
-      {project.image ? (
-        <img
-          src={project.image}
-          alt=""
-          decoding="async"
-          className="w-full h-full object-cover object-top"
-        />
-      ) : (
-        <div className="w-full h-full flex items-center justify-center border border-dashed border-white/15 rounded-xl">
-          {Icon && <Icon className="text-[4rem] text-font1 opacity-40" />}
-        </div>
-      )}
+      {media}
     </m.div>
   );
 };
@@ -90,7 +94,7 @@ const ProjectShowcase = ({ projects }) => {
                 onClick={() => setActive(key)}
                 className={`block w-full text-left appearance-none cursor-pointer font-[inherit] px-4 py-3 rounded-xl border outline-none transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-green1/60 ${
                   selected
-                    ? "bg-btn border-btn text-white"
+                    ? "bg-green1 border-green1 text-dark1"
                     : "bg-card/40 border-white/10 text-font1/70 hover:bg-card/70 hover:border-white/20 hover:text-font1"
                 }`}
                 whileHover={{ y: -3, transition: pop }}
@@ -99,7 +103,7 @@ const ProjectShowcase = ({ projects }) => {
                 <span className="block text-sm font-semibold leading-tight whitespace-nowrap md:whitespace-normal">
                   {name}
                 </span>
-                <span className={`hidden md:block text-[0.7rem] mt-1 truncate ${selected ? "text-white/70" : "opacity-50"}`}>
+                <span className={`hidden md:block text-[0.7rem] mt-1 truncate ${selected ? "text-dark1/70" : "opacity-50"}`}>
                   {sub || p.tech_stack.split(",").slice(0, 2).join(" · ")}
                 </span>
               </m.button>
@@ -109,9 +113,29 @@ const ProjectShowcase = ({ projects }) => {
       </m.ul>
 
       <m.div className="min-w-0" variants={fadeUp}>
-        <AnimatePresence mode="wait" initial={false}>
-          <Preview key={active} project={project} />
-        </AnimatePresence>
+        <div className="relative">
+          <AnimatePresence mode="wait" initial={false}>
+            <Preview key={active} project={project} />
+          </AnimatePresence>
+          <m.a
+            href={project.link}
+            target="_blank"
+            rel="noreferrer"
+            className="group absolute top-3 right-3 z-10 inline-flex items-center gap-2 rounded-full bg-green1 px-4 py-2 text-sm font-semibold text-dark1 no-underline hover:bg-[#d4f78a] transition-colors duration-200"
+            whileHover={{ y: -2, transition: pop }}
+            whileTap={squishTap}
+          >
+            {isGithub(project.link) ? (
+              <>
+                View source <FiGithub className="text-base transition-transform duration-300 ease-bounce group-hover:-translate-y-0.5" />
+              </>
+            ) : (
+              <>
+                Visit site <FiArrowUpRight className="text-base transition-transform duration-300 ease-bounce group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              </>
+            )}
+          </m.a>
+        </div>
 
         <AnimatePresence mode="wait" initial={false}>
           <m.div
@@ -121,32 +145,16 @@ const ProjectShowcase = ({ projects }) => {
             animate={{ opacity: 1, y: 0, transition: { ...bounce, delay: 0.05 } }}
             exit={{ opacity: 0, y: -8, transition: { duration: 0.15 } }}
           >
-            <div className="flex items-start justify-between gap-4">
-              <div className="min-w-0">
-                <h3 className="text-2xl font-medium leading-tight m-0">{title}</h3>
-                {subtitle && <p className="text-xs opacity-50 mt-1 m-0">{subtitle}</p>}
-              </div>
-              <m.a
-                href={project.link}
-                target="_blank"
-                rel="noreferrer"
-                className="shrink-0 inline-flex items-center gap-1.5 rounded-md bg-btn px-4 py-2 text-sm font-semibold text-white no-underline"
-                whileHover={squishHover}
-                whileTap={squishTap}
-              >
-                {isGithub(project.link) ? (
-                  <>
-                    Source <FiGithub />
-                  </>
-                ) : (
-                  <>
-                    Visit <FiArrowUpRight />
-                  </>
-                )}
-              </m.a>
+            <div className="min-w-0">
+              <h3 className="text-2xl font-medium leading-tight m-0">{title}</h3>
+              {subtitle && <p className="text-xs opacity-50 mt-1 m-0">{subtitle}</p>}
             </div>
             <p className="text-sm opacity-70 leading-relaxed m-0 max-w-2xl">{project.description}</p>
-            <p className="text-xs opacity-40 m-0">{tags.join(" · ")}</p>
+            <p className="text-xs text-[#5b8def] m-0 flex flex-wrap gap-x-3 gap-y-1">
+              {tags.map((t) => (
+                <span key={t}>#{t.replace(/\s+/g, "")}</span>
+              ))}
+            </p>
           </m.div>
         </AnimatePresence>
       </m.div>

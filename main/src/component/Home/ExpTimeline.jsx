@@ -24,7 +24,7 @@ const ARROW_SHAPES = {
 
 const Arrow = ({ dir = "right", className = "" }) => (
   <span
-    className={`absolute bg-green1 z-10 ${dir === "down" ? "w-3 h-3.5" : "w-3.5 h-3"} ${className}`}
+    className={`absolute bg-btn/50 z-10 ${dir === "down" ? "w-4 h-[18px]" : "w-[18px] h-4"} ${className}`}
     style={{ clipPath: ARROW_SHAPES[dir] }}
   />
 );
@@ -36,11 +36,11 @@ const ExpTimeline = ({ experiences }) => {
   if (isMobile) {
     return (
       <div className="relative pl-10">
-        <div className="absolute top-3 bottom-3 left-[7px] w-0.5 bg-btn/40" />
+        <div className="absolute top-3 bottom-3 left-[6px] w-1 bg-btn/50" />
         <div className="flex flex-col gap-6">
           {experiences.map((exp, i) => (
             <div key={i} className="relative">
-              <Arrow dir="down" className="top-7 -left-[38px]" />
+              <Arrow dir="down" className="top-7 -left-[40px]" />
               <ExpCard exp={exp} />
             </div>
           ))}
@@ -62,7 +62,7 @@ const ExpTimeline = ({ experiences }) => {
           <div key={r} className={`relative ${r > 0 ? "pt-14" : ""}`}>
             {r > 0 && (
               <span
-                className={`absolute -top-0.5 bottom-0 w-14 border-2 border-btn/50 ${
+                className={`absolute -top-1 bottom-0 w-14 border-4 border-btn/50 ${
                   reversed
                     ? "-right-14 border-l-0 rounded-r-full"
                     : "-left-14 border-r-0 rounded-l-full"
@@ -70,14 +70,14 @@ const ExpTimeline = ({ experiences }) => {
               />
             )}
             <div className={`relative flex items-stretch ${reversed ? "flex-row-reverse" : ""}`}>
-              <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-btn/50" />
+              <span className="absolute left-0 right-0 bottom-0 h-1 bg-btn/50" />
               {row.map((exp, i) => (
                 <div
                   key={i}
                   className="relative shrink-0 px-3 pb-5 flex"
                   style={{ width: CELL_WIDTH }}
                 >
-                  <Arrow dir="left" className="-bottom-[5px] left-1/2 -translate-x-1/2" />
+                  <Arrow dir="left" className="-bottom-1.5 left-1/2 -translate-x-1/2" />
                   <ExpCard exp={exp} />
                 </div>
               ))}

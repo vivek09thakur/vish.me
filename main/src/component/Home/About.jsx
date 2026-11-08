@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from "react";
 import { m } from "framer-motion";
+import PropTypes from "prop-types";
 import Data from "../../Data.json";
 import TechStack from "./Techstack";
 import GCPBadges from "./GCPBadges";
@@ -7,10 +8,10 @@ import ExpTimeline from "./ExpTimeline";
 import { fadeUp, viewportOnce } from "../../motion";
 
 const ProjectShowcase = lazy(() => import("./ProjectShowcase"));
+const WeekendProjects = lazy(() => import("./WeekendProjects"));
 
 const About = () => {
-  const { RandomAboutText } = Data;
-  const [randomTitle, randomDescription] = RandomAboutText;
+  const { RandomAboutText, weekendIntro } = Data;
   const experiences = Object.values(Data.exp).reverse();
 
   const MyExp = () => {
@@ -33,7 +34,7 @@ const About = () => {
     );
   };
 
-  const RandomText = () => {
+  const SectionIntro = ({ title, text }) => {
     return (
       <>
         <m.h2
@@ -44,7 +45,7 @@ const About = () => {
           whileInView="show"
           viewport={viewportOnce}
         >
-          {randomTitle}
+          {title}
         </m.h2>
         <m.p
           className="w-[70%] pb-[5%] opacity-70 max-[680px]:w-full max-[680px]:mb-[10%]"
@@ -53,18 +54,23 @@ const About = () => {
           whileInView="show"
           viewport={viewportOnce}
         >
-          {randomDescription}
+          {text}
         </m.p>
       </>
     );
   };
+  SectionIntro.propTypes = { title: PropTypes.string.isRequired, text: PropTypes.string.isRequired };
 
   return (
     <div className="w-[90%] h-full ml-[10%] relative bg-dark1 max-[680px]:w-[80%] max-[680px]:ml-[15%] max-[680px]:pr-[5%]">
       <MyExp />
-      <RandomText />
+      <SectionIntro title={RandomAboutText[0]} text={RandomAboutText[1]} />
       <Suspense fallback={<div>Loading projects...</div>}>
         <ProjectShowcase projects={Data.projects} />
+      </Suspense>
+      <SectionIntro title={weekendIntro[0]} text={weekendIntro[1]} />
+      <Suspense fallback={null}>
+        <WeekendProjects projects={Data.weekendProjects} />
       </Suspense>
       <TechStack />
       <GCPBadges />
