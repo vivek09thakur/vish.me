@@ -3,10 +3,11 @@ import { FiGithub, FiLinkedin } from "react-icons/fi";
 import { SiDiscord, SiStackoverflow } from "react-icons/si";
 import { RiTwitterXFill } from "react-icons/ri";
 import { m } from "framer-motion";
+import PropTypes from "prop-types";
 import userData from "../../Data.json";
-import { bounce, pop, squishTap } from "../../motion";
+import { bounce } from "../../motion";
 
-const SideNav = () => {
+const SideNav = ({ ready = true }) => {
   const {
     github,
     linkedin,
@@ -39,7 +40,7 @@ const SideNav = () => {
           className="w-full h-[67%] flex flex-col-reverse justify-evenly items-center max-[500px]:h-[60%]"
           variants={{ hidden: {}, show: { transition: { staggerChildren: 0.07, delayChildren: 0.3 } } }}
           initial="hidden"
-          animate="show"
+          animate={ready ? "show" : "hidden"}
         >
           {Object.entries(socialLinks).map(([key, link], index) => {
             const Icon = Icons[key];
@@ -49,11 +50,12 @@ const SideNav = () => {
                 key={index}
                 target="_blank"
                 rel="noreferrer"
-                variants={{ hidden: { opacity: 0, x: -40, scale: 0.4 }, show: { opacity: 1, x: 0, scale: 1, transition: bounce } }}
-                whileHover={{ scale: 1.4, rotate: -10, transition: pop }}
-                whileTap={squishTap}
+                className="inline-flex group"
+                variants={{ hidden: { opacity: 0, x: -40 }, show: { opacity: 1, x: 0, transition: bounce } }}
               >
-                <Icon className="text-[1.4rem] text-font1 relative left-[-5.5%] hover:text-btn focus:text-btn transition-colors duration-300" />
+                <span className="inline-flex group-hover:scale-[1.35] group-hover:-rotate-12 group-active:scale-90 transition-transform duration-300 ease-bounce">
+                  <Icon className="text-[1.4rem] text-font1 relative left-[-5.5%] group-hover:text-btn group-focus:text-btn transition-colors duration-300" />
+                </span>
               </m.a>
             );
           })}
@@ -62,6 +64,10 @@ const SideNav = () => {
       </div>
     </div>
   );
+};
+
+SideNav.propTypes = {
+  ready: PropTypes.bool,
 };
 
 export default SideNav;

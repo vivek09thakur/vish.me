@@ -127,7 +127,7 @@ const Section = ({ icon: Icon, title, accent, subtitle, status, items, renderIte
       <>
         <m.div
           className="w-[80%] mx-auto flex flex-wrap justify-center items-center gap-6 max-[680px]:w-full max-[680px]:gap-4"
-          variants={stagger(0.06)}
+          variants={stagger(0.04)}
           initial="hidden"
           whileInView="show"
           viewport={viewportOnce}
@@ -139,7 +139,7 @@ const Section = ({ icon: Icon, title, accent, subtitle, status, items, renderIte
             href={link}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-md bg-btn px-4 py-2 text-sm font-semibold text-white no-underline hover:brightness-110 transition"
+            className="inline-flex items-center gap-1.5 rounded-md bg-btn px-4 py-2 text-sm font-semibold text-white no-underline hover:bg-[#ab82ff] transition-colors duration-200"
             whileHover={squishHover}
             whileTap={squishTap}
           >

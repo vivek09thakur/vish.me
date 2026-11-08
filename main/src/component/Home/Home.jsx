@@ -5,7 +5,7 @@ import Data from "../../Data.json";
 import MyImage from "../../assets/myimage.jpg";
 import { RiDownloadLine } from "react-icons/ri";
 import { CiLocationOn } from "react-icons/ci";
-import { bounceSoft, fadeUp, squishHover, squishTap, stagger } from "../../motion";
+import { bounceSoft, fadeUp, stagger } from "../../motion";
 
 const Typewriter = ({ text }) => {
   const [index, setIndex] = useState(0);
@@ -52,14 +52,27 @@ const SPOT_RADIUS = 90;
 
 const SpotlightImage = ({ src, alt }) => {
   const ref = useRef(null);
+  const frame = useRef(0);
+  const pos = useRef({ x: 0, y: 0 });
 
+  const apply = () => {
+    frame.current = 0;
+    const el = ref.current;
+    if (!el) return;
+    el.style.setProperty("--x", `${pos.current.x}px`);
+    el.style.setProperty("--y", `${pos.current.y}px`);
+    el.style.setProperty("--r", `${SPOT_RADIUS}px`);
+  };
   const move = (e) => {
     const r = ref.current.getBoundingClientRect();
-    ref.current.style.setProperty("--x", `${e.clientX - r.left}px`);
-    ref.current.style.setProperty("--y", `${e.clientY - r.top}px`);
-    ref.current.style.setProperty("--r", `${SPOT_RADIUS}px`);
+    pos.current = { x: e.clientX - r.left, y: e.clientY - r.top };
+    if (!frame.current) frame.current = requestAnimationFrame(apply);
   };
-  const leave = () => ref.current.style.setProperty("--r", "0px");
+  const leave = () => {
+    cancelAnimationFrame(frame.current);
+    frame.current = 0;
+    ref.current.style.setProperty("--r", "0px");
+  };
 
   const imgClass = "w-full h-full object-cover rounded-2xl";
   return (
@@ -78,7 +91,7 @@ const SpotlightImage = ({ src, alt }) => {
         className={`${imgClass} absolute inset-0 grayscale pointer-events-none`}
         style={{
           clipPath: "circle(var(--r) at var(--x, 50%) var(--y, 50%))",
-          willChange: "clip-path",
+          transform: "translateZ(0)",
         }}
       />
     </div>
@@ -90,21 +103,20 @@ SpotlightImage.propTypes = {
   alt: PropTypes.string.isRequired,
 };
 
-const Home = () => (
+const Home = ({ ready = true }) => (
   <div className="grid-overlay w-[90%] ml-[10%] flex items-center pt-48 pb-10 max-[780px]:w-[85%] max-[780px]:ml-[15%] max-[780px]:py-20 max-[500px]:py-16">
     <m.div
       className="relative z-10 w-full flex items-center justify-between gap-10 flex-row-reverse max-[780px]:flex-col-reverse max-[780px]:gap-8"
       variants={stagger(0.08, 0.1)}
       initial="hidden"
-      animate="show"
+      animate={ready ? "show" : "hidden"}
     >
       <m.div
         className="w-2/5 flex justify-center shrink-0 max-[780px]:w-[60%] max-[500px]:w-[75%]"
         variants={{
-          hidden: { opacity: 0, x: 80, scale: 0.7, rotate: 10 },
-          show: { opacity: 1, x: 0, scale: 1, rotate: 0, transition: bounceSoft },
+          hidden: { opacity: 0, x: 80 },
+          show: { opacity: 1, x: 0, transition: bounceSoft },
         }}
-        whileHover={{ scale: 1.04, rotate: 2, transition: bounceSoft }}
       >
         <SpotlightImage src={MyImage} alt="Vivek Thakur" />
       </m.div>
@@ -112,17 +124,14 @@ const Home = () => (
         className="w-[55%] max-[780px]:w-full max-[780px]:text-center max-[500px]:text-left"
         variants={stagger(0.1)}
       >
-        <m.a
+        <a
           href={Data.myCV}
-          className="group no-underline absolute top-5 right-5 z-[1200] inline-flex items-center gap-2 rounded-lg bg-btn px-5 py-2.5 text-sm font-semibold text-white hover:brightness-110 transition max-[780px]:static max-[780px]:mb-6 max-[500px]:mb-4"
+          className="group no-underline absolute top-5 right-5 z-[1200] inline-flex items-center gap-2 rounded-lg bg-btn px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#ab82ff] transition-colors duration-200 max-[780px]:static max-[780px]:mb-6 max-[500px]:mb-4"
           download="VivekThakurCV.pdf"
-          variants={fadeUp}
-          whileHover={squishHover}
-          whileTap={squishTap}
         >
           <RiDownloadLine className="text-base transition-transform group-hover:translate-y-0.5" />
           Resume
-        </m.a>
+        </a>
         <m.div variants={fadeUp}>
           <Typewriter text={Data.user.IntroLine} />
         </m.div>
@@ -143,5 +152,9 @@ const Home = () => (
     </m.div>
   </div>
 );
+
+Home.propTypes = {
+  ready: PropTypes.bool,
+};
 
 export default Home;

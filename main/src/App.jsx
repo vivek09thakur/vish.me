@@ -27,8 +27,8 @@ const Portfolio = () => {
   return (
     <Fragment>
       {showPre && <Pre load={load} />}
-      <SideNav />
-      <Home />
+      <SideNav ready={!load} />
+      <Home ready={!load} />
       <About />
       <BlogList />
       <Footer />

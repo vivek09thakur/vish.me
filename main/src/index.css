@@ -16,6 +16,8 @@
   --font-poppins: "Poppins", sans-serif;
   --font-mono: "Roboto Mono", monospace;
   --font-archivo: "Archivo Black", sans-serif;
+
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 :root {

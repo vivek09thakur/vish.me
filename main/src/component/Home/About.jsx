@@ -4,14 +4,13 @@ import Data from "../../Data.json";
 import TechStack from "./Techstack";
 import GCPBadges from "./GCPBadges";
 import ExpTimeline from "./ExpTimeline";
-import { fadeUp, stagger, viewportOnce } from "../../motion";
+import { fadeUp, viewportOnce } from "../../motion";
 
-const Cards = lazy(() => import("../Cards/Card"));
+const ProjectShowcase = lazy(() => import("./ProjectShowcase"));
 
 const About = () => {
   const { RandomAboutText } = Data;
   const [randomTitle, randomDescription] = RandomAboutText;
-  const projectKeys = Object.keys(Data.projects);
   const experiences = Object.values(Data.exp).reverse();
 
   const MyExp = () => {
@@ -60,28 +59,12 @@ const About = () => {
     );
   };
 
-  const Projects = () => {
-    return (
-      <m.div
-        className="w-[80%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 max-[680px]:w-full"
-        variants={stagger(0.1)}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.05 }}
-      >
-        {projectKeys.map((key, i) => (
-          <Cards key={key} project={Data.projects[key]} featured={i === 0} />
-        ))}
-      </m.div>
-    );
-  };
-
   return (
     <div className="w-[90%] h-full ml-[10%] relative bg-dark1 max-[680px]:w-[80%] max-[680px]:ml-[15%] max-[680px]:pr-[5%]">
       <MyExp />
       <RandomText />
       <Suspense fallback={<div>Loading projects...</div>}>
-        <Projects />
+        <ProjectShowcase projects={Data.projects} />
       </Suspense>
       <TechStack />
       <GCPBadges />
