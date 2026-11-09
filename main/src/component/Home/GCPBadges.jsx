@@ -4,15 +4,14 @@ import PropTypes from "prop-types";
 import { RxExternalLink } from "react-icons/rx";
 import { SiGooglecloud } from "react-icons/si";
 import { FiGithub } from "react-icons/fi";
-import Data from "../../Data.json";
+import { badges, socials, socialLinks } from "../../data";
 import { fadeUp, pop, scaleIn, squishHover, squishTap, stagger, viewportOnce } from "../../motion";
 
-const API_BASE = "/gcp-badges";
-const { profileId, profileUrl, apiBaseUrl } = Data.gcpSkillBoost;
-const githubUser = Data.socials.github.split("/").filter(Boolean).pop();
+const { proxyPath, apiBase, gcpProfileId: profileId, gcpProfileUrl: profileUrl } = badges;
+const githubUser = socials.github;
 
 const fetchFirst = async (path, signal) => {
-  const urls = [`${API_BASE}${path}`, `${apiBaseUrl}${path}`];
+  const urls = [`${proxyPath}${path}`, `${apiBase}${path}`];
   let lastError;
   for (const url of urls) {
     try {
@@ -201,7 +200,7 @@ const GCPBadges = () => {
             tier={Number(a.tier) || 1}
           />
         )}
-        link={Data.socials.github}
+        link={socialLinks.github}
         linkLabel="View GitHub profile"
         emptyText="No achievements yet."
       />

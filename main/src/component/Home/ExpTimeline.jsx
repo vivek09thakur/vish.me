@@ -72,7 +72,7 @@ const Row = ({ L, items, rowIndex, offset }) => {
               }}
               variants={fadeUp}
             >
-              <ExpCard exp={exp} color={color} compact />
+              <ExpCard exp={exp} color={color} />
             </m.div>
           </div>
         );
@@ -161,7 +161,7 @@ const ExpTimeline = ({ experiences }) => {
                   className="absolute top-1 -left-[46px] w-4 h-4 rounded-full bg-dark1"
                   style={{ border: `3px solid ${color}` }}
                 />
-                <ExpCard exp={exp} color={color} compact />
+                <ExpCard exp={exp} color={color} />
               </m.div>
             );
           })}

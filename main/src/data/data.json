@@ -1,0 +1,172 @@
+{
+  "site": {
+    "name": "Vivek Thakur",
+    "introLine": "Hi, I'm Vivek.",
+    "title": "Cloud Architect & Developer",
+    "about": "A Computer Science undergraduate at BITS Pilani and a Cloud Architect at Wipro, working onsite for HPE on private, air-gapped cloud solutions built with HPE GreenLake. I'm passionate about cloud infrastructure, AI/ML and frontend development — and outside of tech I enjoy exploring the universe, photography, and sketching.",
+    "location": "Bengaluru, Karnataka, India",
+    "email": "vivekthakurcse20509@gmail.com",
+    "url": "https://vishme.vercel.app",
+    "resume": "/Vivek @Resume.pdf"
+  },
+
+  "socials": {
+    "github": "vivek09thakur",
+    "linkedin": "vivek09thakur",
+    "x": "notexsisted",
+    "instagram": "vivekthakur.sh",
+    "discord": "1008823092514144366",
+    "stackoverflow": "22438160/vivek-thakur",
+    "devto": "vivek09thakur"
+  },
+
+  "badges": {
+    "apiBase": "https://dev-badges.vercel.app",
+    "proxyPath": "/gcp-badges",
+    "gcpProfileId": "49e66b41-798d-4bbf-860e-35a9040ac66d",
+    "gcpProfileUrl": "https://www.skills.google/public_profiles/49e66b41-798d-4bbf-860e-35a9040ac66d"
+  },
+
+  "sections": {
+    "experience": { "title": "My Journey So Far" },
+    "projects": {
+      "title": "Major Projects",
+      "intro": "Things like 'Completed Projects' doesn't exist in my life — I get an idea and start building. There's always something that can be improved, so every project is ongoing."
+    },
+    "sideProjects": {
+      "title": "Weekend Projects",
+      "intro": "Small side projects I built while learning machine learning algorithms — quick experiments, each one shipped as a tiny web app."
+    }
+  },
+
+  "experience": {
+    "exp1": {
+      "company": "Wipro",
+      "role": "Cloud Architect",
+      "start": "Mar 2026",
+      "end": null,
+      "summary": "Architecting and implementing a private, disconnected (air-gapped) cloud solution for Hewlett Packard Enterprise (HPE) using HPE GreenLake — delivering secure, scalable infrastructure with zero public internet connectivity while maintaining enterprise-grade capabilities."
+    },
+    "exp2": {
+      "company": "Wipro",
+      "role": "WebSphere Administrator",
+      "start": "Jan 2025",
+      "end": "Mar 2026",
+      "summary": "Managed and maintained IBM WebSphere application server environments on-site."
+    },
+    "exp3": {
+      "company": "Wipro",
+      "role": "Windows Server Administrator",
+      "start": "Jul 2024",
+      "end": "Jan 2025",
+      "summary": "Administered Windows Server environments with Microsoft Azure and Azure Active Directory as part of an on-site apprenticeship."
+    },
+    "exp4": {
+      "company": "Wipro",
+      "role": "Scholar Trainee",
+      "start": "May 2024",
+      "end": "Jul 2024",
+      "summary": "Joined under the Work Integrated Learning Program (WILP) — a scholarship to pursue a BTech from BITS Pilani alongside Wipro's work culture — working with DevOps and Azure DevOps Server."
+    },
+    "exp5": {
+      "company": "InnoByte Services",
+      "role": "Frontend Developer Intern",
+      "start": "Jan 2024",
+      "end": "May 2024",
+      "summary": "Built and shipped responsive web interfaces remotely using HTML5, CSS3 and modern frontend tooling."
+    },
+    "exp6": {
+      "company": "Hacktoberfest 2023",
+      "role": "Open Source Contributor",
+      "start": "Oct 2023",
+      "end": "Nov 2023",
+      "summary": "Featured in the Hacktoberfest 2023 Hall of Fame after completing the challenge — contributed to open-source projects with 4 pull requests accepted and merged."
+    }
+  },
+
+  "projects": {
+    "project1": {
+      "name": "IshvaraX",
+      "summary": "A community platform for people who love to code — open freelance-style projects with applications, study materials organised by topic, a member-written blog, a showcase of shipped apps and an admin panel managing all of it.",
+      "live": "https://ishvarax.vercel.app",
+      "repo": "https://github.com/IshvaraX/IshvaraX",
+      "tags": ["Next.js 15", "TypeScript", "Tailwind CSS v4", "Material 3", "FastAPI"],
+      "image": "/projects/ishvarax.png"
+    },
+    "project2": {
+      "name": "FIT",
+      "subtitle": "by IshvaraX",
+      "summary": "A habit tracker that treats your life like a character sheet — daily tasks earn XP, raise six life stats, and four good days a week level you up. No feed, no ads, offline-first.",
+      "repo": "https://github.com/IshvaraX/FIT",
+      "tags": ["React Native", "Expo", "Material 3", "FastAPI"],
+      "image": "/projects/fit.jpg"
+    },
+    "project3": {
+      "name": "Saturday",
+      "summary": "A small framework for building and training your own voice assistant on a small language model — describe a persona, write a few example conversations, optionally add tools, and Saturday handles LoRA fine-tuning, speech in and out, speaker logins, and running the model on a free Colab GPU. Published on PyPI as saturday-ai; JERN is built on it.",
+      "repo": "https://github.com/vivek09thakur/SATURDAY",
+      "tags": ["Python", "Hugging Face", "PEFT (LoRA)", "llama.cpp", "faster-whisper", "Google Colab"],
+      "icon": "robot"
+    },
+    "project4": {
+      "name": "JERN",
+      "subtitle": "Just an Experimental Response Network",
+      "summary": "A personal AI assistant with a cloud-GPU brain and local hands. A fine-tuned Qwen2.5-1.5B model runs on a free Colab GPU while file, shell, web-search and MCP tools execute on your own machine.",
+      "repo": "https://github.com/IshvaraX/JERN",
+      "tags": ["Python", "PyTorch", "Hugging Face", "FastAPI", "MCP", "Google Colab"],
+      "image": "/projects/jern.png"
+    },
+    "project5": {
+      "name": "LAN-Analysis",
+      "summary": "A Python-based local web app with a React.js UI that analyzes a star topology LAN network, providing details on connected devices, bandwidth usage, network interfaces, Wi-Fi, vEthernet, and DNS server information.",
+      "repo": "https://github.com/vivek09thakur/LAN-Analysis",
+      "tags": ["React.js", "Python", "Flask", "Web APIs"],
+      "image": "/projects/lan-analyzer.png"
+    },
+    "project6": {
+      "name": "LearnIT",
+      "subtitle": "Open-source book distribution platform",
+      "summary": "A platform for distributing and accessing open-source books, enabling users to share and discover educational resources.",
+      "live": "https://learn-it.vercel.app",
+      "tags": ["Python", "Django", "React.js"],
+      "image": "/projects/learnit.png"
+    }
+  },
+
+  "sideProjects": {
+    "sideProject1": {
+      "name": "HIRO",
+      "summary": "Your personal healthcare companion — an ML model that analyzes reported symptoms and suggests likely conditions, wrapped in a simple web UI.",
+      "live": "https://hiro-ml-disease-symptoms-analyzer.vercel.app/",
+      "repo": "https://github.com/vivek09thakur/HIRO",
+      "tags": ["Python", "scikit-learn", "Flask", "JavaScript"],
+      "icon": "brain"
+    },
+    "sideProject2": {
+      "name": "ML Image Classification",
+      "summary": "Groups images that resemble a sample image using ImageNet features extracted with Keras and ranked by cosine similarity — now served as a small web model.",
+      "live": "https://ml-image-classification.vercel.app/",
+      "repo": "https://github.com/vivek09thakur/ML-Image-Classification",
+      "tags": ["Python", "Keras", "ImageNet", "FastAPI"],
+      "icon": "image"
+    },
+    "sideProject3": {
+      "name": "TicTacToe AI",
+      "summary": "An unbeatable Tic-Tac-Toe agent using memoised minimax with a stateless FastAPI backend — ships as a single Vercel function and comes with an exhaustive test proving it never loses.",
+      "live": "https://tic-tac-toeee-ai.vercel.app/",
+      "repo": "https://github.com/vivek09thakur/TicTacToe-AI",
+      "tags": ["Python", "FastAPI", "Minimax", "HTML/CSS/JS"],
+      "icon": "game"
+    },
+    "sideProject4": {
+      "name": "DevBadges API",
+      "subtitle": "formerly Google Cloud Skill Boost Badges API",
+      "summary": "Read-only API for showing off a dev profile — Google Cloud Skills Boost badges and GitHub achievements as JSON or embeddable SVG grids, plus a Google weather-card scraper. It powers the badges section on this site.",
+      "live": "https://dev-badges.vercel.app/docs",
+      "repo": "https://github.com/vivek09thakur/Dev-Badges-API",
+      "tags": ["Python", "FastAPI", "Pydantic", "Vercel"],
+      "image": "/projects/dev-badges.png",
+      "icon": "api"
+    }
+  }
+}

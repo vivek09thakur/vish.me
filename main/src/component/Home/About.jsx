@@ -1,7 +1,7 @@
 import React, { Suspense, lazy } from "react";
 import { m } from "framer-motion";
 import PropTypes from "prop-types";
-import Data from "../../Data.json";
+import { experience, sections, majorProjects, weekendProjects } from "../../data";
 import TechStack from "./Techstack";
 import GCPBadges from "./GCPBadges";
 import ExpTimeline from "./ExpTimeline";
@@ -11,9 +11,6 @@ const ProjectShowcase = lazy(() => import("./ProjectShowcase"));
 const WeekendProjects = lazy(() => import("./WeekendProjects"));
 
 const About = () => {
-  const { RandomAboutText, weekendIntro } = Data;
-  const experiences = Object.values(Data.exp).reverse();
-
   const MyExp = () => {
     return (
       <div className="max-[680px]:w-full px-6 pt-4 pb-10 md:px-10 md:pt-6 md:pb-14">
@@ -25,10 +22,10 @@ const About = () => {
           whileInView="show"
           viewport={viewportOnce}
         >
-          My Journey So Far
+          {sections.experience.title}
         </m.h2>
         <div className="max-[680px]:mt-8">
-          <ExpTimeline experiences={experiences} />
+          <ExpTimeline experiences={experience} />
         </div>
       </div>
     );
@@ -64,13 +61,13 @@ const About = () => {
   return (
     <div className="w-[90%] h-full ml-[10%] relative bg-dark1 max-[680px]:w-[80%] max-[680px]:ml-[15%] max-[680px]:pr-[5%]">
       <MyExp />
-      <SectionIntro title={RandomAboutText[0]} text={RandomAboutText[1]} />
+      <SectionIntro title={sections.projects.title} text={sections.projects.intro} />
       <Suspense fallback={<div>Loading projects...</div>}>
-        <ProjectShowcase projects={Data.projects} />
+        <ProjectShowcase projects={majorProjects} />
       </Suspense>
-      <SectionIntro title={weekendIntro[0]} text={weekendIntro[1]} />
+      <SectionIntro title={sections.sideProjects.title} text={sections.sideProjects.intro} />
       <Suspense fallback={null}>
-        <WeekendProjects projects={Data.weekendProjects} />
+        <WeekendProjects projects={weekendProjects} />
       </Suspense>
       <TechStack />
       <GCPBadges />

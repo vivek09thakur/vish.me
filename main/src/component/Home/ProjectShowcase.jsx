@@ -2,36 +2,20 @@ import { useState } from "react";
 import { AnimatePresence, m } from "framer-motion";
 import PropTypes from "prop-types";
 import { FiArrowUpRight, FiGithub } from "react-icons/fi";
-import { SiNextdotjs, SiGooglecloud, SiPokemon } from "react-icons/si";
-import { RiRobot2Line } from "react-icons/ri";
-import { LuNetwork } from "react-icons/lu";
 import SourcePreview from "./SourcePreview";
+import { Hashtags, ProjectIcon } from "./projectBits";
 import { bounce, bounceSoft, fadeUp, pop, squishTap, stagger, viewportOnce } from "../../motion";
 
-const ICONS = {
-  nextjs: SiNextdotjs,
-  robot: RiRobot2Line,
-  gcp: SiGooglecloud,
-  pokemon: SiPokemon,
-  network: LuNetwork,
-};
-
-const isGithub = (url) => /github\.com/.test(url);
-const splitName = (name) => name.split("|").map((s) => s.trim());
-
 const Preview = ({ project }) => {
-  const Icon = ICONS[project.icon];
   let media;
   if (project.image) {
-    media = (
-      <img src={project.image} alt="" decoding="async" className="w-full h-full object-cover object-top" />
-    );
-  } else if (isGithub(project.link)) {
+    media = <img src={project.image} alt="" decoding="async" className="w-full h-full object-cover object-top" />;
+  } else if (project.repo && !project.live) {
     media = <SourcePreview />;
   } else {
     media = (
       <div className="w-full h-full flex items-center justify-center border border-dashed border-white/15 rounded-xl">
-        {Icon && <Icon className="text-[4rem] text-font1 opacity-40" />}
+        <ProjectIcon name={project.icon} className="text-[4rem] text-font1 opacity-40" />
       </div>
     );
   }
@@ -48,21 +32,33 @@ const Preview = ({ project }) => {
 };
 Preview.propTypes = { project: PropTypes.object.isRequired };
 
+const CornerLink = ({ href, primary, children }) => (
+  <m.a
+    href={href}
+    target="_blank"
+    rel="noreferrer"
+    className={`group inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold no-underline transition-colors duration-200 ${
+      primary ? "bg-green1 text-dark1 hover:bg-[#d4f78a]" : "bg-dark1/80 text-font1 hover:text-green1"
+    }`}
+    whileHover={{ y: -2, transition: pop }}
+    whileTap={squishTap}
+  >
+    {children}
+  </m.a>
+);
+CornerLink.propTypes = { href: PropTypes.string.isRequired, primary: PropTypes.bool, children: PropTypes.node };
+
 const ProjectShowcase = ({ projects }) => {
-  const keys = Object.keys(projects);
-  const [active, setActive] = useState(keys[0]);
-  const project = projects[active];
-  const [title, subtitle] = splitName(project.name);
-  const tags = project.tech_stack.split(",").map((t) => t.trim()).filter(Boolean);
+  const [index, setIndex] = useState(0);
+  const project = projects[index];
 
   const onKeyDown = (e) => {
-    const i = keys.indexOf(active);
     if (e.key === "ArrowDown" || e.key === "ArrowRight") {
       e.preventDefault();
-      setActive(keys[(i + 1) % keys.length]);
+      setIndex((i) => (i + 1) % projects.length);
     } else if (e.key === "ArrowUp" || e.key === "ArrowLeft") {
       e.preventDefault();
-      setActive(keys[(i - 1 + keys.length) % keys.length]);
+      setIndex((i) => (i - 1 + projects.length) % projects.length);
     }
   };
 
@@ -81,17 +77,15 @@ const ProjectShowcase = ({ projects }) => {
         className="flex gap-2 overflow-x-auto pb-2 list-none m-0 p-0 md:flex-col md:overflow-visible md:pb-0"
         variants={fadeUp}
       >
-        {keys.map((key) => {
-          const p = projects[key];
-          const [name, sub] = splitName(p.name);
-          const selected = key === active;
+        {projects.map((p, i) => {
+          const selected = i === index;
           return (
-            <li key={key} className="shrink-0 md:shrink">
+            <li key={p.id} className="shrink-0 md:shrink">
               <m.button
                 type="button"
                 role="tab"
                 aria-selected={selected}
-                onClick={() => setActive(key)}
+                onClick={() => setIndex(i)}
                 className={`block w-full text-left appearance-none cursor-pointer font-[inherit] px-4 py-3 rounded-xl border outline-none transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-green1/60 ${
                   selected
                     ? "bg-green1 border-green1 text-dark1"
@@ -101,10 +95,10 @@ const ProjectShowcase = ({ projects }) => {
                 whileTap={squishTap}
               >
                 <span className="block text-sm font-semibold leading-tight whitespace-nowrap md:whitespace-normal">
-                  {name}
+                  {p.name}
                 </span>
                 <span className={`hidden md:block text-[0.7rem] mt-1 truncate ${selected ? "text-dark1/70" : "opacity-50"}`}>
-                  {sub || p.tech_stack.split(",").slice(0, 2).join(" · ")}
+                  {p.subtitle || p.tags.slice(0, 2).join(" · ")}
                 </span>
               </m.button>
             </li>
@@ -115,46 +109,36 @@ const ProjectShowcase = ({ projects }) => {
       <m.div className="min-w-0" variants={fadeUp}>
         <div className="relative">
           <AnimatePresence mode="wait" initial={false}>
-            <Preview key={active} project={project} />
+            <Preview key={project.id} project={project} />
           </AnimatePresence>
-          <m.a
-            href={project.link}
-            target="_blank"
-            rel="noreferrer"
-            className="group absolute top-3 right-3 z-10 inline-flex items-center gap-2 rounded-full bg-green1 px-4 py-2 text-sm font-semibold text-dark1 no-underline hover:bg-[#d4f78a] transition-colors duration-200"
-            whileHover={{ y: -2, transition: pop }}
-            whileTap={squishTap}
-          >
-            {isGithub(project.link) ? (
-              <>
-                View source <FiGithub className="text-base transition-transform duration-300 ease-bounce group-hover:-translate-y-0.5" />
-              </>
-            ) : (
-              <>
-                Visit site <FiArrowUpRight className="text-base transition-transform duration-300 ease-bounce group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-              </>
+          <div className="absolute top-3 right-3 z-10 flex items-center gap-2">
+            {project.repo && (
+              <CornerLink href={project.repo} primary={!project.live}>
+                Source <FiGithub className="text-base transition-transform duration-300 ease-bounce group-hover:-translate-y-0.5" />
+              </CornerLink>
             )}
-          </m.a>
+            {project.live && (
+              <CornerLink href={project.live} primary>
+                Visit site <FiArrowUpRight className="text-base transition-transform duration-300 ease-bounce group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              </CornerLink>
+            )}
+          </div>
         </div>
 
         <AnimatePresence mode="wait" initial={false}>
           <m.div
-            key={active}
+            key={project.id}
             className="mt-6 flex flex-col gap-3"
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0, transition: { ...bounce, delay: 0.05 } }}
             exit={{ opacity: 0, y: -8, transition: { duration: 0.15 } }}
           >
             <div className="min-w-0">
-              <h3 className="text-2xl font-medium leading-tight m-0">{title}</h3>
-              {subtitle && <p className="text-xs opacity-50 mt-1 m-0">{subtitle}</p>}
+              <h3 className="text-2xl font-medium leading-tight m-0">{project.name}</h3>
+              {project.subtitle && <p className="text-xs opacity-50 mt-1 m-0">{project.subtitle}</p>}
             </div>
-            <p className="text-sm opacity-70 leading-relaxed m-0 max-w-2xl">{project.description}</p>
-            <p className="text-xs text-[#5b8def] m-0 flex flex-wrap gap-x-3 gap-y-1">
-              {tags.map((t) => (
-                <span key={t}>#{t.replace(/\s+/g, "")}</span>
-              ))}
-            </p>
+            <p className="text-sm opacity-70 leading-relaxed m-0 max-w-2xl">{project.summary}</p>
+            <Hashtags tags={project.tags} />
           </m.div>
         </AnimatePresence>
       </m.div>
@@ -163,7 +147,7 @@ const ProjectShowcase = ({ projects }) => {
 };
 
 ProjectShowcase.propTypes = {
-  projects: PropTypes.object.isRequired,
+  projects: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default ProjectShowcase;

@@ -1,5 +1,5 @@
 import { m } from "framer-motion";
-import Data from "../../Data.json";
+import { site, socials, socialLinks } from "../../data";
 import { fadeUp, viewportOnce } from "../../motion";
 
 const Footer = () => {
@@ -15,15 +15,17 @@ const Footer = () => {
       <div className="flex justify-center items-center">
         <div className="w-[40%] h-[2px] bg-line max-[680px]:w-[10%]"></div>
         <div className="w-[60%] max-[680px]:w-[90%]">
-          <a href={`mailto: ${Data.user.email}`} className="no-underline text-font1 ml-4 font-mono">
-            {Data.user.email}
+          <a href={`mailto:${site.email}`} className="no-underline text-font1 ml-4 font-mono">
+            {site.email}
           </a>
         </div>
       </div>
       <div className="w-full text-center my-[2%]">
         <p className="text-[.95rem] opacity-30 font-light">
-          All Rights Reserved © {year} | {" "}
-          <a href={Data.user.github}>vivek09thakur</a>
+          All Rights Reserved © {year} |{" "}
+          <a href={socialLinks.github} target="_blank" rel="noreferrer">
+            {socials.github}
+          </a>
         </p>
       </div>
     </m.div>

@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import { m } from "framer-motion";
 import CreateBlogPosts from "./BlogCards";
-import Data from "../../Data.json";
+import { socials } from "../../data";
 import { fadeUp, viewportOnce } from "../../motion";
 
 const BlogList = () => {
-  const username = Data.socials.dev;
-  const apiUrl = `https://dev.to/api/articles?username=${username}`;
+  const apiUrl = `https://dev.to/api/articles?username=${socials.devto}`;
   const [posts, setPosts] = useState([]);
   const [error, setError] = useState(null);
 
