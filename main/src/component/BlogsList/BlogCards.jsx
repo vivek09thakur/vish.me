@@ -7,13 +7,19 @@ import { fadeUp, pop, viewportOnce } from "../../motion";
 const formatDate = (iso) =>
   new Date(iso).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
 
-const CreateBlogPosts = ({ posts }) => {
-  const href = `/blog/${posts.id}`;
-  const thumb = posts.cover_image || posts.social_image;
-  const reactions = posts.public_reactions_count;
+const Arrow = ({ className = "" }) => (
+  <FiArrowUpRight
+    className={`shrink-0 transition-[opacity,color,transform] duration-500 ease-bounce group-hover:text-green1 group-hover:opacity-100 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 ${className}`}
+  />
+);
+Arrow.propTypes = { className: PropTypes.string };
+
+const Featured = ({ post }) => {
+  const thumb = post.cover_image || post.social_image;
+  const reactions = post.public_reactions_count;
   return (
     <m.article
-      className="group w-[80%] max-[780px]:w-full"
+      className="group"
       variants={fadeUp}
       initial="hidden"
       whileInView="show"
@@ -21,51 +27,71 @@ const CreateBlogPosts = ({ posts }) => {
       whileHover={{ y: -4, transition: pop }}
     >
       <Link
-        to={href}
-        className="flex gap-5 items-stretch rounded-xl border border-white/10 bg-card/30 p-3 no-underline text-font1 hover:border-white/20 hover:bg-card/50 transition-colors duration-300 max-[500px]:flex-col max-[500px]:gap-3"
+        to={`/blog/${post.id}`}
+        className="grid items-center gap-8 no-underline text-font1 md:grid-cols-[1.15fr_1fr] max-[780px]:gap-5"
       >
-        <div className="shrink-0 w-44 rounded-lg overflow-hidden bg-dark1 max-[780px]:w-32 max-[500px]:w-full max-[500px]:aspect-video">
+        <div className="aspect-video overflow-hidden rounded-xl bg-card">
           {thumb && (
             <img
               src={thumb}
               alt=""
               loading="lazy"
               decoding="async"
-              className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+              className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
             />
           )}
         </div>
-
-        <div className="flex flex-col min-w-0 py-1 flex-1">
-          <p className="text-xs opacity-50 m-0">
-            {formatDate(posts.published_at)} · {posts.reading_time_minutes} min read
-            {reactions > 0 && ` · ${reactions} ${reactions === 1 ? "reaction" : "reactions"}`}
+        <div className="min-w-0">
+          <p className="m-0 text-xs opacity-50">
+            Latest &middot; {formatDate(post.published_at)} &middot; {post.reading_time_minutes} min read
+            {reactions > 0 && <> &middot; {reactions} {reactions === 1 ? "reaction" : "reactions"}</>}
           </p>
-
-          <h2 className="text-[1.05rem] font-medium leading-snug mt-1.5 m-0 group-hover:text-green1 transition-colors max-[780px]:text-base">
-            {posts.title}
+          <h2 className="m-0 mt-3 text-[1.75rem] font-semibold leading-tight transition-colors group-hover:text-green1 max-[780px]:text-xl">
+            {post.title}
           </h2>
-
-          <p className="text-sm opacity-65 mt-1.5 m-0 leading-relaxed line-clamp-2">{posts.description}</p>
-
-          <div className="flex items-center justify-between gap-3 mt-auto pt-3">
-            {posts.tag_list.length > 0 && (
-              <p className="text-xs text-[#5b8def] m-0 flex flex-wrap gap-x-2.5 truncate">
-                {posts.tag_list.slice(0, 4).map((t) => (
-                  <span key={t}>#{t}</span>
-                ))}
-              </p>
-            )}
-            <FiArrowUpRight className="shrink-0 text-lg opacity-50 group-hover:opacity-100 group-hover:text-green1 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-[opacity,color,transform] duration-300 ease-bounce" />
-          </div>
+          <p className="m-0 mt-3 leading-relaxed opacity-65 line-clamp-3 max-[780px]:text-sm">{post.description}</p>
+          {post.tag_list.length > 0 && (
+            <p className="m-0 mt-4 flex flex-wrap gap-x-3 text-xs text-[#5b8def]">
+              {post.tag_list.slice(0, 4).map((t) => (
+                <span key={t}>#{t}</span>
+              ))}
+            </p>
+          )}
+          <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-green1 max-[780px]:mt-4">
+            Read the post <Arrow className="text-base" />
+          </span>
         </div>
       </Link>
     </m.article>
   );
 };
+Featured.propTypes = { post: PropTypes.object.isRequired };
+
+const Row = ({ post }) => (
+  <m.li className="group" variants={fadeUp}>
+    <Link
+      to={`/blog/${post.id}`}
+      className="grid grid-cols-[7.5rem_minmax(0,1fr)_auto] items-baseline gap-6 py-5 no-underline text-font1 max-[680px]:grid-cols-1 max-[680px]:gap-1.5 max-[680px]:py-4"
+    >
+      <span className="text-xs opacity-50">{formatDate(post.published_at)}</span>
+      <span className="min-w-0">
+        <h3 className="m-0 text-base font-medium leading-snug transition-colors group-hover:text-green1">{post.title}</h3>
+        <p className="m-0 mt-1 text-sm opacity-55 line-clamp-1">{post.description}</p>
+      </span>
+      <span className="inline-flex items-center gap-2 text-xs opacity-50 max-[680px]:hidden">
+        {post.reading_time_minutes} min <Arrow className="text-base" />
+      </span>
+    </Link>
+  </m.li>
+);
+Row.propTypes = { post: PropTypes.object.isRequired };
+
+const CreateBlogPosts = ({ posts, featured = false }) =>
+  featured ? <Featured post={posts} /> : <Row post={posts} />;
 
 CreateBlogPosts.propTypes = {
   posts: PropTypes.object.isRequired,
+  featured: PropTypes.bool,
 };
 
 export default CreateBlogPosts;

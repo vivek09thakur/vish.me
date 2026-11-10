@@ -114,12 +114,12 @@ const ProjectShowcase = ({ projects }) => {
           <div className="absolute top-3 right-3 z-10 flex items-center gap-2">
             {project.repo && (
               <CornerLink href={project.repo} primary={!project.live}>
-                Source <FiGithub className="text-base transition-transform duration-300 ease-bounce group-hover:-translate-y-0.5" />
+                Source <FiGithub className="text-base transition-transform duration-500 ease-bounce group-hover:-translate-y-0.5" />
               </CornerLink>
             )}
             {project.live && (
               <CornerLink href={project.live} primary>
-                Visit site <FiArrowUpRight className="text-base transition-transform duration-300 ease-bounce group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                Visit site <FiArrowUpRight className="text-base transition-transform duration-500 ease-bounce group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </CornerLink>
             )}
           </div>

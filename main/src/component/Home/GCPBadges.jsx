@@ -54,7 +54,7 @@ const BadgeCard = ({ href, title, image, tier }) => (
     target="_blank"
     rel="noreferrer"
     title={title}
-    className="group relative flex items-center justify-center w-36 h-36 max-[680px]:w-28 max-[680px]:h-28"
+    className="group relative flex items-center justify-center w-40 h-40 max-[1000px]:w-32 max-[1000px]:h-32 max-[680px]:w-24 max-[680px]:h-24"
     variants={scaleIn}
     whileHover={{ y: -12, scale: 1.15, rotate: -4, transition: pop }}
     whileTap={squishTap}
@@ -82,50 +82,38 @@ BadgeCard.propTypes = {
 };
 
 const Section = ({ icon: Icon, title, accent, subtitle, status, items, renderItem, link, linkLabel, emptyText }) => (
-  <div className="w-full h-full my-[5%] mx-auto relative">
+  <div className="w-full mt-28 mb-10 mx-auto relative max-[680px]:mt-20">
     <m.h2
-      className="text-[2.5rem] font-normal p-4 text-center mb-[1%] max-[680px]:text-[2rem]"
-      style={{ textTransform: "capitalize" }}
+      className="section-title mb-3 text-center max-[680px]:text-left"
       variants={fadeUp}
       initial="hidden"
       whileInView="show"
       viewport={viewportOnce}
     >
-      <Icon style={{ marginBottom: "-6px", color: "var(--btn_color)" }} /> {title}{" "}
-      <span style={{ color: "var(--btn_color)" }}>{accent}</span>
+      <Icon className="inline-block -mt-1.5 mr-1 text-btn" /> {title} <span className="text-btn">{accent}</span>
     </m.h2>
 
     {subtitle && status === "ready" && (
-      <p className="text-center mb-[3%]" style={{ opacity: 0.7 }}>
-        {subtitle}
-      </p>
+      <p className="text-center mb-10 opacity-70 max-[680px]:text-left">{subtitle}</p>
     )}
 
-    {status === "loading" && (
-      <p className="text-center" style={{ opacity: 0.6 }}>
-        Loading…
-      </p>
-    )}
+    {status === "loading" && <p className="text-center opacity-60 max-[680px]:text-left">Loading…</p>}
 
     {status === "error" && (
-      <p className="text-center" style={{ opacity: 0.6 }}>
-        Couldn&apos;t load right now.{" "}
-        <a href={link} target="_blank" rel="noreferrer" className="text-btn no-underline">
-          View profile
+      <p className="text-center opacity-60 max-[680px]:text-left">
+        Couldn&apos;t reach the badge service right now.{" "}
+        <a href={link} target="_blank" rel="noreferrer" className="text-btn no-underline hover:underline">
+          View profile instead
         </a>
       </p>
     )}
 
-    {status === "empty" && (
-      <p className="text-center" style={{ opacity: 0.6 }}>
-        {emptyText}
-      </p>
-    )}
+    {status === "empty" && <p className="text-center opacity-60 max-[680px]:text-left">{emptyText}</p>}
 
     {status === "ready" && (
       <>
         <m.div
-          className="w-[80%] mx-auto flex flex-wrap justify-center items-center gap-6 max-[680px]:w-full max-[680px]:gap-4"
+          className="w-[80%] max-w-[1000px] mx-auto flex flex-wrap justify-center items-center gap-5 max-[680px]:w-full max-[680px]:gap-4"
           variants={stagger(0.04)}
           initial="hidden"
           whileInView="show"
@@ -133,7 +121,7 @@ const Section = ({ icon: Icon, title, accent, subtitle, status, items, renderIte
         >
           {items.map(renderItem)}
         </m.div>
-        <div className="text-center mt-[3%]">
+        <div className="text-center mt-10">
           <m.a
             href={link}
             target="_blank"

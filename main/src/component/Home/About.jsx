@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from "react";
+import { Suspense, lazy } from "react";
 import { m } from "framer-motion";
 import PropTypes from "prop-types";
 import { experience, sections, majorProjects, weekendProjects } from "../../data";
@@ -13,10 +13,9 @@ const WeekendProjects = lazy(() => import("./WeekendProjects"));
 const About = () => {
   const MyExp = () => {
     return (
-      <div className="max-[680px]:w-full px-6 pt-4 pb-10 md:px-10 md:pt-6 md:pb-14">
+      <div className="max-[680px]:w-full px-6 pt-10 pb-10 md:px-10 md:pt-24 md:pb-14">
         <m.h2
-          className="text-[2.5rem] font-normal mt-0 mb-10 mx-0 text-center max-[680px]:text-left max-[680px]:text-[1.6rem] max-[680px]:mb-6"
-          style={{ textTransform: "capitalize" }}
+          className="section-title mb-10 text-center max-[680px]:text-left max-[680px]:mb-6"
           variants={fadeUp}
           initial="hidden"
           whileInView="show"
@@ -33,10 +32,9 @@ const About = () => {
 
   const SectionIntro = ({ title, text }) => {
     return (
-      <>
+      <div className="mt-28 mb-12 max-[680px]:mt-20 max-[680px]:mb-8">
         <m.h2
-          className="font-normal text-[2em] pb-[2%] max-[680px]:pb-[7%] max-[680px]:text-[1.5rem] max-[680px]:mb-[10%] max-[680px]:mt-[28%]"
-          style={{ textTransform: "capitalize", marginTop: "8%" }}
+          className="section-title"
           variants={fadeUp}
           initial="hidden"
           whileInView="show"
@@ -45,7 +43,7 @@ const About = () => {
           {title}
         </m.h2>
         <m.p
-          className="w-[70%] pb-[5%] opacity-70 max-[680px]:w-full max-[680px]:mb-[10%]"
+          className="mt-4 max-w-2xl opacity-70 leading-relaxed"
           variants={fadeUp}
           initial="hidden"
           whileInView="show"
@@ -53,7 +51,7 @@ const About = () => {
         >
           {text}
         </m.p>
-      </>
+      </div>
     );
   };
   SectionIntro.propTypes = { title: PropTypes.string.isRequired, text: PropTypes.string.isRequired };
@@ -62,7 +60,7 @@ const About = () => {
     <div className="w-[90%] h-full ml-[10%] relative bg-dark1 max-[680px]:w-[80%] max-[680px]:ml-[15%] max-[680px]:pr-[5%]">
       <MyExp />
       <SectionIntro title={sections.projects.title} text={sections.projects.intro} />
-      <Suspense fallback={<div>Loading projects...</div>}>
+      <Suspense fallback={<p className="opacity-60">Loading projects&hellip;</p>}>
         <ProjectShowcase projects={majorProjects} />
       </Suspense>
       <SectionIntro title={sections.sideProjects.title} text={sections.sideProjects.intro} />

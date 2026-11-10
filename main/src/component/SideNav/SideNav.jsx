@@ -36,7 +36,7 @@ const SideNav = ({ ready = true }) => {
               className="inline-flex group"
               variants={{ hidden: { opacity: 0, x: -40 }, show: { opacity: 1, x: 0, transition: bounce } }}
             >
-              <span className="inline-flex group-hover:scale-[1.35] group-hover:-rotate-12 group-active:scale-90 transition-transform duration-300 ease-bounce">
+              <span className="inline-flex group-hover:scale-[1.35] group-hover:-rotate-12 group-active:scale-90 transition-transform duration-500 ease-bounce">
                 <Icon className="text-[1.4rem] text-font1 relative left-[-5.5%] group-hover:text-btn group-focus:text-btn transition-colors duration-300" />
               </span>
             </m.a>

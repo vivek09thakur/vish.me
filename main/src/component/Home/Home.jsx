@@ -5,7 +5,7 @@ import { site } from "../../data";
 import MyImage from "../../assets/myimage.jpg";
 import { RiDownloadLine } from "react-icons/ri";
 import { CiLocationOn } from "react-icons/ci";
-import { bounceSoft, fadeUp, stagger } from "../../motion";
+import { bounceSoft, fadeUp, squishHover, squishTap, stagger } from "../../motion";
 
 const Typewriter = ({ text }) => {
   const [index, setIndex] = useState(0);
@@ -34,12 +34,15 @@ const Typewriter = ({ text }) => {
   return (
     <h1
       ref={ref}
-      className="relative font-normal text-[5rem] font-archivo leading-[1.1] max-[780px]:text-[4rem] max-[500px]:text-[3.5rem]"
+      className="relative font-normal text-[5rem] font-archivo leading-[1.05] max-[1000px]:text-[4.25rem] max-[780px]:text-[4rem] max-[500px]:text-[3.25rem]"
     >
       <span aria-hidden="true" className="invisible">
         {text}
       </span>
-      <span className="absolute inset-0">{text.slice(0, index)}</span>
+      <span className="absolute inset-0">
+        {text.slice(0, index)}
+        <span aria-hidden="true" className="caret ml-1 inline-block w-[0.12em] h-[0.85em] align-[-0.08em] bg-green1 rounded-sm" />
+      </span>
     </h1>
   );
 };
@@ -74,16 +77,10 @@ const SpotlightImage = ({ src, alt }) => {
     ref.current.style.setProperty("--r", "0px");
   };
 
-  const imgClass = "w-full h-full object-cover rounded-2xl";
+  const imgClass = "w-full h-full object-cover rounded-[2px]";
   return (
-    <div
-      ref={ref}
-      onMouseMove={move}
-      onMouseLeave={leave}
-      className="relative w-full max-w-[400px] aspect-square -rotate-3 rounded-2xl"
-      style={{ "--r": "0px" }}
-    >
-      <img src={src} alt={alt} width="400" height="400" fetchpriority="high" decoding="async" className={imgClass} />
+    <div ref={ref} onMouseMove={move} onMouseLeave={leave} className="relative w-full aspect-square" style={{ "--r": "0px" }}>
+      <img src={src} alt={alt} width="400" height="400" decoding="async" className={imgClass} />
       <img
         src={src}
         alt=""
@@ -103,52 +100,80 @@ SpotlightImage.propTypes = {
   alt: PropTypes.string.isRequired,
 };
 
+const Polaroid = ({ src, alt, caption }) => (
+  <m.figure
+    className="relative m-0 w-full bg-[#eef0f5] p-3 pb-3 text-dark1 rounded-[3px] cursor-grab active:cursor-grabbing"
+    initial={{ rotate: 3 }}
+    whileHover={{ rotate: -1.5, y: -10, scale: 1.03 }}
+    whileTap={{ rotate: 2, scale: 0.96 }}
+    transition={{ type: "spring", stiffness: 220, damping: 10 }}
+  >
+    <span
+      aria-hidden="true"
+      className="absolute -top-3 left-1/2 h-7 w-24 -translate-x-1/2 -rotate-3 bg-green1/80 mix-blend-multiply"
+      style={{ clipPath: "polygon(2% 0, 100% 4%, 98% 100%, 0 96%)" }}
+    />
+    <SpotlightImage src={src} alt={alt} />
+    <figcaption className="mt-2 flex items-center justify-center gap-1 whitespace-nowrap font-hand text-[1.45rem] font-semibold leading-none text-dark1/80 max-[500px]:text-[1.2rem]">
+      <CiLocationOn className="text-xl" /> {caption}
+    </figcaption>
+  </m.figure>
+);
+
+Polaroid.propTypes = {
+  src: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
+  caption: PropTypes.string.isRequired,
+};
+
 const Home = ({ ready = true }) => (
-  <div className="grid-overlay w-[90%] ml-[10%] flex items-center pt-48 pb-10 max-[780px]:w-[85%] max-[780px]:ml-[15%] max-[780px]:py-20 max-[500px]:py-16">
+  <div className="grid-overlay w-[90%] ml-[10%] pt-60 pb-12 max-[780px]:w-[85%] max-[780px]:ml-[15%] max-[780px]:pt-24 max-[780px]:pb-8 max-[500px]:pt-20">
     <m.div
-      className="relative z-10 w-full flex items-center justify-between gap-10 flex-row-reverse max-[780px]:flex-col-reverse max-[780px]:gap-8"
+      className="relative z-10 mx-auto w-full max-w-[1140px] flow-root max-[780px]:flex max-[780px]:flex-col max-[780px]:items-center max-[780px]:text-center max-[500px]:items-start max-[500px]:text-left"
       variants={stagger(0.08, 0.1)}
       initial="hidden"
       animate={ready ? "show" : "hidden"}
     >
+
       <m.div
-        className="w-2/5 flex justify-center shrink-0 max-[780px]:w-[60%] max-[500px]:w-[75%]"
+        className="float-right ml-14 mb-4 -mt-6 w-[340px] max-[1000px]:w-[270px] max-[780px]:float-none max-[780px]:mx-auto max-[780px]:mt-0 max-[780px]:mb-10 max-[780px]:w-[62%] max-[500px]:w-[78%] max-[500px]:mx-0 max-[500px]:ml-0"
         variants={{
-          hidden: { opacity: 0, x: 80 },
-          show: { opacity: 1, x: 0, transition: bounceSoft },
+          hidden: { opacity: 0, y: -24, rotate: 8 },
+          show: { opacity: 1, y: 0, rotate: 0, transition: bounceSoft },
         }}
       >
-        <SpotlightImage src={MyImage} alt="Vivek Thakur" />
+        <div className="relative">
+          <m.span
+            aria-hidden="true"
+            className="absolute -left-40 bottom-14 flex items-end gap-1 font-hand text-[1.6rem] font-semibold text-green1 max-[1000px]:hidden"
+            variants={{ hidden: { opacity: 0, x: -12 }, show: { opacity: 1, x: 0, transition: { delay: 0.9, duration: 0.5 } } }}
+          >
+            <span className="-rotate-6 -translate-y-6">that&apos;s me</span>
+            <svg width="78" height="54" viewBox="0 0 78 54" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M3 44c20 4 42-2 58-20 4-5 8-10 11-17" />
+              <path d="M62 10l10-3 1 10" />
+            </svg>
+          </m.span>
+          <Polaroid src={MyImage} alt="Vivek Thakur" caption={site.location} />
+        </div>
       </m.div>
-      <m.div
-        className="w-[55%] max-[780px]:w-full max-[780px]:text-center max-[500px]:text-left"
-        variants={stagger(0.1)}
+
+      <m.div variants={fadeUp}>
+        <Typewriter text={site.introLine} />
+      </m.div>
+      <m.p className="opacity-80 mt-6 max-w-[38rem] text-[1.05rem] leading-relaxed max-[500px]:text-[90%]" variants={fadeUp}>
+        {site.about}
+      </m.p>      <m.a
+        href={site.resume}
+        className="group no-underline mt-8 inline-flex items-center gap-2 rounded-lg bg-btn px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#ab82ff] transition-colors duration-200"
+        download="VivekThakurCV.pdf"
+        variants={fadeUp}
+        whileHover={squishHover}
+        whileTap={squishTap}
       >
-        <a
-          href={site.resume}
-          className="group no-underline absolute top-5 right-5 z-[1200] inline-flex items-center gap-2 rounded-lg bg-btn px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#ab82ff] transition-colors duration-200 max-[780px]:static max-[780px]:mb-6 max-[500px]:mb-4"
-          download="VivekThakurCV.pdf"
-        >
-          <RiDownloadLine className="text-base transition-transform group-hover:translate-y-0.5" />
-          Resume
-        </a>
-        <m.div variants={fadeUp}>
-          <Typewriter text={site.introLine} />
-        </m.div>
-        <m.p
-          className="opacity-80 mt-6 max-w-xl leading-relaxed max-[780px]:mx-auto max-[500px]:mx-0 max-[500px]:text-[90%]"
-          variants={fadeUp}
-        >
-          {site.about}
-        </m.p>
-        <m.p
-          className="mt-6 flex items-center gap-1 max-[780px]:justify-center max-[500px]:justify-start"
-          style={{ opacity: 0.6, fontSize: "1.5rem" }}
-          variants={fadeUp}
-        >
-          <CiLocationOn /> {site.location}
-        </m.p>
-      </m.div>
+        <RiDownloadLine className="text-base transition-transform group-hover:translate-y-0.5" />
+        Download resume
+      </m.a>
     </m.div>
   </div>
 );
