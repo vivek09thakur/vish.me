@@ -1,5 +1,6 @@
 import { m } from "framer-motion";
 import PropTypes from "prop-types";
+import SectionHeading from "../ui/SectionHeading";
 import { fadeUp, stagger, viewportOnce } from "../../motion";
 import {
   SiPython,
@@ -116,15 +117,9 @@ Tool.propTypes = {
 
 const TechStack = () => (
   <div className="w-full mt-28 mb-20 mx-auto max-[680px]:mt-20 max-[680px]:mb-14">
-    <m.h2
-      className="section-title mb-14 text-center max-[680px]:text-left max-[680px]:mb-8"
-      variants={fadeUp}
-      initial="hidden"
-      whileInView="show"
-      viewport={viewportOnce}
-    >
+    <SectionHeading align="center" className="mb-14 max-[680px]:mb-8">
       Languages <span className="text-btn">and</span> Tools
-    </m.h2>
+    </SectionHeading>
 
     <div className="mx-auto flex w-[80%] max-w-[1000px] flex-col gap-10 max-[680px]:w-full max-[680px]:gap-7">
       {GROUPS.map(({ title, color, items }) => (

@@ -1,14 +1,28 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import PropTypes from "prop-types";
 import { useParams, Link } from "react-router-dom";
 import { m } from "framer-motion";
 import { FiArrowLeft, FiExternalLink } from "react-icons/fi";
-import useDocumentMeta from "../../useDocumentMeta";
+import useDocumentMeta from "../../hooks/useDocumentMeta";
+import useFetch from "../../hooks/useFetch";
+import StatusText from "../ui/StatusText";
 import { fadeUp, stagger } from "../../motion";
+
+const BackLink = () => (
+  <Link
+    to="/"
+    className="inline-flex items-center gap-2 text-sm no-underline opacity-60 hover:opacity-100 transition-opacity"
+  >
+    <FiArrowLeft /> Back
+  </Link>
+);
+
+const Centered = ({ children }) => <div className="max-w-3xl mx-auto px-5 py-24 text-center">{children}</div>;
+Centered.propTypes = { children: PropTypes.node.isRequired };
 
 const BlogPost = () => {
   const { id } = useParams();
-  const [post, setPost] = useState(null);
-  const [error, setError] = useState(null);
+  const { data: post, status } = useFetch(`https://dev.to/api/articles/${id}`);
 
   useDocumentMeta({
     title: post ? `${post.title} | Vivek Thakur` : undefined,
@@ -19,55 +33,24 @@ const BlogPost = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    const controller = new AbortController();
-    fetch(`https://dev.to/api/articles/${id}`, { signal: controller.signal })
-      .then((res) => {
-        if (!res.ok) throw new Error("Not found");
-        return res.json();
-      })
-      .then(setPost)
-      .catch((err) => {
-        if (err.name !== "AbortError") setError("Could not load this article.");
-      });
-    return () => controller.abort();
   }, [id]);
 
-  const BackLink = () => (
-    <Link
-      to="/"
-      className="inline-flex items-center gap-2 text-sm no-underline opacity-60 hover:opacity-100 transition-opacity"
-    >
-      <FiArrowLeft /> Back
-    </Link>
-  );
-
-  if (error) {
+  if (status === "error") {
     return (
-      <div className="max-w-3xl mx-auto px-5 py-24 text-center">
-        <p className="mb-6 opacity-80">{error}</p>
+      <Centered>
+        <StatusText className="mb-6 opacity-80">Could not load this article.</StatusText>
         <BackLink />
-      </div>
+      </Centered>
     );
   }
 
   if (!post) {
     return (
-      <div className="max-w-3xl mx-auto px-5 py-24 text-center opacity-70">
-        Loading article…
-      </div>
+      <Centered>
+        <StatusText className="opacity-70">Loading article…</StatusText>
+      </Centered>
     );
   }
-
-  const DevToLink = () => (
-    <a
-      href={post.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-flex items-center gap-1.5 text-sm text-btn no-underline hover:underline"
-    >
-      Read on dev.to <FiExternalLink />
-    </a>
-  );
 
   return (
     <m.div
@@ -80,10 +63,7 @@ const BlogPost = () => {
         <BackLink />
       </m.div>
 
-      <m.h1
-        className="mt-8 text-4xl font-archivo leading-tight max-[680px]:text-3xl"
-        variants={fadeUp}
-      >
+      <m.h1 className="mt-8 text-4xl font-archivo leading-tight max-[680px]:text-3xl" variants={fadeUp}>
         {post.title}
       </m.h1>
 
@@ -95,9 +75,11 @@ const BlogPost = () => {
         <m.img
           src={post.cover_image}
           alt=""
-          loading="lazy"
+          width="1000"
+          height="420"
           decoding="async"
-          className="w-full rounded-xl mt-8"
+          fetchpriority="high"
+          className="w-full h-auto rounded-xl mt-8"
           variants={fadeUp}
         />
       )}
@@ -110,7 +92,14 @@ const BlogPost = () => {
 
       <div className="mt-12 pt-6 border-t border-white/10 flex items-center justify-between gap-4 flex-wrap">
         <BackLink />
-        <DevToLink />
+        <a
+          href={post.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 text-sm text-btn no-underline hover:underline"
+        >
+          Read on dev.to <FiExternalLink />
+        </a>
       </div>
     </m.div>
   );

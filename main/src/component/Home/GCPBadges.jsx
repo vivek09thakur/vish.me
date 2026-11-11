@@ -1,52 +1,28 @@
-import { useEffect, useState } from "react";
 import { m } from "framer-motion";
 import PropTypes from "prop-types";
 import { RxExternalLink } from "react-icons/rx";
 import { SiGooglecloud } from "react-icons/si";
 import { FiGithub } from "react-icons/fi";
 import { badges, socials, socialLinks } from "../../data";
-import { fadeUp, pop, scaleIn, squishHover, squishTap, stagger, viewportOnce } from "../../motion";
+import useFetch from "../../hooks/useFetch";
+import SectionHeading from "../ui/SectionHeading";
+import StatusText from "../ui/StatusText";
+import ExternalButton from "../ui/ExternalButton";
+import { pop, scaleIn, squishTap, stagger, viewportOnce } from "../../motion";
 
 const { proxyPath, apiBase, gcpProfileId: profileId, gcpProfileUrl: profileUrl } = badges;
 const githubUser = socials.github;
 
-const fetchFirst = async (path, signal) => {
-  const urls = [`${proxyPath}${path}`, `${apiBase}${path}`];
-  let lastError;
-  for (const url of urls) {
-    try {
-      const res = await fetch(url, { signal });
-      if (res.ok) return res.json();
-      lastError = new Error(`Request failed (${res.status})`);
-    } catch (err) {
-      if (err.name === "AbortError") throw err;
-      lastError = err;
-    }
-  }
-  throw lastError;
-};
+// Dev proxy first, then the public API as a fallback.
+const urlsFor = (path) => [`${proxyPath}${path}`, `${apiBase}${path}`];
+const GCP_URLS = urlsFor(`/profile/${profileId}`);
+const GH_URLS = urlsFor(`/github/${githubUser}/achievements`);
 
-const useFetch = (path, pick) => {
-  const [data, setData] = useState(null);
-  const [status, setStatus] = useState("loading");
-  useEffect(() => {
-    const controller = new AbortController();
-    fetchFirst(path, controller.signal)
-      .then((json) => {
-        const items = pick(json);
-        setData({ raw: json, items });
-        setStatus(items.length ? "ready" : "empty");
-      })
-      .catch((err) => {
-        if (err.name !== "AbortError") setStatus("error");
-      });
-    return () => controller.abort();
-  }, [path, pick]);
-  return { data, status };
-};
-
-const pickBadges = (json) => json.badges || [];
-const pickAchievements = (json) => json.achievements || [];
+const pickBadges = (json) => ({ items: json.badges ?? [], count: json.badge_count, memberSince: json.member_since });
+const pickAchievements = (json) => ({ items: json.achievements ?? [] });
+const itemsOf = (data) => data?.items ?? [];
+// Treat a successful response with no items as "empty" so the section shows its empty text.
+const statusOf = ({ status, data }) => (status === "ready" && itemsOf(data).length === 0 ? "empty" : status);
 
 const BadgeCard = ({ href, title, image, tier }) => (
   <m.a
@@ -83,32 +59,26 @@ BadgeCard.propTypes = {
 
 const Section = ({ icon: Icon, title, accent, subtitle, status, items, renderItem, link, linkLabel, emptyText }) => (
   <div className="w-full mt-28 mb-10 mx-auto relative max-[680px]:mt-20">
-    <m.h2
-      className="section-title mb-3 text-center max-[680px]:text-left"
-      variants={fadeUp}
-      initial="hidden"
-      whileInView="show"
-      viewport={viewportOnce}
-    >
+    <SectionHeading align="center" className="mb-3">
       <Icon className="inline-block -mt-1.5 mr-1 text-btn" /> {title} <span className="text-btn">{accent}</span>
-    </m.h2>
+    </SectionHeading>
 
     {subtitle && status === "ready" && (
       <p className="text-center mb-10 opacity-70 max-[680px]:text-left">{subtitle}</p>
     )}
 
-    {status === "loading" && <p className="text-center opacity-60 max-[680px]:text-left">Loading…</p>}
+    {status === "loading" && <StatusText className="text-center max-[680px]:text-left">Loading…</StatusText>}
 
     {status === "error" && (
-      <p className="text-center opacity-60 max-[680px]:text-left">
+      <StatusText className="text-center max-[680px]:text-left">
         Couldn&apos;t reach the badge service right now.{" "}
         <a href={link} target="_blank" rel="noreferrer" className="text-btn no-underline hover:underline">
           View profile instead
         </a>
-      </p>
+      </StatusText>
     )}
 
-    {status === "empty" && <p className="text-center opacity-60 max-[680px]:text-left">{emptyText}</p>}
+    {status === "empty" && <StatusText className="text-center max-[680px]:text-left">{emptyText}</StatusText>}
 
     {status === "ready" && (
       <>
@@ -122,16 +92,9 @@ const Section = ({ icon: Icon, title, accent, subtitle, status, items, renderIte
           {items.map(renderItem)}
         </m.div>
         <div className="text-center mt-10">
-          <m.a
-            href={link}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-md bg-btn px-4 py-2 text-sm font-semibold text-white no-underline hover:bg-[#ab82ff] transition-colors duration-200"
-            whileHover={squishHover}
-            whileTap={squishTap}
-          >
+          <ExternalButton href={link} target="_blank" rel="noreferrer" className="gap-1.5 rounded-md px-4 py-2">
             {linkLabel} <RxExternalLink />
-          </m.a>
+          </ExternalButton>
         </div>
       </>
     )}
@@ -152,10 +115,11 @@ Section.propTypes = {
 };
 
 const GCPBadges = () => {
-  const gcp = useFetch(`/profile/${profileId}`, pickBadges);
-  const gh = useFetch(`/github/${githubUser}/achievements`, pickAchievements);
-  const gcpCount = gcp.data?.raw?.badge_count ?? gcp.data?.items.length ?? 0;
-  const memberSince = gcp.data?.raw?.member_since;
+  const gcp = useFetch(GCP_URLS, pickBadges);
+  const gh = useFetch(GH_URLS, pickAchievements);
+  const gcpItems = itemsOf(gcp.data);
+  const gcpCount = gcp.data?.count ?? gcpItems.length;
+  const memberSince = gcp.data?.memberSince;
 
   return (
     <>
@@ -164,8 +128,8 @@ const GCPBadges = () => {
         title="Google Cloud"
         accent="Badges"
         subtitle={`${gcpCount} badge${gcpCount === 1 ? "" : "s"} earned on Google Cloud Skills Boost${memberSince ? ` · member since ${memberSince}` : ""}`}
-        status={gcp.status}
-        items={gcp.data?.items}
+        status={statusOf(gcp)}
+        items={gcpItems}
         renderItem={(b) => (
           <BadgeCard key={b.id ?? b.url ?? b.title} href={b.url || profileUrl} title={b.title} image={b.image_url} />
         )}
@@ -177,8 +141,8 @@ const GCPBadges = () => {
         icon={FiGithub}
         title="GitHub"
         accent="Achievements"
-        status={gh.status}
-        items={gh.data?.items}
+        status={statusOf(gh)}
+        items={itemsOf(gh.data)}
         renderItem={(a) => (
           <BadgeCard
             key={a.slug ?? a.name}

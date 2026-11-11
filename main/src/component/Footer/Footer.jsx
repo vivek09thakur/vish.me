@@ -1,25 +1,14 @@
 import { m } from "framer-motion";
-import { FaInstagram } from "react-icons/fa6";
-import { FiGithub, FiLinkedin, FiArrowUpRight } from "react-icons/fi";
-import { SiDiscord, SiStackoverflow } from "react-icons/si";
-import { RiTwitterXFill } from "react-icons/ri";
-import { site, socials, socialLinks } from "../../data";
+import { FiArrowUpRight } from "react-icons/fi";
+import { site, socials, socialLinks, socialNav } from "../../data";
+import SOCIAL_ICONS from "../ui/socialIcons";
 import { fadeUp, viewportOnce } from "../../motion";
-
-const LINKS = [
-  { href: socialLinks.github, label: "GitHub", Icon: FiGithub },
-  { href: socialLinks.linkedin, label: "LinkedIn", Icon: FiLinkedin },
-  { href: socialLinks.stackoverflow, label: "Stack Overflow", Icon: SiStackoverflow },
-  { href: socialLinks.x, label: "X", Icon: RiTwitterXFill },
-  { href: socialLinks.instagram, label: "Instagram", Icon: FaInstagram },
-  { href: socialLinks.discord, label: "Discord", Icon: SiDiscord },
-];
 
 const Footer = () => {
   const year = new Date().getFullYear();
   return (
     <m.footer
-      className="w-[90%] ml-[10%] pt-24 pb-12 bg-dark1 max-[680px]:w-[80%] max-[680px]:ml-[15%] max-[680px]:pt-16"
+      className="with-rail pt-24 pb-12 bg-dark1 max-[680px]:pt-16 max-[680px]:pr-4"
       variants={fadeUp}
       initial="hidden"
       whileInView="show"
@@ -45,20 +34,23 @@ const Footer = () => {
         </div>
 
         <ul className="flex flex-wrap gap-2 list-none">
-          {LINKS.map(({ href, label, Icon }) => (
-            <li key={label}>
-              <a
-                href={href}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={label}
-                title={label}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-card/40 text-font1 no-underline hover:text-btn hover:border-btn/50 transition-colors duration-200"
-              >
-                <Icon />
-              </a>
-            </li>
-          ))}
+          {socialNav.map(({ key, href, label }) => {
+            const Icon = SOCIAL_ICONS[key];
+            return (
+              <li key={key}>
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={label}
+                  title={label}
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-card/40 text-font1 no-underline hover:text-btn hover:border-btn/50 transition-colors duration-200"
+                >
+                  <Icon />
+                </a>
+              </li>
+            );
+          })}
         </ul>
       </div>
 

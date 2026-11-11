@@ -28,7 +28,7 @@ const Note = ({ project, index }) => {
   const { tilt, tape, ink } = NOTES[index % NOTES.length];
   return (
     <m.article
-      className="relative flex h-full flex-col gap-3 rounded-sm bg-card px-6 pb-6 pt-9 max-[680px]:px-5"
+      className="relative box-border flex h-full flex-col gap-3 rounded-sm bg-card px-6 pb-6 pt-9 max-[680px]:px-5"
       style={{ rotate: tilt }}
       variants={fadeUp}
       whileHover={{ rotate: 0, y: -8, transition: pop }}
@@ -63,7 +63,7 @@ Note.propTypes = { project: PropTypes.object.isRequired, index: PropTypes.number
 
 const WeekendProjects = ({ projects }) => (
   <m.div
-    className="mx-auto grid w-[86%] max-w-[1100px] gap-8 sm:grid-cols-2 lg:grid-cols-4 max-[680px]:w-full max-[680px]:gap-9"
+    className="mx-auto grid w-[86%] max-w-[1100px] gap-8 sm:grid-cols-2 lg:grid-cols-4 max-[680px]:w-full max-[680px]:gap-12"
     variants={stagger(0.1)}
     initial="hidden"
     whileInView="show"

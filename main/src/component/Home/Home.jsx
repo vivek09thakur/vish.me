@@ -1,17 +1,22 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { m } from "framer-motion";
 import PropTypes from "prop-types";
 import { site } from "../../data";
 import MyImage from "../../assets/myimage.jpg";
 import { RiDownloadLine } from "react-icons/ri";
 import { CiLocationOn } from "react-icons/ci";
-import { bounceSoft, fadeUp, squishHover, squishTap, stagger } from "../../motion";
+import ExternalButton from "../ui/ExternalButton";
+import { bounceSoft, fadeUp, stagger } from "../../motion";
+
+const TYPE_MS = 100;
+const HOLD_MS = 1000;
 
 const Typewriter = ({ text }) => {
   const [index, setIndex] = useState(0);
   const [active, setActive] = useState(true);
   const ref = useRef(null);
 
+  // Pause the loop when the heading is off-screen or the tab is hidden.
   useEffect(() => {
     const el = ref.current;
     const io = new IntersectionObserver(([e]) => setActive(e.isIntersecting && !document.hidden));
@@ -25,9 +30,9 @@ const Typewriter = ({ text }) => {
   }, []);
 
   useEffect(() => {
-    if (!text || !active) return;
+    if (!text || !active) return undefined;
     const done = index >= text.length;
-    const t = setTimeout(() => setIndex(done ? 0 : index + 1), done ? 1000 : 100);
+    const t = setTimeout(() => setIndex(done ? 0 : index + 1), done ? HOLD_MS : TYPE_MS);
     return () => clearTimeout(t);
   }, [index, text, active]);
 
@@ -58,14 +63,14 @@ const SpotlightImage = ({ src, alt }) => {
   const frame = useRef(0);
   const pos = useRef({ x: 0, y: 0 });
 
-  const apply = () => {
+  const apply = useCallback(() => {
     frame.current = 0;
     const el = ref.current;
     if (!el) return;
     el.style.setProperty("--x", `${pos.current.x}px`);
     el.style.setProperty("--y", `${pos.current.y}px`);
     el.style.setProperty("--r", `${SPOT_RADIUS}px`);
-  };
+  }, []);
   const move = (e) => {
     const r = ref.current.getBoundingClientRect();
     pos.current = { x: e.clientX - r.left, y: e.clientY - r.top };
@@ -77,6 +82,8 @@ const SpotlightImage = ({ src, alt }) => {
     ref.current.style.setProperty("--r", "0px");
   };
 
+  useEffect(() => () => cancelAnimationFrame(frame.current), []);
+
   const imgClass = "w-full h-full object-cover rounded-[2px]";
   return (
     <div ref={ref} onMouseMove={move} onMouseLeave={leave} className="relative w-full aspect-square" style={{ "--r": "0px" }}>
@@ -85,6 +92,9 @@ const SpotlightImage = ({ src, alt }) => {
         src={src}
         alt=""
         aria-hidden="true"
+        width="400"
+        height="400"
+        decoding="async"
         className={`${imgClass} absolute inset-0 grayscale pointer-events-none`}
         style={{
           clipPath: "circle(var(--r) at var(--x, 50%) var(--y, 50%))",
@@ -127,7 +137,7 @@ Polaroid.propTypes = {
 };
 
 const Home = ({ ready = true }) => (
-  <div className="grid-overlay w-[90%] ml-[10%] pt-60 pb-12 max-[780px]:w-[85%] max-[780px]:ml-[15%] max-[780px]:pt-24 max-[780px]:pb-8 max-[500px]:pt-20">
+  <div className="grid-overlay with-rail pt-60 pb-12 max-[780px]:pt-24 max-[780px]:pb-8 max-[500px]:pt-20">
     <m.div
       className="relative z-10 mx-auto w-full max-w-[1140px] flow-root max-[780px]:flex max-[780px]:flex-col max-[780px]:items-center max-[780px]:text-center max-[500px]:items-start max-[500px]:text-left"
       variants={stagger(0.08, 0.1)}
@@ -163,17 +173,16 @@ const Home = ({ ready = true }) => (
       </m.div>
       <m.p className="opacity-80 mt-6 max-w-[38rem] text-[1.05rem] leading-relaxed max-[500px]:text-[90%]" variants={fadeUp}>
         {site.about}
-      </m.p>      <m.a
+      </m.p>
+      <ExternalButton
         href={site.resume}
-        className="group no-underline mt-8 inline-flex items-center gap-2 rounded-lg bg-btn px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#ab82ff] transition-colors duration-200"
+        className="group mt-8"
         download="VivekThakurCV.pdf"
         variants={fadeUp}
-        whileHover={squishHover}
-        whileTap={squishTap}
       >
         <RiDownloadLine className="text-base transition-transform group-hover:translate-y-0.5" />
         Download resume
-      </m.a>
+      </ExternalButton>
     </m.div>
   </div>
 );

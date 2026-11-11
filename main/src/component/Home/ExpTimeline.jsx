@@ -6,18 +6,22 @@ import { bounce, fadeUp, stagger } from "../../motion";
 
 const COLORS = ["#c6f26e", "#9b6bff", "#5b8def", "#ffb454"];
 
-const layoutFor = (w) => {
-  if (w < 680) return { mobile: true };
-  if (w < 1100) return { mobile: false, perRow: 2, rowH: 340, pad: 265, stem: 84, cardW: 270 };
-  return { mobile: false, perRow: 3, rowH: 380, pad: 285, stem: 90, cardW: 280 };
-};
+const BREAKPOINTS = [
+  { query: "(max-width: 679px)", layout: { mobile: true } },
+  { query: "(max-width: 1099px)", layout: { mobile: false, perRow: 2, rowH: 340, pad: 265, stem: 84, cardW: 270 } },
+  { query: "all", layout: { mobile: false, perRow: 3, rowH: 380, pad: 285, stem: 90, cardW: 280 } },
+];
 
+const layoutFor = () => BREAKPOINTS.find((b) => window.matchMedia(b.query).matches).layout;
+
+// Only re-renders when the breakpoint changes, not on every resize pixel.
 const useLayout = () => {
-  const [layout, setLayout] = useState(() => layoutFor(window.innerWidth));
+  const [layout, setLayout] = useState(layoutFor);
   useEffect(() => {
-    const onResize = () => setLayout(layoutFor(window.innerWidth));
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
+    const lists = BREAKPOINTS.map((b) => window.matchMedia(b.query));
+    const onChange = () => setLayout(layoutFor());
+    lists.forEach((l) => l.addEventListener("change", onChange));
+    return () => lists.forEach((l) => l.removeEventListener("change", onChange));
   }, []);
   return layout;
 };
