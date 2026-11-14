@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vishme.vercel.app/sitemap.xml
+Sitemap: https://vishme.pages.dev/sitemap.xml

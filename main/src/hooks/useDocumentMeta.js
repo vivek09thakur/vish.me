@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const SITE = "https://vishme.vercel.app";
+const SITE = "https://vishme.pages.dev";
 
 const setMeta = (selector, attr, value) => {
   let el = document.head.querySelector(selector);
