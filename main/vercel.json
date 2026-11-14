@@ -1,9 +1,9 @@
 {
-  "rewrites": [
+  "redirects": [
     {
-      "source": "/gcp-badges/:path*",
-      "destination": "https://dev-badges.vercel.app/:path*"
-    },
-    { "source": "/(.*)", "destination": "/index.html" }
+      "source": "/:path*",
+      "destination": "https://vishme.pages.dev/:path*",
+      "permanent": true
+    }
   ]
 }
