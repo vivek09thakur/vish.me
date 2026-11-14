@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "destination": "https://vishme.pages.dev/:path*",
+      "permanent": true
+    }
+  ]
+}
