@@ -1,4 +1,8 @@
 {
+  "framework": null,
+  "buildCommand": "",
+  "installCommand": "",
+  "outputDirectory": "redirect",
   "redirects": [
     {
       "source": "/:path*",
